@@ -11,3 +11,5 @@ const Head = ({ title = "" }) => {
     </NextHead>
   );
 };
+
+export default Head;
