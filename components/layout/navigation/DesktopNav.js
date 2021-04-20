@@ -1,0 +1,44 @@
+import Link from "next/Link";
+import Image from "next/Image";
+
+import { Navbar, Nav, Container, Button } from "react-bootstrap";
+
+const DesktopNav = () => {
+  return (
+    <Navbar className="d-none d-md-block">
+      <Container>
+        <Link href="/" passHref>
+          <Navbar.Brand>
+            <Image src="/holidaze-logo.svg" height="70" width="112" />
+          </Navbar.Brand>
+        </Link>
+        <Navbar.Collapse>
+          <Nav className="mx-auto">
+            <Nav.Item>
+              <Link href="/" passHref>
+                <Nav.Link>Home</Nav.Link>
+              </Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Link href="/explore" passHref>
+                <Nav.Link>Explore</Nav.Link>
+              </Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Link href="/contact" passHref>
+                <Nav.Link>Contact</Nav.Link>
+              </Link>
+            </Nav.Item>
+          </Nav>
+        </Navbar.Collapse>
+        <Nav.Item>
+          <Link href="/login" passHref>
+            <Button variant="outline-primary">Login</Button>
+          </Link>
+        </Nav.Item>
+      </Container>
+    </Navbar>
+  );
+};
+
+export default DesktopNav;
