@@ -7,7 +7,7 @@ const Head = ({ title = "" }) => {
         {title}
         {title ? " | " : ""} Holidaze
       </title>
-      <link rel="shortcut icon" href="/favicon.ico" />
+      <link rel="shortcut icon" href="/icons/favicon.ico" />
     </NextHead>
   );
 };

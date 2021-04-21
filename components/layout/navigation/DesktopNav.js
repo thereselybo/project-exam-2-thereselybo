@@ -13,7 +13,7 @@ const DesktopNav = () => {
       <Container>
         <Link href="/" passHref>
           <Navbar.Brand>
-            <Image src="/holidaze-logo.svg" height="70" width="112" />
+            <Image src="/images/holidaze-logo.svg" height="70" width="112" />
           </Navbar.Brand>
         </Link>
         <Navbar.Collapse>
