@@ -1,9 +1,13 @@
 import Link from "next/Link";
 import Image from "next/Image";
+import { useRouter } from "next/router";
 
 import { Navbar, Nav, Container, Button } from "react-bootstrap";
 
 const DesktopNav = () => {
+  const router = useRouter();
+  const path = router.pathname;
+
   return (
     <Navbar className="d-none d-md-block">
       <Container>
@@ -13,7 +17,7 @@ const DesktopNav = () => {
           </Navbar.Brand>
         </Link>
         <Navbar.Collapse>
-          <Nav className="mx-auto">
+          <Nav activeKey={path} className="mx-auto">
             <Nav.Item>
               <Link href="/" passHref>
                 <Nav.Link>Home</Nav.Link>
