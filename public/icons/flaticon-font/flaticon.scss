@@ -1,0 +1,73 @@
+$flaticon-font: "flaticon";
+
+@font-face {
+    font-family: $flaticon-font;
+    src: url("./flaticon.ttf?ed909d7e3fdeefdf74110183272ba258") format("truetype"),
+url("./flaticon.woff?ed909d7e3fdeefdf74110183272ba258") format("woff"),
+url("./flaticon.woff2?ed909d7e3fdeefdf74110183272ba258") format("woff2"),
+url("./flaticon.eot?ed909d7e3fdeefdf74110183272ba258#iefix") format("embedded-opentype"),
+url("./flaticon.svg?ed909d7e3fdeefdf74110183272ba258#flaticon") format("svg");
+}
+
+i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
+    font-family: flaticon !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+$flaticon-map: (
+    "island": "\f101",
+    "wifi-signal": "\f102",
+    "shop": "\f103",
+    "stones": "\f104",
+    "gym": "\f105",
+    "sun-umbrella": "\f106",
+    "swimming-pool": "\f107",
+    "mop": "\f108",
+    "rest-area": "\f109",
+    "menu": "\f10a",
+    "hotel": "\f10b",
+    "hotels": "\f10c",
+);
+
+.flaticon-island:before {
+    content: map-get($flaticon-map, "island");
+}
+.flaticon-wifi-signal:before {
+    content: map-get($flaticon-map, "wifi-signal");
+}
+.flaticon-shop:before {
+    content: map-get($flaticon-map, "shop");
+}
+.flaticon-stones:before {
+    content: map-get($flaticon-map, "stones");
+}
+.flaticon-gym:before {
+    content: map-get($flaticon-map, "gym");
+}
+.flaticon-sun-umbrella:before {
+    content: map-get($flaticon-map, "sun-umbrella");
+}
+.flaticon-swimming-pool:before {
+    content: map-get($flaticon-map, "swimming-pool");
+}
+.flaticon-mop:before {
+    content: map-get($flaticon-map, "mop");
+}
+.flaticon-rest-area:before {
+    content: map-get($flaticon-map, "rest-area");
+}
+.flaticon-menu:before {
+    content: map-get($flaticon-map, "menu");
+}
+.flaticon-hotel:before {
+    content: map-get($flaticon-map, "hotel");
+}
+.flaticon-hotels:before {
+    content: map-get($flaticon-map, "hotels");
+}

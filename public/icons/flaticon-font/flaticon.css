@@ -1,0 +1,56 @@
+@font-face {
+    font-family: "flaticon";
+    src: url("./flaticon.ttf?ed909d7e3fdeefdf74110183272ba258") format("truetype"),
+url("./flaticon.woff?ed909d7e3fdeefdf74110183272ba258") format("woff"),
+url("./flaticon.woff2?ed909d7e3fdeefdf74110183272ba258") format("woff2"),
+url("./flaticon.eot?ed909d7e3fdeefdf74110183272ba258#iefix") format("embedded-opentype"),
+url("./flaticon.svg?ed909d7e3fdeefdf74110183272ba258#flaticon") format("svg");
+}
+
+i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
+    font-family: flaticon !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.flaticon-island:before {
+    content: "\f101";
+}
+.flaticon-wifi-signal:before {
+    content: "\f102";
+}
+.flaticon-shop:before {
+    content: "\f103";
+}
+.flaticon-stones:before {
+    content: "\f104";
+}
+.flaticon-gym:before {
+    content: "\f105";
+}
+.flaticon-sun-umbrella:before {
+    content: "\f106";
+}
+.flaticon-swimming-pool:before {
+    content: "\f107";
+}
+.flaticon-mop:before {
+    content: "\f108";
+}
+.flaticon-rest-area:before {
+    content: "\f109";
+}
+.flaticon-menu:before {
+    content: "\f10a";
+}
+.flaticon-hotel:before {
+    content: "\f10b";
+}
+.flaticon-hotels:before {
+    content: "\f10c";
+}
