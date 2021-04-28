@@ -1,4 +1,4 @@
-import Layout from "../components/PublicLayout/PublicLayout";
+import Layout from "../components/layout/PublicLayout/PublicLayout";
 
 const Explore = () => {
   return (
