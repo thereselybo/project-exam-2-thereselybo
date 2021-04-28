@@ -10,7 +10,7 @@ const Layout = ({ title, children }) => {
     <>
       <Head title={title} />
       <Navigation />
-      <Container>{children}</Container>
+      {children}
     </>
   );
 };

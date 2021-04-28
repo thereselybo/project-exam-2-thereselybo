@@ -1,4 +1,4 @@
-import Layout from "../../components/layout/AdminLayout/AdminLayout";
+import Layout from "../../../components/layout/AdminLayout/AdminLayout";
 
 const AddEstablishment = () => {
   return (
