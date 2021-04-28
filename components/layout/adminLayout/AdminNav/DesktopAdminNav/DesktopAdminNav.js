@@ -10,6 +10,8 @@ import {
   ArrowLeftShort,
 } from "react-bootstrap-icons";
 
+import styles from "./DesktopAdminNav.module.scss";
+
 const DesktopAdminNav = () => {
   const router = useRouter();
   const path = router.pathname;

@@ -4,6 +4,8 @@ import { useRouter } from "next/router";
 
 import { Navbar, Nav, Container, Button } from "react-bootstrap";
 
+import styles from "./DesktopNav.module.scss";
+
 const DesktopNav = () => {
   const router = useRouter();
   const path = router.pathname;

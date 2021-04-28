@@ -4,6 +4,8 @@ import Image from "next/Image";
 import { Nav, Navbar, Container, Col } from "react-bootstrap";
 import { House, Search, Envelope, Person } from "react-bootstrap-icons";
 
+import styles from "./MobileNav.module.scss";
+
 const MobileNav = () => {
   return (
     <Navbar fixed="bottom" className="d-md-none">

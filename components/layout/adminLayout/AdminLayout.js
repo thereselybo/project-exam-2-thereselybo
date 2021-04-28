@@ -1,7 +1,9 @@
 import Head from "../Head";
-import AdminNav from "./navigation/AdminNav";
+import AdminNav from "./AdminNav/AdminNav";
 
 import { Container, Row, Col } from "react-bootstrap";
+
+import styles from "./AdminLayout.module.scss";
 
 const Layout = ({ title, children }) => {
   return (

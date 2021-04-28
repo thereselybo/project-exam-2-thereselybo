@@ -10,6 +10,8 @@ import {
   ArrowLeftShort,
 } from "react-bootstrap-icons";
 
+import styles from "./MobileAdminNav.module.scss";
+
 const MobileAdminNav = () => {
   return (
     <>
