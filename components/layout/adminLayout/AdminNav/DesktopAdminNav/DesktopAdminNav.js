@@ -19,8 +19,8 @@ const DesktopAdminNav = () => {
   return (
     <Navbar className="d-none d-md-block min-vh-100">
       <Container className="h-100 position-fixed">
-        <Nav className="flex-column align-items-left">
-          <Nav.Item>
+        <Nav className="flex-column align-items-left h-100">
+          <Nav.Item className="mb-auto">
             <Link href="/" passHref>
               <Nav.Link className="d-flex align-items-center">
                 <ArrowLeftShort className="me-3" />
@@ -56,7 +56,7 @@ const DesktopAdminNav = () => {
             </Nav.Item>
           </div>
 
-          <Nav.Item>
+          <Nav.Item className="mt-auto">
             <Nav.Link className="d-flex align-items-center">
               <Person className="me-3" />
               Logout

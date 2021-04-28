@@ -1,5 +1,5 @@
 import DesktopAdminNav from "./DesktopAdminNav/DesktopAdminNav";
-import MobileAdminNav from "./MobileAdminNav";
+import MobileAdminNav from "./MobileAdminNav/MobileAdminNav";
 
 import styles from "./AdminNav.module.scss";
 

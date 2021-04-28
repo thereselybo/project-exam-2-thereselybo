@@ -1,5 +1,5 @@
 import Head from "../Head";
-import Navigation from "../navigation/Navigation";
+import Navigation from "../Navigation/Navigation";
 
 import { Container } from "react-bootstrap";
 

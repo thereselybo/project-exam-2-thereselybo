@@ -1,4 +1,4 @@
-import Layout from "../../components/layout/adminLayout/AdminLayout";
+import Layout from "../../components/layout/AdminLayout/AdminLayout";
 
 const EditEstablishment = () => {
   return (
