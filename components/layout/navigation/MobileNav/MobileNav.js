@@ -1,5 +1,5 @@
-import Link from "next/Link";
-import Image from "next/Image";
+import Link from "next/link";
+import Image from "next/image";
 
 import { Nav, Navbar, Container, Col } from "react-bootstrap";
 import { House, Search, Envelope, Person } from "react-bootstrap-icons";

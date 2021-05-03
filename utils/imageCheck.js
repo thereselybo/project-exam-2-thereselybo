@@ -10,7 +10,7 @@ export const imageCheck = (resort, imgPlaceholder, altPlaceholder) => {
   let resortImgAlt = altPlaceholder;
 
   if (imgObject) {
-    console.log(`${BASE_URL}${resort.image[0].formats.medium.url}`);
+    // console.log(`${BASE_URL}${resort.image[0].formats.medium.url}`);
     fallbackImage = `${BASE_URL}${resort.image[0].formats.medium.url}`;
   }
 

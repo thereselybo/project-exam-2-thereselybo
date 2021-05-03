@@ -15,7 +15,7 @@ export const getResortDetails = (resort) => {
     resortImgAltPlaceholder
   );
 
-  console.log(image);
+//   console.log(image);
 
   const resortDetails = {
     title: resort.title,
@@ -23,7 +23,7 @@ export const getResortDetails = (resort) => {
     description,
     image: image.resortImg,
     imageAlt: image.resortImgAlt,
-    location: resort.location,
+    location: resort.location.title,
     price: resort.price,
     featured: resort.featured,
     rating: resort.rating,
