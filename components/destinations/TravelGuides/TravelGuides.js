@@ -36,15 +36,22 @@ const TravelGuides = ({ destinations, heading }) => {
                 // <Col key={key++}>
                 <SwiperSlide key={i}>
                   <SuperEllipse
-                    className="my-auto d-none d-md-block p-5"
+                    className="m-auto d-none d-md-block p-5 ratio ratio-1x1"
                     r1={0.03}
                     r2={0.4}
                     style={{
-                      width: "100px",
-                      height: "100px",
+                      // width: "80%",
+                      // height: "100%",
                       background: "hsla(26, 59%, 90%, 0.8)",
                     }}
-                  />
+                  >
+                    <Image
+                      src={destinationDetails.image}
+                      alt={destinationDetails.imageAlt}
+                      layout="fill"
+                      objectFit="cover"
+                    />
+                  </SuperEllipse>
                   <h4>{destinationDetails.title}</h4>
                 </SwiperSlide>
                 // </Col>
