@@ -1,10 +1,9 @@
 import { Swiper } from "swiper/react";
+import SwiperCore, { Lazy, Navigation } from "swiper/core";
 
 import "swiper/swiper-bundle.css";
 // import "~swiper/swiper.min.css";
 // import "~swiper/components/navigation/navigation.min.css";
-
-import SwiperCore, { Lazy, Navigation } from "swiper/core";
 
 import styles from "./ResortCarousel.module.scss";
 

@@ -5,6 +5,10 @@ import ResortCarousel from "../ResortCarousel/ResortCarousel";
 
 import styles from "./FeaturedResorts.module.scss";
 
+// TODO:
+// solve unique key prop problem
+// solve src does not match problem
+
 const FeaturedResorts = ({ resorts, heading }) => {
   let featuredResorts = [];
   console.dir(heading);
@@ -19,7 +23,7 @@ const FeaturedResorts = ({ resorts, heading }) => {
 
   if (featuredResorts.length > 3) {
     return (
-      <>
+      <section>
         {heading}
         <ResortCarousel>
           {featuredResorts ? (
@@ -53,13 +57,13 @@ const FeaturedResorts = ({ resorts, heading }) => {
             <h3>Loading.....</h3>
           )}
         </ResortCarousel>
-      </>
+      </section>
     );
   }
 
   if (featuredResorts.length <= 3) {
     return featuredResorts.length ? (
-      <>
+      <section>
         {heading}
         <Row>
           {featuredResorts.map((resort, i) => {
@@ -86,7 +90,7 @@ const FeaturedResorts = ({ resorts, heading }) => {
             );
           })}
         </Row>
-      </>
+      </section>
     ) : (
       ""
     );

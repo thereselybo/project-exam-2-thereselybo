@@ -10,18 +10,18 @@ export const imageCheck = (resort, imgPlaceholder, altPlaceholder) => {
   let resortImg = imgPlaceholder;
   let resortImgAlt = altPlaceholder;
 
-  if (imgObject.length) {
-    fallbackImage = `${BASE_URL}${resort.image[0].formats.medium.url}`;
-  }
+  // if (imgObject.length) {
+  //   fallbackImage = `${BASE_URL}${resort.image[0].formats.medium.url}`;
+  // }
 
   if (imgUrl) {
     resortImg = imgUrl;
     resortImgAlt = `Resort image of ${resort.title}`;
-  } else if (imgObject) {
-    if (fallbackImage) {
-      resortImg = fallbackImage;
-      resortImgAlt = `Resort image of ${resort.title}`;
-    }
+  } else if (imgObject.length) {
+    // if (fallbackImage) {
+    resortImg = `${BASE_URL}${resort.image[0].formats.medium.url}`;
+    resortImgAlt = `Resort image of ${resort.title}`;
+    // }
   }
 
   return { resortImg, resortImgAlt };

@@ -11,11 +11,6 @@ import { Container, Col, Form, Row, Button } from "react-bootstrap";
 import styles from "./home/index.module.scss";
 
 const Home = ({ resorts }) => {
-  // const featuredHeading = `${[
-  //   <h2>
-  //     <span className="d-none d-md-inline">Not sure? </span> Get inspired
-  //   </h2>,
-  // ]}`;
   return (
     <Layout title="Home">
       <Header />
@@ -29,7 +24,6 @@ const Home = ({ resorts }) => {
             </h2>,
           ]}
         />
-        {/* <FeaturedResorts resorts={resorts} heading={featuredHeading} /> */}
       </Container>
     </Layout>
   );
