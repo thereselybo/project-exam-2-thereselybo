@@ -5,11 +5,11 @@ import "swiper/swiper-bundle.css";
 // import "~swiper/swiper.min.css";
 // import "~swiper/components/navigation/navigation.min.css";
 
-import styles from "./ResortCarousel.module.scss";
+import styles from "./Carousel.module.scss";
 
 SwiperCore.use([Navigation, Lazy]);
 
-const ResortCarousel = ({ children }) => {
+const Carousel = ({ children }) => {
   return (
     <>
       <Swiper
@@ -22,7 +22,7 @@ const ResortCarousel = ({ children }) => {
           },
           768: {
             slidesPerView: 3,
-            spaceBetween: 40,
+            spaceBetween: 60,
           },
         }}
         navigation={true}
@@ -36,4 +36,4 @@ const ResortCarousel = ({ children }) => {
   );
 };
 
-export default ResortCarousel;
+export default Carousel;

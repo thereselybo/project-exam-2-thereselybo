@@ -1,8 +1,8 @@
 import {
   resortImgAltPlaceholder,
   resortImgPlaceholder,
-} from "../../constants/placeholders";
-import { imageCheck } from "../../utils/imageCheck";
+} from "../constants/placeholders";
+import { imageCheck } from "./imageCheck";
 
 export const getResortDetails = (resort) => {
   const description = resort.description_rich
@@ -15,7 +15,7 @@ export const getResortDetails = (resort) => {
     resortImgAltPlaceholder
   );
 
-//   console.log(image);
+  //   console.log(image);
 
   const resortDetails = {
     title: resort.title,

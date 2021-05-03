@@ -19,8 +19,8 @@ export const imageCheck = (resort, imgPlaceholder, altPlaceholder) => {
     resortImgAlt = `Resort image of ${resort.title}`;
   } else if (imgObject.length) {
     // if (fallbackImage) {
-    resortImg = `${BASE_URL}${resort.image[0].formats.medium.url}`;
-    resortImgAlt = `Resort image of ${resort.title}`;
+      resortImg = `${BASE_URL}${resort.image[0].formats.medium.url}`;
+      resortImgAlt = `Resort image of ${resort.title}`;
     // }
   }
 

@@ -4,3 +4,8 @@ export const resortImgAltPlaceholder = "Digital illustration of resort";
 
 // export const userImgPlaceholder = "";
 // export const userImgAltPlaceholder = "";
+
+export const destinationImgPlaceholder =
+  "https://image.freepik.com/free-vector/nature-scene-with-coconut-trees-beach_1308-29137.jpg";
+export const destinationImgAltPlaceholder =
+  "Digital illustration of tropical destination";
