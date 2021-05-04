@@ -24,7 +24,7 @@ const Header = () => {
             r1={0.03}
             r2={0.4}
             style={{
-              width: "80%",
+              width: "100%",
               height: "55%",
               background: "hsla(26, 59%, 90%, 0.8)",
             }}

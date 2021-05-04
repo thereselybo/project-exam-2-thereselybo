@@ -14,6 +14,7 @@ import { Container, Col, Form, Row, Button } from "react-bootstrap";
 
 import styles from "./home/index.module.scss";
 import TravelGuides from "../components/destinations/TravelGuides/TravelGuides";
+import PopularDestinations from "../components/destinations/PopularDestinations/PopularDestinations";
 
 const Home = ({ resorts, destinations }) => {
   console.log(destinations);
@@ -29,6 +30,10 @@ const Home = ({ resorts, destinations }) => {
               inspired
             </h2>,
           ]}
+        />
+        <PopularDestinations
+          destinations={destinations}
+          heading={[<h2 className="text-center">Popular destinations</h2>]}
         />
         <TravelGuides
           destinations={destinations}
