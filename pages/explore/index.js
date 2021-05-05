@@ -6,7 +6,7 @@ import FeaturedResorts from "../../components/resorts/FeaturedResorts/FeaturedRe
 
 import { Container } from "react-bootstrap";
 import SearchBar from "./SearchBar/SearchBar";
-import Resorts from "../../components/resorts/Resorts/Resorts";
+import Resorts from "./Resorts/Resorts";
 
 // TODO:
 // get location from url path
