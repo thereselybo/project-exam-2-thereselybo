@@ -51,7 +51,7 @@ const FeaturedResorts = ({ resorts, heading }) => {
                         <Card.ImgOverlay>
                           <Card.Body>
                             <Card.Title>{resortDetails.title}</Card.Title>
-                            <Card.Text>{resort.location.title}</Card.Text>
+                            <Card.Text>{resortDetails.location}</Card.Text>
                             <Card.Subtitle>
                               <span className="h4">
                                 {resortDetails.price} NOK
@@ -91,7 +91,7 @@ const FeaturedResorts = ({ resorts, heading }) => {
                   <Card.ImgOverlay>
                     <Card.Body>
                       <Card.Title>{resortDetails.title}</Card.Title>
-                      <Card.Text>{resort.location.title}</Card.Text>
+                      <Card.Text>{resortDetails.location}</Card.Text>
                       <Card.Subtitle>
                         <span className="h4">{resortDetails.price} NOK</span>
                         <span>/night</span>
