@@ -23,11 +23,12 @@ export const getResortDetails = (resort) => {
     description,
     image: image.resortImg,
     imageAlt: image.resortImgAlt,
-    location: resort.location.title,
+    destination: resort.destination.title,
     price: resort.price,
     featured: resort.featured,
     rating: resort.rating,
     id: resort.id,
+    slug: resort.slug,
   };
   return resortDetails;
 };

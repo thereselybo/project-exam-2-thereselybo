@@ -9,8 +9,8 @@ import SearchBar from "./SearchBar/SearchBar";
 import Resorts from "./Resorts/Resorts";
 
 // TODO:
-// get location from url path
-// if location
+// get destination from url path
+// if destination
 // render recommended in area
 // render all resorts in area
 // else render all resorts

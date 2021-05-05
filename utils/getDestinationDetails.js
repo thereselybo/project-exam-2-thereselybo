@@ -25,6 +25,7 @@ export const getDestinationDetails = (destination) => {
     image: image.resortImg,
     imageAlt: image.resortImgAlt,
     id: destination.id,
+    slug: destination.slug,
   };
   return destinationDetails;
 };

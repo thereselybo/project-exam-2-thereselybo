@@ -1,17 +1,36 @@
 import axios from "axios";
 
 import Layout from "../../components/layout/PublicLayout/PublicLayout";
+import SearchBar from "./SearchBar/SearchBar";
+import FeaturedResorts from "../../components/resorts/FeaturedResorts/FeaturedResorts";
+import Resorts from "./Resorts/Resorts";
 import { BASE_URL, DESTINATIONS_ENDPOINT } from "../../constants/api";
-
-// TODO: 
-// either build or discard
+import { Container } from "react-bootstrap";
 
 const url = `${BASE_URL}${DESTINATIONS_ENDPOINT}`;
 
 const Destination = ({ destination }) => {
-  const { slug } = destination;
+  // const { slug } = destination;
+  const resorts = destination.resorts;
+  console.log(resorts);
 
-  return <Layout>Some destination and stuff inside it</Layout>;
+  console.log(destination);
+
+  return (
+    <Layout title={`Explore ${destination.title}`}>
+      <Container>
+        <SearchBar />
+        <FeaturedResorts
+          resorts={resorts}
+          heading={[<h1 className="text-center">Recommended in area</h1>]}
+        />
+        <Resorts
+          resorts={resorts}
+          heading={[<h2 className="text-center">More results</h2>]}
+        />
+      </Container>
+    </Layout>
+  );
 };
 
 export default Destination;
@@ -33,40 +52,21 @@ export const getStaticPaths = async () => {
   }
 };
 
-// export const getStaticProps = async () => {
-//     let destinations = [];
+export const getStaticProps = async ({ params }) => {
+  const destinationUrl = `${url}?slug=${params.slug}`;
+  console.log(destinationUrl);
+  let destination = null;
 
-//     try {
-//       const res = await axios.get(url);
-//       destinations = res.data;
-//     } catch (err) {
-//       console.log("destinations fetch error:", err);
-//     }
+  try {
+    const res = await axios.get(destinationUrl);
+    destination = res.data[0];
+  } catch (err) {
+    console.log("destination fetch error: ", err);
+  }
 
-//     return {
-//       props: {
-//         resorts,
-//         destinations,
-//       },
-//     };
-//   };
-//   export const getStaticProps = async();
-
-// export const getStaticProps = async ({ params }) => {
-//   const destinationUrl = `${url}?slug=${params.slug}`;
-//   console.log(destinationUrl);
-//   let destination = null;
-
-//   try {
-//     const res = await axios.get(url);
-//     destination = res.data;
-//   } catch (err) {
-//     console.log("destination fetch error: ", err);
-//   }
-
-//   return {
-//     props: {
-//       destination,
-//     },
-//   };
-// };
+  return {
+    props: {
+      destination,
+    },
+  };
+};

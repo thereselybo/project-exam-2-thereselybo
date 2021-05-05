@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Card, Col, Row } from "react-bootstrap";
 import SuperEllipse from "react-superellipse";
 import { SwiperSlide } from "swiper/react";
@@ -14,7 +15,7 @@ import styles from "./TravelGuides.module.scss";
 // move destinations into separate component
 
 const TravelGuides = ({ destinations, heading }) => {
-  console.log(destinations);
+  console.log("travel guide destinations: ", destinations);
   // let featuredDestinations = [];
   //   destinations.forEach((destination) => {
   //     if (destination.featured) {
@@ -45,14 +46,18 @@ const TravelGuides = ({ destinations, heading }) => {
                       background: "hsla(26, 59%, 90%, 0.8)",
                     }}
                   >
-                    <Image
-                      src={destinationDetails.image}
-                      alt={destinationDetails.imageAlt}
-                      layout="fill"
-                      objectFit="cover"
-                    />
+                    <Link href={`/explore/${destinationDetails.slug}`}>
+                      <Image
+                        src={destinationDetails.image}
+                        alt={destinationDetails.imageAlt}
+                        layout="fill"
+                        objectFit="cover"
+                      />
+                    </Link>
                   </SuperEllipse>
-                  <h4>{destinationDetails.title}</h4>
+                  <Link href={`/explore/${destinationDetails.slug}`}>
+                    <h4>{destinationDetails.title}</h4>
+                  </Link>
                 </SwiperSlide>
                 // </Col>
               );
@@ -75,24 +80,26 @@ const TravelGuides = ({ destinations, heading }) => {
             const destinationDetails = getDestinationDetails(destination);
             return (
               <Col key={i} xs={12} md={4} className="p-5">
-                <SuperEllipse
-                  className="m-auto d-none d-md-block p-5 ratio ratio-1x1"
-                  r1={0.03}
-                  r2={0.4}
-                  style={{
-                    // width: "80%",
-                    // height: "100%",
-                    background: "hsla(26, 59%, 90%, 0.8)",
-                  }}
-                >
-                  <Image
-                    src={destinationDetails.image}
-                    alt={destinationDetails.imageAlt}
-                    layout="fill"
-                    objectFit="cover"
-                  />
-                </SuperEllipse>
-                <h4>{destinationDetails.title}</h4>
+                <Link href={`/explore/${destinationDetails.slug}`}>
+                  <SuperEllipse
+                    className="m-auto d-none d-md-block p-5 ratio ratio-1x1"
+                    r1={0.03}
+                    r2={0.4}
+                    style={{
+                      // width: "80%",
+                      // height: "100%",
+                      background: "hsla(26, 59%, 90%, 0.8)",
+                    }}
+                  >
+                    <Image
+                      src={destinationDetails.image}
+                      alt={destinationDetails.imageAlt}
+                      layout="fill"
+                      objectFit="cover"
+                    />
+                  </SuperEllipse>
+                  <h4>{destinationDetails.title}</h4>
+                </Link>
               </Col>
             );
           })}
