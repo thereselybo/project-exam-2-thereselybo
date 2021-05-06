@@ -27,6 +27,7 @@ export const getResortDetails = (resort) => {
     price: resort.price,
     featured: resort.featured,
     rating: resort.rating,
+    facilities: resort.facilities,
     id: resort.id,
     slug: resort.slug,
   };

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Card, Col, Row } from "react-bootstrap";
 import { SwiperSlide } from "swiper/react";
 import { getResortDetails } from "../../../utils/getResortDetails";
@@ -43,24 +44,26 @@ const FeaturedResorts = ({ resorts, heading }) => {
                         background: "hsla(26, 59%, 90%, 0.8)",
                       }}
                     >
-                      <Card>
-                        <Card.Img
-                          src={resortDetails.image}
-                          alt={resortDetails.imageAlt}
-                        />
-                        <Card.ImgOverlay>
-                          <Card.Body>
-                            <Card.Title>{resortDetails.title}</Card.Title>
-                            <Card.Text>{resortDetails.destination}</Card.Text>
-                            <Card.Subtitle>
-                              <span className="h4">
-                                {resortDetails.price} NOK
-                              </span>
-                              <span>/night</span>
-                            </Card.Subtitle>
-                          </Card.Body>
-                        </Card.ImgOverlay>
-                      </Card>
+                      <Link href={`/resort/${resortDetails.slug}`}>
+                        <Card>
+                          <Card.Img
+                            src={resortDetails.image}
+                            alt={resortDetails.imageAlt}
+                          />
+                          <Card.ImgOverlay>
+                            <Card.Body>
+                              <Card.Title>{resortDetails.title}</Card.Title>
+                              <Card.Text>{resortDetails.destination}</Card.Text>
+                              <Card.Subtitle>
+                                <span className="h4">
+                                  {resortDetails.price} NOK
+                                </span>
+                                <span>/night</span>
+                              </Card.Subtitle>
+                            </Card.Body>
+                          </Card.ImgOverlay>
+                        </Card>
+                      </Link>
                     </SuperEllipse>
                   </Col>
                 </SwiperSlide>

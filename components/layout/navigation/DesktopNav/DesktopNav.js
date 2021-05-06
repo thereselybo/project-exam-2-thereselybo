@@ -39,7 +39,7 @@ const DesktopNav = () => {
             </Nav.Item>
           </Nav>
         </Navbar.Collapse>
-        <Nav.Item>
+        <Nav.Item className="ms-5">
           <Link href="/login" passHref>
             <Button variant="outline-primary">Login</Button>
           </Link>

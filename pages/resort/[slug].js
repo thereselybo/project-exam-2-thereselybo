@@ -1,18 +1,22 @@
 import axios from "axios";
 
 import Layout from "../../components/layout/PublicLayout/PublicLayout";
-import { BASE_URL, RESORTS_ENDPOINT } from "../../constants/api";
-import ResortCard from "./ResortCard/ResortCard";
+import {
+  BASE_URL,
+  RESORTS_ENDPOINT,
+  REVIEWS_ENDPOINT,
+} from "../../constants/api";
+import ResortDetail from "./ResortDetail/ResortDetail";
 
-const url = `${BASE_URL}${RESORTS_ENDPOINT}`;
+const resortsUrl = `${BASE_URL}${RESORTS_ENDPOINT}`;
 
-const Resort = ({ resort }) => {
+const Resort = ({ resort, reviews }) => {
   // const { slug } = resort;
   console.log(resort);
 
   return (
     <Layout>
-      <ResortCard resort={resort} />
+      <ResortDetail resort={resort} reviews={reviews} />
     </Layout>
   );
 };
@@ -23,7 +27,7 @@ export const getStaticPaths = async () => {
   let resorts = [];
 
   try {
-    const res = await axios.get(url);
+    const res = await axios.get(resortsUrl);
     resorts = res.data;
 
     const paths = resorts.map((resort) => ({
@@ -37,13 +41,17 @@ export const getStaticPaths = async () => {
 };
 
 export const getStaticProps = async ({ params }) => {
-  const resortUrl = `${url}?slug=${params.slug}`;
-  console.log(resortUrl);
+  const resortUrl = `${resortsUrl}?slug=${params.slug}`;
+  const reviewsUrl = `${BASE_URL}${REVIEWS_ENDPOINT}`;
+
   let resort = null;
+  let reviews = [];
 
   try {
-    const res = await axios.get(resortUrl);
-    resort = res.data[0];
+    const resortRes = await axios.get(resortUrl);
+    const reviewsRes = await axios.get(reviewsUrl);
+    resort = resortRes.data[0];
+    reviews = reviewsRes.data;
   } catch (err) {
     console.log("resort fetch error: ", err);
   }
@@ -51,6 +59,7 @@ export const getStaticProps = async ({ params }) => {
   return {
     props: {
       resort,
+      reviews,
     },
   };
 };

@@ -1,8 +1,5 @@
 import Image from "next/image";
-import { Col, Row, Container, Card } from "react-bootstrap";
-import SuperEllipse from "react-superellipse";
-import { BASE_URL } from "../../../constants/api";
-import { getResortDetails } from "../../../utils/getResortDetails";
+import { Col, Row, Container } from "react-bootstrap";
 
 import styles from "./HorizontalLayout.module.scss";
 

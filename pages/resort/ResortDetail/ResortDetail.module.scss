@@ -1,0 +1,13 @@
+.resortImage {
+  position: relative;
+  height: 400px;
+  width: 100vw;
+}
+
+.resortMap {
+  position: relative;
+  height: 200px;
+  @media screen and (min-width: 768px) {
+    height: 260px;
+  }
+}

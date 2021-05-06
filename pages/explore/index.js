@@ -26,7 +26,7 @@ const Explore = ({ resorts }) => {
         <SearchBar />
         <FeaturedResorts
           resorts={resorts}
-          heading={[<h1 className="text-center">Recommended in area</h1>]}
+          heading={[<h1 className="text-center">Recommended resorts</h1>]}
         />
         <Resorts
           resorts={resorts}
