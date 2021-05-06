@@ -9,8 +9,12 @@ const Layout = ({ title, children }) => {
   return (
     <>
       <Head title={title} />
-      <Navigation />
-      {children}
+      <div className="min-vh-100">
+        <Navigation />
+        <div className={styles.contentWrapper}>
+        {children}
+        </div>
+      </div>
     </>
   );
 };
