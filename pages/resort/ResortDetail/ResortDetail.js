@@ -1,16 +1,14 @@
 import Image from "next/image";
 import { Col, Row, Container, Card, Form, Button } from "react-bootstrap";
 import SuperEllipse from "react-superellipse";
+import { SwiperSlide } from "swiper/react";
 import HorizontalLayout from "../../../components/layout/HorizontalLayout/HorizontalLayout";
+import Carousel from "../../../components/Carousel/Carousel";
 import { BASE_URL } from "../../../constants/api";
 import { getResortDetails } from "../../../utils/getResortDetails";
 import { getReviewDetails } from "../../../utils/getReviewDetails";
 
 import styles from "./ResortDetail.module.scss";
-
-// TODO:
-// create review carousel
-// booking section on mobile and desktop
 
 const ResortDetail = ({ resort, reviews }) => {
   const resortDetails = getResortDetails(resort);
@@ -31,6 +29,7 @@ const ResortDetail = ({ resort, reviews }) => {
         imageAlt={resortDetails.imageAlt}
       > */}
       <Row className="d-flex flex-md-row justify-content-between">
+        {/* left hand content */}
         <Col md={6}>
           <Container>
             <h1>{resortDetails.title}</h1>
@@ -88,7 +87,29 @@ const ResortDetail = ({ resort, reviews }) => {
             {reviews ? (
               <>
                 <h2>Reviews</h2>
-                <Row className="d-flex flex-row flex-nowrap overflow-auto">
+
+                <Carousel slides={1}>
+                  {reviews.map((review, i) => {
+                    const reviewDetails = getReviewDetails(review);
+                    return (
+                      <SwiperSlide key={i}>
+                        <Card>
+                          <Card.Img
+                            src={reviewDetails.image}
+                            alt={reviewDetails.imageAlt}
+                            // className="h-50"
+                          />
+                          <Card.Body>
+                            <Card.Title>{reviewDetails.visitor}</Card.Title>
+                            <Card.Text>{reviewDetails.review}</Card.Text>
+                          </Card.Body>
+                        </Card>
+                      </SwiperSlide>
+                    );
+                  })}
+                </Carousel>
+
+                {/* <Row className="d-flex flex-row flex-nowrap overflow-auto">
                   {reviews.map((review, i) => {
                     console.log(review);
                     const reviewDetails = getReviewDetails(review);
@@ -106,13 +127,25 @@ const ResortDetail = ({ resort, reviews }) => {
                       </Card>
                     );
                   })}
-                </Row>
+                </Row> */}
               </>
             ) : (
               ""
             )}
+
+            <Col className="d-md-none">
+              <h2>
+                {resortDetails.price} NOK
+                <span className="fw-light">/night</span>
+              </h2>
+              <Button variant="primary" size="lg" block>
+                Book
+              </Button>
+            </Col>
           </Container>
         </Col>
+
+        {/* right hand content */}
         <Col
           md={6}
           className="d-none d-md-flex h-100 position-fixed end-0 top-0"
@@ -176,6 +209,7 @@ const ResortDetail = ({ resort, reviews }) => {
           </Col>
         </Col>
       </Row>
+
       {/* </HorizontalLayout> */}
     </>
   );

@@ -9,7 +9,7 @@ import styles from "./Carousel.module.scss";
 
 SwiperCore.use([Navigation, Lazy]);
 
-const Carousel = ({ children }) => {
+const Carousel = ({ children, slides = 3 }) => {
   return (
     <>
       <Swiper
@@ -21,7 +21,7 @@ const Carousel = ({ children }) => {
             spaceBetween: 20,
           },
           768: {
-            slidesPerView: 3,
+            slidesPerView: slides,
             spaceBetween: 60,
           },
         }}
