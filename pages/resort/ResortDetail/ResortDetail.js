@@ -1,5 +1,14 @@
+import { useState } from "react";
 import Image from "next/image";
-import { Col, Row, Container, Card, Form, Button } from "react-bootstrap";
+import {
+  Col,
+  Row,
+  Container,
+  Card,
+  Form,
+  Button,
+  Modal,
+} from "react-bootstrap";
 import SuperEllipse from "react-superellipse";
 import { SwiperSlide } from "swiper/react";
 import HorizontalLayout from "../../../components/layout/HorizontalLayout/HorizontalLayout";
@@ -9,10 +18,16 @@ import { getResortDetails } from "../../../utils/getResortDetails";
 import { getReviewDetails } from "../../../utils/getReviewDetails";
 
 import styles from "./ResortDetail.module.scss";
+import { X } from "react-bootstrap-icons";
 
 const ResortDetail = ({ resort, reviews }) => {
   const resortDetails = getResortDetails(resort);
   console.log(reviews);
+
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   return (
     <>
@@ -138,7 +153,7 @@ const ResortDetail = ({ resort, reviews }) => {
                 {resortDetails.price} NOK
                 <span className="fw-light">/night</span>
               </h2>
-              <Button variant="primary" size="lg" block>
+              <Button variant="primary" size="lg" block onClick={handleShow}>
                 Book
               </Button>
             </Col>
@@ -199,7 +214,7 @@ const ResortDetail = ({ resort, reviews }) => {
                     variant="primary"
                     size="lg"
                     className="mx-auto mt-3"
-                    type="submit"
+                    onClick={handleShow}
                   >
                     Book
                   </Button>
@@ -210,6 +225,73 @@ const ResortDetail = ({ resort, reviews }) => {
         </Col>
       </Row>
 
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header>
+          <Modal.Title>{resortDetails.title}</Modal.Title>
+          <div className="close" onClick={handleClose}>
+            <X />
+          </div>
+          {/* <Button className="close" onClick={handleClose}>
+            <X />
+          </Button> */}
+        </Modal.Header>
+        <Modal.Body>
+          <Form>
+            <Row className="my-3">
+              <Form.Group as={Col} xs={6}>
+                <Form.Label>First name</Form.Label>
+                <Form.Control />
+              </Form.Group>
+
+              <Form.Group as={Col} xs={6}>
+                <Form.Label>Last name</Form.Label>
+                <Form.Control />
+              </Form.Group>
+
+              <Form.Group as={Col} xs={12}>
+                <Form.Label>Email address</Form.Label>
+                <Form.Control />
+              </Form.Group>
+
+              <Form.Group as={Col} xs={6}>
+                <Form.Label>Check in</Form.Label>
+                <Form.Control type="date" />
+              </Form.Group>
+
+              <Form.Group as={Col} xs={6}>
+                <Form.Label>Check out</Form.Label>
+                <Form.Control type="date" />
+              </Form.Group>
+
+              <Form.Group as={Col} xs={12}>
+                <Form.Label>Guests</Form.Label>
+                <Form.Control type="number" />
+              </Form.Group>
+
+              <Form.Group as={Col} xs={12}>
+                <Form.Label>Additional requests</Form.Label>
+                <Form.Control as="textarea" rows={3} />
+              </Form.Group>
+            </Row>
+
+            <Col className="d-flex justify-content-center">
+              <Button
+                variant="primary"
+                size="lg"
+                className="mx-auto mt-3 w-100"
+                onClick={handleClose}
+              >
+                Book
+              </Button>
+            </Col>
+          </Form>
+        </Modal.Body>
+        {/* <Modal.Footer>
+          <Button variant="primary" onClick={handleClose}>
+            Book now
+          </Button>
+        </Modal.Footer> */}
+      </Modal>
       {/* </HorizontalLayout> */}
     </>
   );
