@@ -10,10 +10,12 @@ const Layout = ({ title, children }) => {
     <>
       <Head title={title} />
       <Row>
-        <Col xs={12} md={1}>
+        {/* <Col xs={12} md={1}> */}
+        <div className={styles.sideNav}>
           <AdminNav />
-        </Col>
-        <Col xs={12} md={11}>
+        </div>
+        {/* <Col xs={12} md={11}> */}
+        <Col>
           <Container>{children}</Container>
         </Col>
       </Row>
