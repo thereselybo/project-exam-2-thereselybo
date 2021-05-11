@@ -21,7 +21,10 @@ const AddResort = ({ facilities, destinations }) => {
 
           <Form.Group as={Col} xs={12} md={6}>
             <Form.Label>Location</Form.Label>
-            <Form.Control as="select">
+            <Form.Control as="select" defaultValue="">
+              <option disabled value="">
+                Choose location
+              </option>
               {destinations.map((destination, i) => {
                 return <option key={i}>{destination.title}</option>;
               })}
@@ -64,13 +67,13 @@ const AddResort = ({ facilities, destinations }) => {
 
           <Form.Group as={Col} xs={6}>
             <Form.Label>Featured</Form.Label>
-            <Form.Check
+            {/* <Form.Check
               type="switch"
               id="custom-switch"
-              class="form-check-input"
+              className="form-check-input"
               // label="Check this switch"
-            />
-            {/* <Form.Switch id="featured" className="custom-control-input" /> */}
+            /> */}
+            <Form.Switch id="featured" className="custom-control-input" />
           </Form.Group>
 
           {/* <div class="form-check form-switch">
