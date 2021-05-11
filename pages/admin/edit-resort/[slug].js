@@ -18,7 +18,14 @@ import {
   RESORTS_ENDPOINT,
 } from "../../../constants/api";
 import { getResortDetails } from "../../../utils/getResortDetails";
-import { Form, Row, Col, Button, FormCheck } from "react-bootstrap";
+import {
+  Form,
+  Row,
+  Col,
+  Button,
+  FormCheck,
+  ButtonGroup,
+} from "react-bootstrap";
 
 const resortsUrl = `${BASE_URL}${RESORTS_ENDPOINT}`;
 
@@ -181,7 +188,7 @@ const EditResort = ({ resort, destinations, facilities }) => {
             <Form.Check
               type="switch"
               id="custom-switch"
-              label="Check this switch"
+              // label="Check this switch"
             />
             {/* <FormCheck
               id="switchEnabled"
@@ -207,15 +214,15 @@ const EditResort = ({ resort, destinations, facilities }) => {
           </div> */}
         </Row>
 
-        <Col className="d-flex justify-content-center">
-          <Button
-            variant="primary"
-            size="lg"
-            className="mx-auto mt-3"
-            type="submit"
-          >
+        {/* <Row> */}
+        <Col className=" mt-3">
+          <Button variant="primary" size="lg" className="me-3" type="submit">
             Update resort
           </Button>
+          <Button variant="danger" size="lg" type="submit">
+            Delete resort
+          </Button>
+          {/* </Row> */}
         </Col>
       </Form>
       {/* )} */}
