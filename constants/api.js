@@ -5,3 +5,4 @@ export const DESTINATIONS_ENDPOINT = "/destinations";
 export const REVIEWS_ENDPOINT = "/reviews";
 export const FACILITIES_ENDPOINT = "/facilities";
 export const BOOKINGS_ENDPOINT = "/bookings";
+export const MESSAGES_ENDPOINT = "/messages";
