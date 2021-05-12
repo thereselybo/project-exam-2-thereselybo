@@ -3,19 +3,14 @@ import { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import axios from "axios";
-import * as yup from "yup";
+
 import { loginSchema } from "../../../schema/loginSchema";
-// import AuthContext from "../../../context/AuthContext";
+import AuthContext from "../../../context/AuthContext";
 import FormError from "../../../components/misc/FormError";
 import Message from "../../../components/misc/Message";
 import { BASE_URL, AUTH_ENDPOINT } from "../../../constants/api";
 
 import { Form, Row, Col, Button } from "react-bootstrap";
-
-// const loginSchema = yup.object().shape({
-//   identifier: yup.string().required("Please enter your username/email"),
-//   password: yup.string().required("Please enter your password"),
-// });
 
 const LoginForm = () => {
   const [submitting, setSubmitting] = useState(false);
@@ -30,7 +25,8 @@ const LoginForm = () => {
     resolver: yupResolver(loginSchema),
   });
 
-  // const [, setAuth] = useContext(AuthContext);
+  const [auth, setAuth] = useContext(AuthContext);
+  console.log(auth);
 
   const url = `${BASE_URL}${AUTH_ENDPOINT}`;
   const router = useRouter();
@@ -42,8 +38,11 @@ const LoginForm = () => {
     try {
       const res = await axios.post(url, data);
       if (res.status === 200) {
+        // console.log("auth", auth);
+        // console.log("res", res);
+        // console.log("data", data);
         // setAuth(res.data);
-        console.log("logging in...");
+        // console.log("auth", auth);
         router.push("/admin");
       }
     } catch (err) {

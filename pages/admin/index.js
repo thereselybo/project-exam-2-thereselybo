@@ -1,13 +1,26 @@
 import axios from "axios";
-
+import { useContext, useEffect } from "react";
+import AuthContext from "../../context/AuthContext";
 import Link from "next/link";
-import { Button, Card, Col, Row } from "react-bootstrap";
 import Layout from "../../components/layout/AdminLayout/AdminLayout";
 import { BASE_URL, RESORTS_ENDPOINT } from "../../constants/api";
 import ResortsDisplay from "./ResortsDisplay/ResortsDisplay";
 
+import { Button, Card, Col, Row } from "react-bootstrap";
+
 const Admin = ({ resorts }) => {
-  console.log(resorts);
+  // const [auth] = useContext(AuthContext);
+  // console.log("auth", auth);
+  // // const router = useRouter();
+
+  // useEffect(() => {
+  //   console.log("auth", auth);
+  //   if (!auth) {
+  //     // router.push("/");
+  //   }
+  // }, []);
+  // // console.log(resorts);
+
   return (
     <Layout title="Admin">
       <div className="d-flex justify-content-between align-items-center">

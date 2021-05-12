@@ -1,3 +1,6 @@
+import { useContext } from "react";
+import AuthContext from "../../../../../context/AuthContext";
+import { useRouter } from "next/router";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -13,6 +16,14 @@ import {
 import styles from "./MobileAdminNav.module.scss";
 
 const MobileAdminNav = () => {
+  const [, setAuth] = useContext(AuthContext);
+  const router = useRouter();
+  // const path = router.pathname;
+
+  const handleLogout = () => {
+    setAuth(null);
+    router.push("/");
+  };
   return (
     <>
       {/* TOP NAV */}
@@ -31,7 +42,7 @@ const MobileAdminNav = () => {
                 {/* </Navbar.Brand> */}
               </Link>
             </Nav.Item>
-            <Nav.Item className="ml-auto nav-link">
+            <Nav.Item className="ml-auto nav-link" onClick={handleLogout}>
               <Col>
                 <Person />
               </Col>

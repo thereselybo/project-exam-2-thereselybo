@@ -1,3 +1,5 @@
+import { useContext } from "react";
+import AuthContext from "../../../../context/AuthContext";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
@@ -9,6 +11,9 @@ import styles from "./DesktopNav.module.scss";
 const DesktopNav = () => {
   const router = useRouter();
   const path = router.pathname;
+
+  const [auth] = useContext(AuthContext);
+  console.log("auth", auth);
 
   return (
     // <Navbar className="d-none d-md-block">
@@ -40,9 +45,20 @@ const DesktopNav = () => {
           </Nav>
         </Navbar.Collapse>
         <Nav.Item className="ms-5">
-          <Link href="/login" passHref>
-            <Button variant="outline-primary">Login</Button>
-          </Link>
+          {auth ? (
+            <Link href="/admin" passHref>
+              <Button variant="outline-primary">Admin</Button>
+            </Link>
+          ) : (
+            <Link href="/login" passHref>
+              <Button variant="outline-primary">Login</Button>
+            </Link>
+          )}
+          {/* // <Link href="/login" passHref>
+          //   <Button variant="outline-primary">
+          //     {auth ? "Admin" : "Login"}
+          //   </Button>
+          // </Link> */}
         </Nav.Item>
         {/* </Container> */}
       </Navbar>

@@ -1,3 +1,5 @@
+import { useContext } from "react";
+import AuthContext from "../../../../context/AuthContext";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -7,6 +9,9 @@ import { House, Search, Envelope, Person } from "react-bootstrap-icons";
 import styles from "./MobileNav.module.scss";
 
 const MobileNav = () => {
+  const [auth] = useContext(AuthContext);
+  console.log("auth", auth);
+
   return (
     <Navbar fixed="bottom" className="d-md-none">
       <Container>
@@ -42,14 +47,34 @@ const MobileNav = () => {
             </Link>
           </Nav.Item>
           <Nav.Item>
-            <Link href="/login" passHref>
+            {auth ? (
+              <Link href="/admin" passHref>
+                <Nav.Link className="text-center">
+                  <Col>
+                    <Person />
+                  </Col>
+                  <Col>Admin</Col>
+                </Nav.Link>
+              </Link>
+            ) : (
+              <Link href="/login" passHref>
+                <Nav.Link className="text-center">
+                  <Col>
+                    <Person />
+                  </Col>
+                  <Col>Login</Col>
+                </Nav.Link>
+              </Link>
+            )}
+
+            {/* <Link href="/login" passHref>
               <Nav.Link className="text-center">
                 <Col>
                   <Person />
                 </Col>
-                <Col>Login</Col>
+                <Col>{auth ? "Admin" : "Login"}</Col>
               </Nav.Link>
-            </Link>
+            </Link> */}
           </Nav.Item>
         </Nav>
       </Container>

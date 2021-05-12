@@ -1,3 +1,5 @@
+import { useContext } from "react";
+import AuthContext from "../../../../../context/AuthContext";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
@@ -13,8 +15,14 @@ import {
 import styles from "./DesktopAdminNav.module.scss";
 
 const DesktopAdminNav = () => {
+  const [, setAuth] = useContext(AuthContext);
   const router = useRouter();
-  const path = router.pathname;
+  // const path = router.pathname;
+
+  const handleLogout = () => {
+    setAuth(null);
+    router.push("/");
+  };
 
   return (
     <Navbar className="d-none d-md-block min-vh-100">
@@ -57,7 +65,10 @@ const DesktopAdminNav = () => {
           </div>
 
           <Nav.Item className="mt-auto">
-            <Nav.Link className="d-flex align-items-center">
+            <Nav.Link
+              className="d-flex align-items-center"
+              onClick={handleLogout}
+            >
               <Person className="me-3" />
               Logout
             </Nav.Link>
