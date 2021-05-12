@@ -3,6 +3,7 @@ import Layout from "../../components/layout/PublicLayout/PublicLayout";
 
 import { Row, Col, Container, Form, Button } from "react-bootstrap";
 import LoginForm from "./LoginForm/LoginForm";
+import LoginFormTest from "./LoginForm/LoginFormTest";
 
 // TODO:
 // center align form vertically
@@ -16,6 +17,7 @@ const Login = () => {
           <Container>
             <h1>Login</h1>
             <LoginForm />
+            {/* <LoginFormTest /> */}
           </Container>
         </Col>
 
