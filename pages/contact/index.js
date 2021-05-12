@@ -1,9 +1,15 @@
+import axios from "axios";
 import Layout from "../../components/layout/PublicLayout/PublicLayout";
 import Image from "next/image";
+import ContactForm from "./ContactForm/ContactForm";
 
 import { Row, Col, Container, Form, Button } from "react-bootstrap";
+import { BASE_URL, MESSAGE_TOPICS_ENDPOINT } from "../../constants/api";
 
-const Contact = () => {
+// TODO:
+// center align form vertically
+
+const Contact = ({ messageTopics }) => {
   return (
     <Layout title="Contact">
       <Row className="d-flex flex-md-row justify-content-between">
@@ -11,45 +17,11 @@ const Contact = () => {
         <Col md={6}>
           <Container>
             <h1>Contact</h1>
-            <Form>
-              <Row className="my-3">
-                <Form.Group as={Col} xs={6}>
-                  <Form.Label>First name</Form.Label>
-                  <Form.Control />
-                </Form.Group>
 
-                <Form.Group as={Col} xs={6}>
-                  <Form.Label>Last name</Form.Label>
-                  <Form.Control />
-                </Form.Group>
-
-                <Form.Group as={Col} xs={12}>
-                  <Form.Label>Email address</Form.Label>
-                  <Form.Control type="email" />
-                </Form.Group>
-
-                <Form.Group as={Col} xs={12}>
-                  <Form.Label>Topic</Form.Label>
-                  <Form.Control as="select" defaultValue="Choose...">
-                    <option>Choose...</option>
-                    <option>...</option>
-                  </Form.Control>
-                </Form.Group>
-
-                <Form.Group as={Col} xs={12}>
-                  <Form.Label>Message</Form.Label>
-                  <Form.Control as="textarea" rows={3} />
-                </Form.Group>
-              </Row>
-
-              <Col className="d-flex justify-content-center">
-                <Button variant="primary" size="lg" className="mx-auto mt-3">
-                  Send message
-                </Button>
-              </Col>
-            </Form>
+            <ContactForm messageTopics={messageTopics} />
           </Container>
         </Col>
+
         {/* right side content */}
         <Col
           md={6}
@@ -68,3 +40,22 @@ const Contact = () => {
 };
 
 export default Contact;
+
+export const getStaticProps = async () => {
+  let messageTopics = [];
+
+  const url = `${BASE_URL}${MESSAGE_TOPICS_ENDPOINT}`;
+
+  try {
+    const res = await axios.get(url);
+    messageTopics = res.data;
+  } catch (err) {
+    console.log("fetch error:", err);
+  }
+
+  return {
+    props: {
+      messageTopics,
+    },
+  };
+};

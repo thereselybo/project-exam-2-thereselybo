@@ -11,7 +11,6 @@ import {
 } from "react-bootstrap";
 import SuperEllipse from "react-superellipse";
 import { SwiperSlide } from "swiper/react";
-import HorizontalLayout from "../../../components/layout/HorizontalLayout/HorizontalLayout";
 import Carousel from "../../../components/Carousel/Carousel";
 import { BASE_URL } from "../../../constants/api";
 import { getResortDetails } from "../../../utils/getResortDetails";

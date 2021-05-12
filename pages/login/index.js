@@ -2,6 +2,10 @@ import Image from "next/image";
 import Layout from "../../components/layout/PublicLayout/PublicLayout";
 
 import { Row, Col, Container, Form, Button } from "react-bootstrap";
+import LoginForm from "./LoginForm/LoginForm";
+
+// TODO:
+// center align form vertically
 
 const Login = () => {
   return (
@@ -11,27 +15,10 @@ const Login = () => {
         <Col md={6}>
           <Container>
             <h1>Login</h1>
-            <Form>
-              <Row className="my-3">
-                <Form.Group as={Col} xs={12}>
-                  <Form.Label>Username/email</Form.Label>
-                  <Form.Control />
-                </Form.Group>
-
-                <Form.Group as={Col} xs={12}>
-                  <Form.Label>Password</Form.Label>
-                  <Form.Control type="password" />
-                </Form.Group>
-              </Row>
-
-              <Col className="d-flex justify-content-center">
-                <Button variant="primary" size="lg" className="mx-auto mt-3">
-                  Login
-                </Button>
-              </Col>
-            </Form>
+            <LoginForm />
           </Container>
         </Col>
+
         {/* right side content */}
         <Col
           md={6}
