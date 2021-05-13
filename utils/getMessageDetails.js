@@ -5,30 +5,11 @@ import {
 import { imageCheck } from "./imageCheck";
 
 export const getMessageDetails = (message) => {
-  // const image = imageCheck(message, userImgPlaceholder, userImgAltPlaceholder);
-
-  //   console.log(image);
-
-  // const topic = message.message_topic
-  //   ? message.message_topic
-  //   : message.message_topic.title;
-
-  let topic;
-  // let topic = "No topic";
-
-  if (message.message_topic) {
-    if (message.message_topic.length) {
-      // topic = message.message_topic.title;
-      console.log(message.message_topic.title);
-      topic = "message.message_topic.title;";
-    } else {
-      console.log(message.message_topic);
-      // topic = message.message_topic;
-      topic = "message.message_topic";
-    }
-  } else {
-    topic = "No topic";
-  }
+  const shortMessage =
+    message.message.length > 30
+      ? `${message.message.substring(0, 30)}...`
+      : message.message;
+  console.log(shortMessage);
 
   const messageDetails = {
     guest: message.first_name,
@@ -38,7 +19,8 @@ export const getMessageDetails = (message) => {
     image: userImgPlaceholder,
     imageAlt: userImgAltPlaceholder,
     message: message.message,
-    topic: topic,
+    shortMessage: shortMessage,
+    topic: message.message_topic.title,
   };
   return messageDetails;
 };

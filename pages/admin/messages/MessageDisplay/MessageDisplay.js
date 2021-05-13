@@ -60,7 +60,7 @@ const MessageDisplay = ({ messages }) => {
                       {messageDetails.topic}
                     </Col>
                     <Col className="d-none d-md-block" md={4}>
-                      {messageDetails.message}
+                      {messageDetails.shortMessage}
                     </Col>
                     <Col className="d-flex align-items-end">
                       <Button
