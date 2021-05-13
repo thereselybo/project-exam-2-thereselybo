@@ -9,6 +9,23 @@ import Message from "../../../components/misc/Message";
 import { Form, Row, Col, Button } from "react-bootstrap";
 import { BASE_URL, MESSAGES_ENDPOINT } from "../../../constants/api";
 import FormError from "../../../components/misc/FormError";
+import { updateMessage } from "../../../utils/updateMessage";
+
+// export const updateMessage = ({ message, allTopics }) => {
+//   console.log("hello");
+//   let updatedMessage = message;
+//   const messageTopic = message.message_topic;
+//   console.log(messageTopic);
+
+//   const updatedTopic = allTopics.filter(
+//     (topic) => topic.message_topic.title === messageTopic
+//   );
+
+//   updatedMessage.messageTopic = updatedTopic;
+//   console.log(updatedMessage);
+
+//   return updatedMessage;
+// };
 
 const ContactForm = ({ messageTopics }) => {
   const [submitting, setSubmitting] = useState(false);
@@ -28,9 +45,13 @@ const ContactForm = ({ messageTopics }) => {
   const onSubmit = async (data) => {
     setSubmitting(true);
     setSubmitError(null);
+    // console.log("data", data);
+    const updatedMessage = updateMessage(data, messageTopics);
+    // console.log(updatedMessage);
 
     try {
-      const res = await axios.post(url, data);
+      console.log(updatedMessage);
+      const res = await axios.post(url, updatedMessage);
       if (res.status === 200) {
         // console.log(res);
         setSubmitted(true);
