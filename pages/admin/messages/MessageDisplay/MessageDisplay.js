@@ -31,7 +31,7 @@ const MessageDisplay = ({ messages }) => {
         <Card.Body>
           {messages.length
             ? messages.map((message, i) => {
-                console.log(console.log(message));
+                // console.log(console.log(message));
                 const messageDetails = getMessageDetails(message);
                 return (
                   <Row

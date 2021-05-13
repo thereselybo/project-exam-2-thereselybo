@@ -3,13 +3,13 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { contactSchema } from "../../../schema/contactSchema";
+import { BASE_URL, MESSAGES_ENDPOINT } from "../../../constants/api";
 
 import Message from "../../../components/misc/Message";
-
-import { Form, Row, Col, Button } from "react-bootstrap";
-import { BASE_URL, MESSAGES_ENDPOINT } from "../../../constants/api";
 import FormError from "../../../components/misc/FormError";
 import { updateMessage } from "../../../utils/updateMessage";
+
+import { Form, Row, Col, Button } from "react-bootstrap";
 
 // export const updateMessage = ({ message, allTopics }) => {
 //   console.log("hello");
@@ -83,7 +83,7 @@ const ContactForm = ({ messageTopics }) => {
             {...register("first_name")}
             disabled={submitting}
           />
-          {errors.firstName && (
+          {errors.first_name && (
             <Message
               className="my-2 p-2"
               message={errors.firstName.message}
@@ -103,7 +103,7 @@ const ContactForm = ({ messageTopics }) => {
           {errors.lastName && (
             <Message
               className="my-2 p-2"
-              message={errors.lastName.message}
+              message={errors.last_name.message}
               variant="danger"
             />
           )}
@@ -144,7 +144,7 @@ const ContactForm = ({ messageTopics }) => {
               return <option key={i}>{topic.title}</option>;
             })}
           </Form.Control>
-          {errors.topic && (
+          {errors.message_topic && (
             <Message
               className="my-2 p-2"
               message={errors.topic.message}
@@ -173,13 +173,7 @@ const ContactForm = ({ messageTopics }) => {
         </Form.Group>
       </Row>
 
-      <Button
-        variant="primary"
-        size="lg"
-        className="mx-auto mt-3"
-        disabled={submitting}
-        type="submit"
-      >
+      <Button variant="primary" size="lg" disabled={submitting} type="submit">
         {submitting ? "Sending message.." : "Send message"}
       </Button>
     </Form>
