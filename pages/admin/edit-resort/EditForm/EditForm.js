@@ -11,6 +11,7 @@ import FormError from "../../../../components/misc/FormError";
 import Message from "../../../../components/misc/Message";
 
 import { Form, Row, Col, Button } from "react-bootstrap";
+import DeleteButton from "../../../../components/resorts/DeleteButton/DeleteButton";
 
 const EditForm = ({ resort, destinations, facilities }) => {
   const [editing, setEditing] = useState(false);
@@ -248,9 +249,13 @@ const EditForm = ({ resort, destinations, facilities }) => {
         >
           Update resort
         </Button>
-        <Button variant="danger" size="lg" disabled={editing}>
-          Delete resort
-        </Button>
+        <DeleteButton
+          id={resortDetails.id}
+          title={resortDetails.title}
+          size="lg"
+          content="Delete resort"
+          editing={editing}
+        />
       </Col>
     </Form>
   );

@@ -1,7 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Button, Card, Col, Row } from "react-bootstrap";
 import { getResortDetails } from "../../../utils/getResortDetails";
+
+import DeleteButton from "../../../components/resorts/DeleteButton/DeleteButton";
+import { Button, Card, Col, Row } from "react-bootstrap";
 
 const ResortsDisplay = ({ resorts }) => {
   return (
@@ -57,9 +59,16 @@ const ResortsDisplay = ({ resorts }) => {
                     </Link>
                   </Col>
                   <Col className="d-none d-md-block d-flex align-items-end">
-                    <Button className="ms-auto" variant="danger">
+                    <DeleteButton
+                      id={resortDetails.id}
+                      title={resortDetails.title}
+                      // size=""
+                      content="Delete"
+                      className="ms-auto"
+                    />
+                    {/* <Button className="ms-auto" variant="danger">
                       Delete
-                    </Button>
+                    </Button> */}
                   </Col>
                 </Row>
               );
