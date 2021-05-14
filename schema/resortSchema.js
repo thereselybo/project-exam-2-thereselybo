@@ -6,13 +6,12 @@ export const resortSchema = yup.object().shape({
   introduction: yup
     .string()
     .required("Please enter an introduction")
-    .max(90, "Your introduction must be 100 characters or less"),
+    .max(100, "Your introduction must be 100 characters or less"),
   description: yup.string().required("Please enter a description"),
   image_url: yup.string().required("Please enter an image URL"),
   price: yup
     .number()
-    .typeError("Price must be a number")
+    .typeError("Price must be a number, greater than 0")
     .positive("Price must be greater than 0")
-    // .positive("Price must be a number")
     .required("Please enter a price"),
 });

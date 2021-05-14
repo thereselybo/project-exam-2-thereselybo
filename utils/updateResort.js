@@ -1,6 +1,6 @@
 import slugify from "slugify";
 
-export const updateResort = (resort, allDestinations) => {
+export const updateResort = (resort, allDestinations, featured) => {
   const updatedResort = resort;
 
   const destination = resort.destination;

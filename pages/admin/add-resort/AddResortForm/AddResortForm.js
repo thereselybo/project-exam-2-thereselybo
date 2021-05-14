@@ -11,13 +11,7 @@ import Message from "../../../../components/misc/Message";
 
 import { Form, Row, Col, Button } from "react-bootstrap";
 
-import { contactSchema } from "../../../../schema/contactSchema";
-
 const AddResortForm = ({ facilities, destinations }) => {
-  // const [submitting, setSubmitting] = useState(false);
-  // const [submitError, setSubmitError] = useState(null);
-  // const [submitted, setSubmitted] = useState(false);
-
   const [adding, setAdding] = useState(false);
   const [addError, setAddError] = useState(null);
   const [added, setAdded] = useState(false);
@@ -26,9 +20,8 @@ const AddResortForm = ({ facilities, destinations }) => {
     register,
     handleSubmit,
     formState: { errors },
-    control,
+    // control,
   } = useForm({
-    // resolver: yupResolver(contactSchema),
     resolver: yupResolver(resortSchema),
   });
 
@@ -37,15 +30,15 @@ const AddResortForm = ({ facilities, destinations }) => {
   const onSubmit = async (data) => {
     setAdding(true);
     setAddError(null);
-    console.log("data", data);
+    // console.log("data", data);
     const updatedResort = updateResort(data, destinations);
-    console.log(updatedResort);
+    // console.log(updatedResort);
 
     try {
-      console.log(updatedResort);
+      // console.log(updatedResort);
       const res = await axios.post(url, updatedResort);
       if (res.status === 200) {
-        console.log(res);
+        // console.log(res);
         setAdded(true);
       }
     } catch (err) {
@@ -70,10 +63,9 @@ const AddResortForm = ({ facilities, destinations }) => {
         <Form.Group as={Col} xs={6}>
           <Form.Label>Resort name</Form.Label>
           <Form.Control
-            name="title"
             placeholder="Enter a name for the resort"
             {...register("title")}
-            disabled={submitting}
+            disabled={adding}
           />
           {errors.title && (
             <Message
