@@ -78,7 +78,6 @@ const ContactForm = ({ messageTopics }) => {
         <Form.Group as={Col} xs={6}>
           <Form.Label>First name</Form.Label>
           <Form.Control
-            name="first_name"
             placeholder="Enter your first name"
             {...register("first_name")}
             disabled={submitting}
@@ -95,7 +94,6 @@ const ContactForm = ({ messageTopics }) => {
         <Form.Group as={Col} xs={6}>
           <Form.Label>Last name</Form.Label>
           <Form.Control
-            name="last_name"
             placeholder="Enter your last name"
             {...register("last_name")}
             disabled={submitting}
@@ -113,7 +111,6 @@ const ContactForm = ({ messageTopics }) => {
           <Form.Label>Email address</Form.Label>
           <Form.Control
             type="email"
-            name="email"
             placeholder="Enter your email address"
             {...register("email")}
             disabled={submitting}

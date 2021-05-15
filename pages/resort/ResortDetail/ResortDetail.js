@@ -18,15 +18,27 @@ import { getReviewDetails } from "../../../utils/getReviewDetails";
 
 import styles from "./ResortDetail.module.scss";
 import { X } from "react-bootstrap-icons";
+import ResortBooking from "../ResortBooking/ResortBooking";
 
 const ResortDetail = ({ resort, reviews }) => {
   const resortDetails = getResortDetails(resort);
-  console.log(reviews);
+  // console.log(reviews);
+
+  // const [show, setShow] = useState(false);
+
+  // const handleClose = () => setShow(false);
+  // const handleShow = (e, data) => {
+  //   console.dir(e.target);
+  //   e.preventDefault();
+  //   console.log(data);
+  //   setShow(true);
+  // };
 
   const [show, setShow] = useState(false);
-
+  const handleShow = () => {
+    setShow(true);
+  };
   const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
 
   return (
     <>
@@ -170,8 +182,14 @@ const ResortDetail = ({ resort, reviews }) => {
             layout="fill"
             objectFit="cover"
           />
+          <ResortBooking
+            show={show}
+            handleShow={handleShow}
+            handleClose={handleClose}
+            resortDetails={resortDetails}
+          />
           {/* <Col md={6} className="h-100 d-flex align-items-center ms-auto"> */}
-          <Col className="h-100 d-flex align-items-center ms-auto">
+          {/* <Col className="h-100 d-flex align-items-center ms-auto">
             <SuperEllipse
               className="my-auto d-none d-md-block p-4 position-absolute "
               r1={0.03}
@@ -190,7 +208,7 @@ const ResortDetail = ({ resort, reviews }) => {
                 {resortDetails.price} NOK
                 <span className="fw-light">/night</span>
               </h2>
-              <Form>
+              <Form onSubmit={handleShow}>
                 <Row className="my-3">
                   <Form.Group as={Col} md={4}>
                     <Form.Label>Check in</Form.Label>
@@ -213,6 +231,7 @@ const ResortDetail = ({ resort, reviews }) => {
                     variant="primary"
                     size="lg"
                     className="mx-auto mt-3"
+                    type="submit"
                     onClick={handleShow}
                   >
                     Book
@@ -220,19 +239,16 @@ const ResortDetail = ({ resort, reviews }) => {
                 </Col>
               </Form>
             </SuperEllipse>
-          </Col>
+          </Col> */}
         </Col>
       </Row>
 
-      <Modal show={show} onHide={handleClose}>
+      {/* <Modal show={show} onHide={handleClose}>
         <Modal.Header>
           <Modal.Title>{resortDetails.title}</Modal.Title>
           <div className="close" onClick={handleClose}>
             <X />
           </div>
-          {/* <Button className="close" onClick={handleClose}>
-            <X />
-          </Button> */}
         </Modal.Header>
         <Modal.Body>
           <Form>
@@ -285,12 +301,7 @@ const ResortDetail = ({ resort, reviews }) => {
             </Col>
           </Form>
         </Modal.Body>
-        {/* <Modal.Footer>
-          <Button variant="primary" onClick={handleClose}>
-            Book now
-          </Button>
-        </Modal.Footer> */}
-      </Modal>
+      </Modal> */}
       {/* </HorizontalLayout> */}
     </>
   );
