@@ -21,11 +21,11 @@ const Home = ({ resorts, destinations }) => {
   return (
     <Layout title="Home">
       <Header />
-      <Container>
+      <Container className="home">
         <FeaturedResorts
           resorts={resorts}
           heading={[
-            <h2 className="text-center">
+            <h2 className="text-center mt-5 mb-3">
               <span className="d-none d-md-inline">Not sure? </span> Get
               inspired
             </h2>,
@@ -33,11 +33,13 @@ const Home = ({ resorts, destinations }) => {
         />
         <PopularDestinations
           destinations={destinations}
-          heading={[<h2 className="text-center">Popular destinations</h2>]}
+          heading={[
+            <h2 className="text-center mt-5 mb-3">Popular destinations</h2>,
+          ]}
         />
         <TravelGuides
           destinations={destinations}
-          heading={[<h2 className="text-center">Travel guides</h2>]}
+          heading={[<h2 className="text-center mt-5 mb-3">Travel guides</h2>]}
         />
       </Container>
     </Layout>

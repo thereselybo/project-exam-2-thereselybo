@@ -1,0 +1,24 @@
+.header {
+  position: relative;
+  height: 700px;
+  width: 100vw;
+}
+
+.hero-image {
+  opacity: 0.8;
+}
+
+.hero-content {
+  .super-ellipse {
+    @media screen and (max-width: 1199px) {
+      h1 {
+        font-size: 2rem;
+      }
+    }
+    @media screen and (max-width: 991px) {
+      h1 {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
