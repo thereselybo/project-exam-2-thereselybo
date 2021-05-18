@@ -37,7 +37,7 @@ const TravelGuides = ({ destinations, heading }) => {
                 // <Col key={key++}>
                 <SwiperSlide key={i}>
                   <SuperEllipse
-                    className="m-auto d-none d-md-block p-5 ratio ratio-1x1"
+                    className="m-auto p-5 ratio ratio-1x1"
                     r1={0.03}
                     r2={0.4}
                     style={{
