@@ -1,20 +1,13 @@
 import Image from "next/image";
-import SuperEllipse from "react-superellipse";
 
-import {
-  Container,
-  Col,
-  Form,
-  Row,
-  Button,
-  InputGroup,
-  FormControl,
-} from "react-bootstrap";
+import DestinationSearch from "./DestinationSearch/DestinationSearch";
+import SuperEllipse from "react-superellipse";
+import { Container, Col, Form, Row, Button } from "react-bootstrap";
 
 import styles from "./index.module.scss";
 import { Search } from "react-bootstrap-icons";
 
-const Header = () => {
+const Header = ({ destinations }) => {
   return (
     // <header className={styles.heroImage}>
     <header className="header home-header">
@@ -41,42 +34,7 @@ const Header = () => {
             }}
           >
             <h1>Where are you going?</h1>
-            <Form>
-              <Row>
-                <Form.Group as={Col} md={8}>
-                  <Form.Label>Destination</Form.Label>
-                  <Form.Control />
-                </Form.Group>
-
-                <Form.Group as={Col} md={4}>
-                  <Form.Label>Guests</Form.Label>
-                  <Form.Control type="number" />
-                </Form.Group>
-              </Row>
-
-              <Row className="my-3">
-                <Form.Group as={Col} md={6}>
-                  <Form.Label>Check in</Form.Label>
-                  <Form.Control type="date" />
-                </Form.Group>
-
-                <Form.Group as={Col} md={6}>
-                  <Form.Label>Check out</Form.Label>
-                  <Form.Control type="date" />
-                </Form.Group>
-              </Row>
-
-              <Col className="d-flex justify-content-center">
-                <Button
-                  variant="primary"
-                  size="lg"
-                  className="mx-auto mt-3"
-                  type="submit"
-                >
-                  Search
-                </Button>
-              </Col>
-            </Form>
+            <DestinationSearch destinations={destinations} />
           </SuperEllipse>
         </Col>
         <Col>
