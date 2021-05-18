@@ -12,7 +12,8 @@ const Layout = ({ title, children }) => {
       <Head title={title} />
       <div className="min-vh-100">
         <Navigation />
-        <div className={styles.contentWrapper}>{children}</div>
+        {/* <div className={styles.contentWrapper}>{children}</div> */}
+        <div className="public-content-wrapper">{children}</div>
       </div>
     </AuthProvider>
   );

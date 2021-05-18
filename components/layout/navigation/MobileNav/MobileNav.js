@@ -13,36 +13,37 @@ const MobileNav = () => {
   console.log("auth", auth);
 
   return (
-    <Navbar fixed="bottom" className="d-md-none">
+    <Navbar fixed="bottom" className="d-md-none public-mobile-nav">
       <Container>
-        <Nav fill className="mx-auto">
+        {/* <Nav fill className="mx-auto"> */}
+        <Nav justify className="mx-auto w-100">
           <Nav.Item>
             <Link href="/" passHref>
               <Nav.Link className="text-center">
-                <Col>
+                <Col className="nav-icon">
                   <House />
                 </Col>
-                <Col>Home</Col>
+                <Col className="nav-text">Home</Col>
               </Nav.Link>
             </Link>
           </Nav.Item>
           <Nav.Item>
             <Link href="/explore" passHref>
               <Nav.Link className="text-center">
-                <Col>
+                <Col className="nav-icon">
                   <Search />
                 </Col>
-                <Col>Explore</Col>
+                <Col className="nav-text">Explore</Col>
               </Nav.Link>
             </Link>
           </Nav.Item>
           <Nav.Item>
             <Link href="/contact" passHref>
               <Nav.Link className="text-center">
-                <Col>
+                <Col className="nav-icon">
                   <Envelope />
                 </Col>
-                <Col>Contact</Col>
+                <Col className="nav-text">Contact</Col>
               </Nav.Link>
             </Link>
           </Nav.Item>
@@ -50,10 +51,10 @@ const MobileNav = () => {
             {auth ? (
               <Link href="/admin" passHref>
                 <Nav.Link className="text-center">
-                  <Col>
+                  <Col className="nav-icon">
                     <Person />
                   </Col>
-                  <Col>Admin</Col>
+                  <Col className="nav-text">Admin</Col>
                 </Nav.Link>
               </Link>
             ) : (

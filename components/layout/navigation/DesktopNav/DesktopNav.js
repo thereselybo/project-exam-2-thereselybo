@@ -17,8 +17,9 @@ const DesktopNav = () => {
 
   return (
     // <Navbar className="d-none d-md-block">
-    <div className={`position-fixed start-0 end-0 top-0 ${styles.navWrapper}`}>
-      <Navbar className="d-none d-md-flex align-items-center px-4 bg-white">
+    // <div className={`position-fixed start-0 end-0 top-0 ${styles.navWrapper}`}>
+    <div className={`position-fixed start-0 end-0 top-0 nav-wrapper`}>
+      <Navbar className="d-none d-md-flex align-items-center px-4 bg-white public-desktop-nav">
         {/* <Container> */}
         <Link href="/" passHref>
           <Navbar.Brand>
@@ -29,17 +30,17 @@ const DesktopNav = () => {
           <Nav activeKey={path} className="mx-auto">
             <Nav.Item>
               <Link href="/" passHref>
-                <Nav.Link>Home</Nav.Link>
+                <Nav.Link className={styles.navLink}>Home</Nav.Link>
               </Link>
             </Nav.Item>
             <Nav.Item>
               <Link href="/explore" passHref>
-                <Nav.Link>Explore</Nav.Link>
+                <Nav.Link className={styles.navLink}>Explore</Nav.Link>
               </Link>
             </Nav.Item>
             <Nav.Item>
               <Link href="/contact" passHref>
-                <Nav.Link>Contact</Nav.Link>
+                <Nav.Link className={styles.navLink}>Contact</Nav.Link>
               </Link>
             </Nav.Item>
           </Nav>

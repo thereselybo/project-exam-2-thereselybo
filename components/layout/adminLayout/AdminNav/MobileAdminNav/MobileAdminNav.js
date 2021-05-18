@@ -55,7 +55,7 @@ const MobileAdminNav = () => {
       {/* BOTTOM NAV */}
       <Navbar fixed="bottom" className="d-md-none">
         <Container>
-          <Nav className="mx-auto">
+          <Nav justify className="mx-auto w-100">
             <Nav.Item>
               <Link href="/admin" passHref>
                 <Nav.Link className="text-center">

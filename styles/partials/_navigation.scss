@@ -1,0 +1,50 @@
+.nav-wrapper {
+  z-index: 1035;
+}
+
+@media screen and (min-width: 768px) {
+  .public-desktop-nav {
+    .nav-link {
+      color: $primary-dusk;
+      &:after {
+        display: block;
+        content: "";
+        border-bottom: 2px solid $secondary-sunshine;
+        width: 0;
+        transition: ease-in 0.15s;
+      }
+
+      &:hover:after,
+      &:focus:after {
+        width: 40px;
+        transition: ease-in 0.15s;
+      }
+
+      &.active {
+        color: $primary-dusk;
+        &:after {
+          display: block;
+          content: "";
+          width: 40px;
+        }
+      }
+    }
+  }
+}
+
+.public-mobile-nav {
+  border-top-left-radius: $border-radius-large;
+  border-top-right-radius: $border-radius-large;
+  background: white;
+  .nav-item .nav-link {
+    .nav-icon {
+      color: $primary-sunrise;
+      font-size: 26px;
+    }
+    .nav-text {
+      color: $primary-dusk-medium;
+      font-weight: 500;
+      font-size: 12px;
+    }
+  }
+}
