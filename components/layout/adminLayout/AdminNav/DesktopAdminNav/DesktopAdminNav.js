@@ -25,13 +25,14 @@ const DesktopAdminNav = () => {
   };
 
   return (
-    <Navbar className="d-none d-md-block min-vh-100">
-      <Container className={`h-100 position-fixed ${styles.maxContentWidth}`}>
+    <Navbar className="d-none d-md-block min-vh-100 admin-desktop-nav">
+      {/* <Container className={`h-100 position-fixed ${styles.maxContentWidth}`}> */}
+      <Container className="h-100 position-fixed nav-container">
         <Nav className="flex-column align-items-left h-100">
-          <Nav.Item className="mb-auto">
+          <Nav.Item className="mb-auto mt-2">
             <Link href="/" passHref>
               <Nav.Link className="d-flex align-items-center">
-                <ArrowLeftShort className="me-3" />
+                <ArrowLeftShort className="me-3 nav-icon" />
                 Main
               </Nav.Link>
             </Link>
@@ -41,7 +42,7 @@ const DesktopAdminNav = () => {
             <Nav.Item>
               <Link href="/admin" passHref>
                 <Nav.Link className="d-flex align-items-center">
-                  <Building className="me-3" />
+                  <Building className="me-3 nav-icon" />
                   Resorts
                 </Nav.Link>
               </Link>
@@ -49,7 +50,7 @@ const DesktopAdminNav = () => {
             <Nav.Item>
               <Link href="/admin/bookings" passHref>
                 <Nav.Link className="d-flex align-items-center">
-                  <Calendar2Week className="me-3" />
+                  <Calendar2Week className="me-3 nav-icon" />
                   Bookings
                 </Nav.Link>
               </Link>
@@ -57,19 +58,19 @@ const DesktopAdminNav = () => {
             <Nav.Item>
               <Link href="/admin/messages" passHref>
                 <Nav.Link className="d-flex align-items-center">
-                  <Envelope className="me-3" />
+                  <Envelope className="me-3 nav-icon" />
                   Messages
                 </Nav.Link>
               </Link>
             </Nav.Item>
           </div>
 
-          <Nav.Item className="mt-auto">
+          <Nav.Item className="mt-auto mb-2">
             <Nav.Link
-              className="d-flex align-items-center"
+              className="d-flex align-items-center mb-3"
               onClick={handleLogout}
             >
-              <Person className="me-3" />
+              <Person className="me-2 nav-icon fs-1" />
               Logout
             </Nav.Link>
           </Nav.Item>

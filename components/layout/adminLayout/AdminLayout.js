@@ -28,14 +28,15 @@ const Layout = ({ title, children }) => {
   return (
     <AuthProvider>
       <Head title={title} />
-      <Row>
+      <Row className="admin-wrapper">
         {/* <Col xs={12} md={1}> */}
-        <div className={styles.sideNav}>
+        {/* <div className={styles.sideNav}> */}
+        <div className="admin-side-nav">
           <AdminNav />
         </div>
         {/* <Col xs={12} md={11}> */}
         <Col>
-          <Container>{children}</Container>
+          <Container className="admin-content-wrapper">{children}</Container>
         </Col>
       </Row>
     </AuthProvider>

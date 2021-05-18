@@ -2,6 +2,7 @@
 $primary-sunrise: hsl(26, 77%, 64%);
 $primary-sunrise-medium: hsl(26, 100%, 75%);
 $primary-sunrise-light: hsl(26, 59%, 90%);
+$primary-sunrise-lighter: hsl(30, 44%, 96%);
 
 $primary-cloudy: hsl(0, 0%, 95%);
 
@@ -13,7 +14,12 @@ $primary-dusk-light: hsl(203, 25%, 24%);
 $secondary-blood-moon: hsl(11, 69%, 59%);
 $secondary-sunshine: hsl(44, 85%, 60%);
 
+// grays
+$silver-lining: hsl(206, 6%, 51%);
+// $silver-lining: hsl(208, 44%, 45%);
+
 ////////////
 
 $border-radius-medium: 16px;
 $border-radius-large: 30px;
+$border-radius-xlarge: 40px;

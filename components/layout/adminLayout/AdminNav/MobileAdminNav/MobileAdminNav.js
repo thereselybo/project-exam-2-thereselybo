@@ -27,62 +27,62 @@ const MobileAdminNav = () => {
   return (
     <>
       {/* TOP NAV */}
-      <Navbar fixed="top" className="d-md-none">
+      <Navbar fixed="top" className="d-md-none admin-mobile-nav top-nav">
         <Container>
-          <Nav className="mx-auto w-100 justify-content-between">
-            <Nav.Item className="mr-auto">
+          <Nav className="mx-auto w-100 justify-content-between nav-bar pb-3">
+            <Nav.Item className="mr-auto p-0">
               <Link href="/" passHref>
                 {/* <Navbar.Brand className="text-center"> */}
-                <Nav.Link className="text-center">
-                  <Col>
+                <Nav.Link className="text-center p-0">
+                  <Col className="nav-icon">
                     <ArrowLeftShort />
                   </Col>
-                  <Col>Main</Col>
+                  <Col className="nav-text">Main</Col>
                 </Nav.Link>
                 {/* </Navbar.Brand> */}
               </Link>
             </Nav.Item>
-            <Nav.Item className="ml-auto nav-link" onClick={handleLogout}>
-              <Col>
+            <Nav.Item className="ml-auto nav-link p-0" onClick={handleLogout}>
+              <Col className="nav-icon text-center">
                 <Person />
               </Col>
-              <Col>Logout</Col>
+              <Col className="nav-text">Logout</Col>
             </Nav.Item>
           </Nav>
         </Container>
       </Navbar>
 
       {/* BOTTOM NAV */}
-      <Navbar fixed="bottom" className="d-md-none">
+      <Navbar fixed="bottom" className="d-md-none admin-mobile-nav bottom-nav">
         <Container>
           <Nav justify className="mx-auto w-100">
             <Nav.Item>
               <Link href="/admin" passHref>
                 <Nav.Link className="text-center">
-                  <Col>
+                  <Col className="nav-icon">
                     <Building />
                   </Col>
-                  <Col>Resorts</Col>
+                  <Col className="nav-text">Resorts</Col>
                 </Nav.Link>
               </Link>
             </Nav.Item>
             <Nav.Item>
               <Link href="/admin/bookings" passHref>
                 <Nav.Link className="text-center">
-                  <Col>
+                  <Col className="nav-icon">
                     <Calendar2Week />
                   </Col>
-                  <Col>Bookings</Col>
+                  <Col className="nav-text">Bookings</Col>
                 </Nav.Link>
               </Link>
             </Nav.Item>
             <Nav.Item>
               <Link href="/admin/messages" passHref>
                 <Nav.Link className="text-center">
-                  <Col>
+                  <Col className="nav-icon">
                     <Envelope />
                   </Col>
-                  <Col>Messages</Col>
+                  <Col className="nav-text">Messages</Col>
                 </Nav.Link>
               </Link>
             </Nav.Item>
