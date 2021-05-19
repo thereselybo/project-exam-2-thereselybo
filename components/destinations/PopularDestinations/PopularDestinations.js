@@ -28,17 +28,20 @@ const PopularDestinations = ({ destinations, heading }) => {
                   background: "hsla(26, 59%, 90%, 0.8)",
                 }}
               >
-                <Link href={`/explore/${destinationDetails.slug}`}>
+                <Link href={`/explore/${destinationDetails.slug}`} passHref>
                   <Image
                     src={destinationDetails.image}
                     alt={destinationDetails.imageAlt}
                     layout="fill"
                     objectFit="cover"
+                    role="button"
                   />
                 </Link>
               </SuperEllipse>
-              <Link href={`/explore/${destinationDetails.slug}`}>
-                <h4 className="my-3">{destinationDetails.title}</h4>
+              <Link href={`/explore/${destinationDetails.slug}`} passHref>
+                <h4 className="my-3 ms-2" role="button">
+                  {destinationDetails.title}
+                </h4>
               </Link>
               {/* </div> */}
             </Col>

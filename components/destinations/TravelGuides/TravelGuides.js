@@ -52,11 +52,14 @@ const TravelGuides = ({ destinations, heading }) => {
                         alt={destinationDetails.imageAlt}
                         layout="fill"
                         objectFit="cover"
+                        role="button"
                       />
                     </Link>
                   </SuperEllipse>
                   <Link href={`/explore/${destinationDetails.slug}`}>
-                    <h4 className="my-3">{destinationDetails.title}</h4>
+                    <h4 className="my-3 ms-2" role="button">
+                      {destinationDetails.title}
+                    </h4>
                   </Link>
                 </SwiperSlide>
                 // </Col>

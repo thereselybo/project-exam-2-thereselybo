@@ -12,7 +12,8 @@ import { BASE_URL } from "../../../constants/api";
 
 // TODO:
 // solve unique key prop problem
-// solve problem with img src not matching
+// solve problem with img src not matching - fixed?
+// create featuredResort card component
 
 const FeaturedResorts = ({ resorts, heading }) => {
   let featuredResorts = [];
@@ -89,7 +90,7 @@ const FeaturedResorts = ({ resorts, heading }) => {
             const resortDetails = getResortDetails(resort);
             return (
               <Col key={i} xs={12} md={4} className="featured-resort">
-                <Link href={`/resort/${resortDetails.slug}`}>
+                <Link href={`/resort/${resortDetails.slug}`} passHref>
                   <SuperEllipse
                     className="m-auto super-ellipse"
                     r1={0.03}
@@ -102,6 +103,7 @@ const FeaturedResorts = ({ resorts, heading }) => {
                         // backgroundImage: `url(${resortDetails.image})`,
                       }
                     }
+                    role="button"
                   >
                     <Card
                       className="h-100 position-relative"

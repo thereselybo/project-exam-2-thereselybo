@@ -22,7 +22,8 @@ const Carousel = ({ children, slides = 3 }) => {
           },
           768: {
             slidesPerView: slides,
-            spaceBetween: 60,
+            // spaceBetween: 60,
+            spaceBetween: 0,
           },
         }}
         navigation={true}
