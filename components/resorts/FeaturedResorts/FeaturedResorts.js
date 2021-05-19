@@ -5,15 +5,13 @@ import { getResortDetails } from "../../../utils/getResortDetails";
 import Carousel from "../../Carousel/Carousel";
 import SuperEllipse from "react-superellipse";
 
-import { StarFill } from "react-bootstrap-icons";
-
 import styles from "./FeaturedResorts.module.scss";
 import { BASE_URL } from "../../../constants/api";
+import FeaturedResortCard from "./FeaturedResortCard";
 
 // TODO:
 // solve unique key prop problem
 // solve problem with img src not matching - fixed?
-// create featuredResort card component
 
 const FeaturedResorts = ({ resorts, heading }) => {
   let featuredResorts = [];
@@ -31,14 +29,16 @@ const FeaturedResorts = ({ resorts, heading }) => {
       <section>
         {heading}
         <Carousel>
+          {/* <div className="swiper-slide-container"> */}
           {featuredResorts ? (
             featuredResorts.map((resort, i) => {
               const resortDetails = getResortDetails(resort);
               //   console.log(resortDetails);
               return (
                 <SwiperSlide key={i}>
-                  <Col className="p-3">
-                    <SuperEllipse
+                  <Col className="featured-resort">
+                    <FeaturedResortCard resortDetails={resortDetails} />
+                    {/* <SuperEllipse
                       className="m-auto d-none d-md-block"
                       r1={0.03}
                       r2={0.4}
@@ -68,7 +68,7 @@ const FeaturedResorts = ({ resorts, heading }) => {
                           </Card.ImgOverlay>
                         </Card>
                       </Link>
-                    </SuperEllipse>
+                    </SuperEllipse> */}
                   </Col>
                 </SwiperSlide>
               );
@@ -76,6 +76,7 @@ const FeaturedResorts = ({ resorts, heading }) => {
           ) : (
             <h3>Loading.....</h3>
           )}
+          {/* </div> */}
         </Carousel>
       </section>
     );
@@ -90,7 +91,8 @@ const FeaturedResorts = ({ resorts, heading }) => {
             const resortDetails = getResortDetails(resort);
             return (
               <Col key={i} xs={12} md={4} className="featured-resort">
-                <Link href={`/resort/${resortDetails.slug}`} passHref>
+                <FeaturedResortCard resortDetails={resortDetails} />
+                {/* <Link href={`/resort/${resortDetails.slug}`} passHref>
                   <SuperEllipse
                     className="m-auto super-ellipse"
                     r1={0.03}
@@ -109,10 +111,6 @@ const FeaturedResorts = ({ resorts, heading }) => {
                       className="h-100 position-relative"
                       style={{ backgroundImage: `url(${resortDetails.image})` }}
                     >
-                      {/* <Card.Img
-                      src={resortDetails.image}
-                      alt={resortDetails.imageAlt}
-                    /> */}
                       <Card.ImgOverlay className="d-flex align-items-end p-0">
                         <Card.Body className="p-4">
                           <Card.Title className="fw-normal">
@@ -130,7 +128,6 @@ const FeaturedResorts = ({ resorts, heading }) => {
                         </Card.Body>
                       </Card.ImgOverlay>
                       <div className="resort-rating position-absolute py-1 px-3 d-flex align-items-center">
-                        {/* {StarFill} */}
                         <span className="align-middle rating-star">
                           <StarFill />
                         </span>
@@ -140,7 +137,7 @@ const FeaturedResorts = ({ resorts, heading }) => {
                       </div>
                     </Card>
                   </SuperEllipse>
-                </Link>
+                </Link> */}
               </Col>
             );
           })}

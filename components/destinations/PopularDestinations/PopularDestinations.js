@@ -29,13 +29,15 @@ const PopularDestinations = ({ destinations, heading }) => {
                 }}
               >
                 <Link href={`/explore/${destinationDetails.slug}`} passHref>
-                  <Image
-                    src={destinationDetails.image}
-                    alt={destinationDetails.imageAlt}
-                    layout="fill"
-                    objectFit="cover"
-                    role="button"
-                  />
+                  <div>
+                    <Image
+                      src={destinationDetails.image}
+                      alt={destinationDetails.imageAlt}
+                      layout="fill"
+                      objectFit="cover"
+                      role="button"
+                    />
+                  </div>
                 </Link>
               </SuperEllipse>
               <Link href={`/explore/${destinationDetails.slug}`} passHref>

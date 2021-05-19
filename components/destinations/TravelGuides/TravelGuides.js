@@ -5,17 +5,17 @@ import SuperEllipse from "react-superellipse";
 import { SwiperSlide } from "swiper/react";
 import { getDestinationDetails } from "../../../utils/getDestinationDetails";
 import Carousel from "../../Carousel/Carousel";
+import TravelGuideCard from "./TravelGuideCard";
 
 import styles from "./TravelGuides.module.scss";
 
 // TODO:
 // solve unique key prop problem
 // solve problem with img src not matching
-// set a featured flag to certain destinations
-// move destinations into separate component
+// set a featured flag to certain destinations?
 
 const TravelGuides = ({ destinations, heading }) => {
-  console.log("travel guide destinations: ", destinations);
+  // console.log("travel guide destinations: ", destinations);
   // let featuredDestinations = [];
   //   destinations.forEach((destination) => {
   //     if (destination.featured) {
@@ -35,8 +35,11 @@ const TravelGuides = ({ destinations, heading }) => {
               //   console.log(resortDetails);
               return (
                 // <Col key={key++}>
+                // <div key={i}>
                 <SwiperSlide key={i}>
-                  <SuperEllipse
+                  {/* <SwiperSlide> */}
+                  <TravelGuideCard destinationDetails={destinationDetails} />
+                  {/* <SuperEllipse
                     className="m-auto p-5 ratio ratio-1x1"
                     r1={0.03}
                     r2={0.4}
@@ -60,8 +63,9 @@ const TravelGuides = ({ destinations, heading }) => {
                     <h4 className="my-3 ms-2" role="button">
                       {destinationDetails.title}
                     </h4>
-                  </Link>
+                  </Link> */}
                 </SwiperSlide>
+                // </div>
                 // </Col>
               );
             })
@@ -83,7 +87,7 @@ const TravelGuides = ({ destinations, heading }) => {
             const destinationDetails = getDestinationDetails(destination);
             return (
               <Col key={i} xs={12} md={4} className="p-5">
-                <Link href={`/explore/${destinationDetails.slug}`}>
+                {/* <Link href={`/explore/${destinationDetails.slug}`}>
                   <SuperEllipse
                     className="m-auto d-none d-md-block p-5 ratio ratio-1x1"
                     r1={0.03}
@@ -102,7 +106,8 @@ const TravelGuides = ({ destinations, heading }) => {
                     />
                   </SuperEllipse>
                   <h4 className="my-3">{destinationDetails.title}</h4>
-                </Link>
+                </Link> */}
+                <TravelGuideCard destinationDetails={destinationDetails} />
               </Col>
             );
           })}
