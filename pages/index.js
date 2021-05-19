@@ -39,7 +39,7 @@ const Home = ({ resorts, destinations }) => {
         />
         <TravelGuides
           destinations={destinations}
-          heading={[<h2 className="text-center mt-5 mb-n5">Travel guides</h2>]}
+          heading={[<h2 className="text-center mt-5 mb-4">Travel guides</h2>]}
         />
       </Container>
     </Layout>
