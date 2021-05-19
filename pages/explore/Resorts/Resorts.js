@@ -14,7 +14,7 @@ const Resorts = ({ resorts, heading }) => {
         {resorts.map((resort, i) => {
           const resortDetails = getResortDetails(resort);
           return (
-            <Col key={i} xs={12} md={6} className="mb-5">
+            <Col key={i} xs={12} lg={6} className="mb-5">
               <Link href={`/resort/${resortDetails.slug}`}>
                 {/* <Card className="h-100"> */}
                 <Card className="h-100 d-flex flex-row resort-card">

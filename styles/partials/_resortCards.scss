@@ -1,7 +1,7 @@
 .resort-card {
   .resort-rating {
-    top: 32px;
-    right: 32px;
+    top: 2rem;
+    right: 2rem;
     background: hsla(0, 0%, 100%, 75%);
     border-radius: $border-radius-medium;
 
@@ -32,6 +32,11 @@
       margin: -2px;
       height: 168px;
       color: $primary-dusk-light;
+    }
+
+    .resort-rating {
+      top: 2rem;
+      right: 2rem;
     }
 
     // .resort-rating {

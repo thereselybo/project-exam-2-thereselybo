@@ -90,7 +90,7 @@ const FeaturedResorts = ({ resorts, heading }) => {
           {featuredResorts.map((resort, i) => {
             const resortDetails = getResortDetails(resort);
             return (
-              <Col key={i} xs={12} md={4} className="featured-resort px-5">
+              <Col key={i} xs={12} lg={4} className="featured-resort px-5">
                 <FeaturedResortCard resortDetails={resortDetails} />
                 {/* <Link href={`/resort/${resortDetails.slug}`} passHref>
                   <SuperEllipse
