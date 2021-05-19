@@ -26,7 +26,8 @@ const Layout = ({ title, children }) => {
   // // }, []);
 
   return (
-    <AuthProvider>
+    // <AuthProvider>
+    <>
       <Head title={title} />
       <Row className="admin-wrapper">
         {/* <Col xs={12} md={1}> */}
@@ -39,7 +40,8 @@ const Layout = ({ title, children }) => {
           <Container className="admin-content-wrapper">{children}</Container>
         </Col>
       </Row>
-    </AuthProvider>
+    </>
+    // </AuthProvider>
   );
 };
 
