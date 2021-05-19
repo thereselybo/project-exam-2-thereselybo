@@ -1,0 +1,61 @@
+.resort-detail {
+  .card {
+    border: none;
+    border-radius: $border-radius-large;
+  }
+
+  .resort-image-header {
+    position: relative;
+    height: 400px;
+    width: 100vw;
+    border-bottom-left-radius: $border-radius-large;
+    border-bottom-right-radius: $border-radius-large;
+
+    .resort-rating {
+      top: 2rem;
+      right: 2rem;
+      background: hsla(0, 0%, 100%, 75%);
+      border-radius: $border-radius-medium;
+
+      .rating-star {
+        color: $primary-sunrise;
+      }
+    }
+
+    .back-button {
+      top: 2rem;
+      left: 2rem;
+      font-size: 3rem;
+      color: $primary-sunrise;
+      z-index: 1000;
+    }
+  }
+  .resort-image {
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .resort-map {
+    position: relative;
+    height: 200px;
+    border-radius: $border-radius-large;
+    background-image: url("https://image.freepik.com/free-vector/colored-city-map-with-park-streets_23-2148318249.jpg");
+    @media screen and (min-width: 768px) {
+      height: 260px;
+    }
+  }
+
+  .review-card {
+    .review-visitor-image {
+      height: 4rem;
+      width: 4rem;
+      border-radius: $border-radius-medium;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+    .rating-star {
+      color: $primary-sunrise;
+    }
+  }
+}

@@ -27,7 +27,7 @@ const ResortBooking = ({ show, handleShow, handleClose, resortDetails }) => {
           style={{
             width: "80%",
             // height: "55%",
-            height: "240px",
+            height: "260px",
             background: "hsla(1, 100%, 100%, 0.8)",
             transform: "translateX(10%)",
             // bottom: "40px",
@@ -63,7 +63,7 @@ const ResortBooking = ({ show, handleShow, handleClose, resortDetails }) => {
               <Button
                 variant="primary"
                 size="lg"
-                className="mx-auto mt-3"
+                className="mx-auto mt-3 px-4"
                 type="submit"
                 // onClick={handleShow}
                 onClick={handleSubmit(updateModal)}

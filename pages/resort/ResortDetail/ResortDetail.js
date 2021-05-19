@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useRouter } from "next/router";
 import Image from "next/image";
 import {
   Col,
@@ -17,7 +18,7 @@ import { getResortDetails } from "../../../utils/getResortDetails";
 import { getReviewDetails } from "../../../utils/getReviewDetails";
 
 import styles from "./ResortDetail.module.scss";
-import { X } from "react-bootstrap-icons";
+import { ArrowLeftCircleFill, StarFill, X } from "react-bootstrap-icons";
 import ResortBooking from "../ResortBooking/ResortBooking";
 
 const ResortDetail = ({ resort, reviews }) => {
@@ -40,32 +41,54 @@ const ResortDetail = ({ resort, reviews }) => {
   };
   const handleClose = () => setShow(false);
 
+  const router = useRouter();
+
+  const goBack = () => {
+    router.back();
+  };
+
   return (
-    <>
-      <header className={`d-md-none ${styles.resortImage}`}>
-        <Image
+    <div className="resort-detail">
+      {/* <header className={`d-md-none ${styles.resortImage}`}> */}
+      <header
+        className="d-md-none resort-image-header resort-image position-relative"
+        style={{ backgroundImage: `url(${resortDetails.image})` }}
+      >
+        <div className="resort-rating position-absolute py-1 px-3 d-flex align-items-center">
+          <span className="align-middle rating-star">
+            <StarFill />
+          </span>
+          <span className="ps-2 pt-1">{resortDetails.rating}</span>
+        </div>
+
+        <ArrowLeftCircleFill
+          className="position-fixed back-button"
+          role="button"
+          onClick={goBack}
+        />
+        {/* <Image
           src={resortDetails.image}
           alt={resortDetails.imageAlt}
           layout="fill"
           objectFit="cover"
-        />
+        /> */}
       </header>
       {/* <HorizontalLayout
         image={resortDetails.image}
         imageAlt={resortDetails.imageAlt}
       > */}
-      <Row className="d-flex flex-md-row justify-content-between">
+      <Row className="d-flex flex-md-row justify-content-between horizontal-layout ">
         {/* left hand content */}
         <Col md={6}>
           <Container>
-            <h1>{resortDetails.title}</h1>
-            <Card>
+            <h1 className="mt-4 mb-3">{resortDetails.title}</h1>
+            <Card className="p-2 fw-light mb-3">
               <Card.Body>{resortDetails.description}</Card.Body>
             </Card>
 
             {resortDetails.facilities ? (
               <>
-                <h2>Facilities</h2>
+                <h2 className="mt-4 mb-3">Facilities</h2>
                 <Row className="d-flex flex-row flex-nowrap overflow-auto">
                   {resortDetails.facilities.map((facility, i) => {
                     console.log(facility);
@@ -100,34 +123,59 @@ const ResortDetail = ({ resort, reviews }) => {
               ""
             )}
 
-            <h2>Location</h2>
-            <div className={styles.resortMap}>
-              <Image
+            <h2 className="mt-4 mb-3">Location</h2>
+            {/* <div className={styles.resortMap}> */}
+            <div className="resort-map">
+              {/* <Image
                 src="https://image.freepik.com/free-vector/colored-city-map-with-park-streets_23-2148318249.jpg"
                 alt={`Map with location of ${resortDetails.title}`}
                 layout="fill"
                 objectFit="cover"
-              />
+              /> */}
             </div>
 
             {reviews ? (
               <>
-                <h2>Reviews</h2>
+                <h2 className="mt-4 mb-3">Reviews</h2>
 
                 <Carousel slides={1}>
                   {reviews.map((review, i) => {
                     const reviewDetails = getReviewDetails(review);
                     return (
-                      <SwiperSlide key={i}>
-                        <Card>
-                          <Card.Img
+                      <SwiperSlide key={i} className="h-100">
+                        <Card className="review-card h-100">
+                          <Col className="d-flex flex-row">
+                            <div
+                              className="review-visitor-image m-3"
+                              style={{
+                                backgroundImage: `url(${reviewDetails.image})`,
+                              }}
+                            >
+                              {" "}
+                            </div>
+                            <div className="align-self-center">
+                              {reviewDetails.visitor}
+                            </div>
+                            {/* <div>{reviewDetails.rating}</div> */}
+                            <div className="resort-rating py-1 px-3 d-flex align-items-center ms-auto">
+                              <span className="align-middle rating-star">
+                                <StarFill />
+                              </span>
+                              <span className="ps-2 pt-1">
+                                {reviewDetails.rating}
+                              </span>
+                            </div>
+                          </Col>
+                          {/* <Card.Img
                             src={reviewDetails.image}
                             alt={reviewDetails.imageAlt}
                             // className="h-50"
-                          />
-                          <Card.Body>
-                            <Card.Title>{reviewDetails.visitor}</Card.Title>
-                            <Card.Text>{reviewDetails.review}</Card.Text>
+                          /> */}
+                          <Card.Body className="pt-0">
+                            {/* <Card.Title>{reviewDetails.visitor}</Card.Title> */}
+                            <Card.Text className="fw-light ">
+                              {reviewDetails.review}
+                            </Card.Text>
                           </Card.Body>
                         </Card>
                       </SwiperSlide>
@@ -159,12 +207,18 @@ const ResortDetail = ({ resort, reviews }) => {
               ""
             )}
 
-            <Col className="d-md-none">
+            <Col className="d-md-none my-5">
               <h2>
                 {resortDetails.price} NOK
                 <span className="fw-light">/night</span>
               </h2>
-              <Button variant="primary" size="lg" block onClick={handleShow}>
+              <Button
+                className="w-100 py-3 mt-2"
+                variant="primary"
+                size="lg"
+                block
+                onClick={handleShow}
+              >
                 Book
               </Button>
             </Col>
@@ -174,14 +228,15 @@ const ResortDetail = ({ resort, reviews }) => {
         {/* right hand content */}
         <Col
           md={6}
-          className="d-none d-md-flex h-100 position-fixed end-0 top-0"
+          className="d-none d-md-flex h-100 position-fixed end-0 top-0 resort-image"
+          style={{ backgroundImage: `url(${resortDetails.image})` }}
         >
-          <Image
+          {/* <Image
             src={resortDetails.image}
             alt={resortDetails.imageAlt}
             layout="fill"
             objectFit="cover"
-          />
+          /> */}
           <ResortBooking
             show={show}
             handleShow={handleShow}
@@ -303,7 +358,7 @@ const ResortDetail = ({ resort, reviews }) => {
         </Modal.Body>
       </Modal> */}
       {/* </HorizontalLayout> */}
-    </>
+    </div>
   );
 };
 // const ResortDetail = ({ resort, reviews }) => {
