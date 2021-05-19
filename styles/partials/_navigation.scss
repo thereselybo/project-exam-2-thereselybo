@@ -99,17 +99,23 @@
     background-color: $primary-sunrise-medium;
     border-top-right-radius: $border-radius-xlarge;
     border-bottom-right-radius: $border-radius-xlarge;
+    width: 220px;
 
     .nav-container {
       width: max-content;
     }
 
+    // nav {
+    //   width: 220px;
+    // }
+
     .nav-item .nav-link {
-      color: $primary-dusk;
+      color: $primary-dusk-light;
 
       .nav-icon {
         color: white;
-        font-size: 26px;
+        // font-size: 26px;
+        font-size: 1.5rem;
       }
     }
   }

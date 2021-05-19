@@ -1,0 +1,29 @@
+// explore
+.explore-container {
+  @media screen and (min-width: 991px) {
+    padding-top: 1rem;
+  }
+
+  .search-bar {
+    border-width: 0;
+    background: none;
+
+    @media screen and (max-width: 992px) {
+      .card-body {
+        padding-bottom: 0;
+      }
+      .form-group,
+      button {
+        margin-bottom: 1rem;
+      }
+    }
+
+    @media screen and (min-width: 768px) {
+      border-radius: $border-radius-large;
+      background: $primary-sunrise-light;
+      // position: absolute;
+      // top: -40px;
+      // z-index: 10000;
+    }
+  }
+}

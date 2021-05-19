@@ -22,15 +22,15 @@ const Explore = ({ resorts }) => {
 
   return (
     <Layout title="Explore">
-      <Container>
+      <Container className="explore-container">
         <SearchBar />
         <FeaturedResorts
           resorts={resorts}
-          heading={[<h1 className="text-center">Recommended resorts</h1>]}
+          heading={[<h1 className="text-center my-4">Recommended resorts</h1>]}
         />
         <Resorts
           resorts={resorts}
-          heading={[<h2 className="text-center">More results</h2>]}
+          heading={[<h2 className="text-center mt-5 mb-4">More results</h2>]}
         />
       </Container>
     </Layout>
