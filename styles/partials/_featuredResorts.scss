@@ -1,0 +1,35 @@
+.featured-resort .super-ellipse {
+  height: 340px;
+  width: 80%;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  .card {
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    .card-body {
+      background: hsla(0, 0%, 100%, 90%);
+      margin: -2px;
+      height: 168px;
+      color: $primary-dusk-light;
+    }
+
+    .resort-rating {
+      top: 32px;
+      right: 32px;
+      background: hsla(0, 0%, 100%, 75%);
+      border-radius: $border-radius-medium;
+
+      .rating-star {
+        color: $primary-sunrise;
+      }
+    }
+    // .card-title {
+    // }
+  }
+}

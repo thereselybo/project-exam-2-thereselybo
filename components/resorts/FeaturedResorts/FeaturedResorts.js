@@ -5,7 +5,10 @@ import { getResortDetails } from "../../../utils/getResortDetails";
 import Carousel from "../../Carousel/Carousel";
 import SuperEllipse from "react-superellipse";
 
+import { StarFill } from "react-bootstrap-icons";
+
 import styles from "./FeaturedResorts.module.scss";
+import { BASE_URL } from "../../../constants/api";
 
 // TODO:
 // solve unique key prop problem
@@ -50,7 +53,7 @@ const FeaturedResorts = ({ resorts, heading }) => {
                             src={resortDetails.image}
                             alt={resortDetails.imageAlt}
                           />
-                          <Card.ImgOverlay>
+                          <Card.ImgOverlay className="d-flex align-items-end">
                             <Card.Body>
                               <Card.Title>{resortDetails.title}</Card.Title>
                               <Card.Text>{resortDetails.destination}</Card.Text>
@@ -85,23 +88,57 @@ const FeaturedResorts = ({ resorts, heading }) => {
           {featuredResorts.map((resort, i) => {
             const resortDetails = getResortDetails(resort);
             return (
-              <Col key={i} xs={12} md={4}>
-                <Card>
-                  <Card.Img
-                    src={resortDetails.image}
-                    alt={resortDetails.imageAlt}
-                  />
-                  <Card.ImgOverlay>
-                    <Card.Body>
-                      <Card.Title>{resortDetails.title}</Card.Title>
-                      <Card.Text>{resortDetails.destination}</Card.Text>
-                      <Card.Subtitle>
-                        <span className="h4">{resortDetails.price} NOK</span>
-                        <span>/night</span>
-                      </Card.Subtitle>
-                    </Card.Body>
-                  </Card.ImgOverlay>
-                </Card>
+              <Col key={i} xs={12} md={4} className="featured-resort">
+                <Link href={`/resort/${resortDetails.slug}`}>
+                  <SuperEllipse
+                    className="m-auto super-ellipse"
+                    r1={0.03}
+                    r2={0.4}
+                    style={
+                      {
+                        //   width: "80%",
+                        //   height: "320px",
+                        //   background: "hsla(26, 59%, 90%, 0.8)",
+                        // backgroundImage: `url(${resortDetails.image})`,
+                      }
+                    }
+                  >
+                    <Card
+                      className="h-100 position-relative"
+                      style={{ backgroundImage: `url(${resortDetails.image})` }}
+                    >
+                      {/* <Card.Img
+                      src={resortDetails.image}
+                      alt={resortDetails.imageAlt}
+                    /> */}
+                      <Card.ImgOverlay className="d-flex align-items-end p-0">
+                        <Card.Body className="p-4">
+                          <Card.Title className="fw-normal">
+                            {resortDetails.title}
+                          </Card.Title>
+                          <Card.Text className="fw-light">
+                            {resortDetails.destination}
+                          </Card.Text>
+                          <Card.Subtitle>
+                            <span className="h4">
+                              {resortDetails.price} NOK
+                            </span>
+                            <span className="fw-light">/night</span>
+                          </Card.Subtitle>
+                        </Card.Body>
+                      </Card.ImgOverlay>
+                      <div className="resort-rating position-absolute py-1 px-3 d-flex align-items-center">
+                        {/* {StarFill} */}
+                        <span className="align-middle rating-star">
+                          <StarFill />
+                        </span>
+                        <span className="ps-2 pt-1">
+                          {resortDetails.rating}
+                        </span>
+                      </div>
+                    </Card>
+                  </SuperEllipse>
+                </Link>
               </Col>
             );
           })}

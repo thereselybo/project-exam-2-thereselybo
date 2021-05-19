@@ -60,10 +60,10 @@ const MobileNav = () => {
             ) : (
               <Link href="/login" passHref>
                 <Nav.Link className="text-center">
-                  <Col>
+                  <Col className="nav-icon">
                     <Person />
                   </Col>
-                  <Col>Login</Col>
+                  <Col className="nav-text">Login</Col>
                 </Nav.Link>
               </Link>
             )}

@@ -3,11 +3,11 @@ button,
   padding: 0.5rem 1rem;
   border-radius: $border-radius-medium;
   color: $primary-dusk;
+  &:hover {
+    color: $primary-dusk;
+  }
 }
 
 .btn-outline-primary {
   color: $primary-sunrise;
-  &:hover {
-    color: $primary-dusk;
-  }
 }

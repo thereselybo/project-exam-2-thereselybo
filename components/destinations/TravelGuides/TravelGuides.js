@@ -56,7 +56,7 @@ const TravelGuides = ({ destinations, heading }) => {
                     </Link>
                   </SuperEllipse>
                   <Link href={`/explore/${destinationDetails.slug}`}>
-                    <h4>{destinationDetails.title}</h4>
+                    <h4 className="my-3">{destinationDetails.title}</h4>
                   </Link>
                 </SwiperSlide>
                 // </Col>
@@ -98,7 +98,7 @@ const TravelGuides = ({ destinations, heading }) => {
                       objectFit="cover"
                     />
                   </SuperEllipse>
-                  <h4>{destinationDetails.title}</h4>
+                  <h4 className="my-3">{destinationDetails.title}</h4>
                 </Link>
               </Col>
             );

@@ -16,7 +16,7 @@ const PopularDestinations = ({ destinations, heading }) => {
         {destinations.map((destination, i) => {
           const destinationDetails = getDestinationDetails(destination);
           return (
-            <Col key={i} xs={6} md={3} className="p-5">
+            <Col key={i} xs={6} md={3} className="px-5">
               {/* <div> */}
               <SuperEllipse
                 className="m-auto p-5 ratio ratio-1x1"
@@ -38,7 +38,7 @@ const PopularDestinations = ({ destinations, heading }) => {
                 </Link>
               </SuperEllipse>
               <Link href={`/explore/${destinationDetails.slug}`}>
-                <h4>{destinationDetails.title}</h4>
+                <h4 className="my-3">{destinationDetails.title}</h4>
               </Link>
               {/* </div> */}
             </Col>

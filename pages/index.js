@@ -25,7 +25,7 @@ const Home = ({ resorts, destinations }) => {
         <FeaturedResorts
           resorts={resorts}
           heading={[
-            <h2 className="text-center mt-5 mb-3">
+            <h2 className="text-center mt-5 mb-4">
               <span className="d-none d-md-inline">Not sure? </span> Get
               inspired
             </h2>,
@@ -34,12 +34,12 @@ const Home = ({ resorts, destinations }) => {
         <PopularDestinations
           destinations={destinations}
           heading={[
-            <h2 className="text-center mt-5 mb-3">Popular destinations</h2>,
+            <h2 className="text-center mt-5 mb-4">Popular destinations</h2>,
           ]}
         />
         <TravelGuides
           destinations={destinations}
-          heading={[<h2 className="text-center mt-5 mb-3">Travel guides</h2>]}
+          heading={[<h2 className="text-center mt-5 mb-4">Travel guides</h2>]}
         />
       </Container>
     </Layout>
