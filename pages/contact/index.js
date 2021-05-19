@@ -12,11 +12,11 @@ import { BASE_URL, MESSAGE_TOPICS_ENDPOINT } from "../../constants/api";
 const Contact = ({ messageTopics }) => {
   return (
     <Layout title="Contact">
-      <Row className="d-flex flex-md-row justify-content-between">
+      <Row className="d-flex flex-md-row justify-content-between horizontal-layout">
         {/* left side content */}
         <Col md={6}>
           <Container>
-            <h1>Contact</h1>
+            <h1 className="mt-5">Contact</h1>
 
             <ContactForm messageTopics={messageTopics} />
           </Container>

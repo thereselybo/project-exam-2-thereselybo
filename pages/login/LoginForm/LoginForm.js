@@ -57,7 +57,7 @@ const LoginForm = () => {
       <Row className="my-3">
         {loginError && <FormError>{loginError}</FormError>}
 
-        <Form.Group as={Col} xs={12}>
+        <Form.Group as={Col} xs={12} className="mb-3">
           <Form.Label>Username/email</Form.Label>
           <Form.Control
             name="identifier"
@@ -75,7 +75,7 @@ const LoginForm = () => {
           )}
         </Form.Group>
 
-        <Form.Group as={Col} xs={12}>
+        <Form.Group as={Col} xs={12} className="mb-3">
           <Form.Label>Password</Form.Label>
           <Form.Control
             type="password"
@@ -97,7 +97,7 @@ const LoginForm = () => {
       <Button
         variant="primary"
         size="lg"
-        className="mx-auto mt-3"
+        className="mx-auto mt-3 px-4"
         type="submit"
         disabled={submitting}
       >

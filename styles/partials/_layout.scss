@@ -10,6 +10,16 @@
   margin-bottom: 80px;
 }
 
+// horizontal layout
+.horizontal-layout {
+  @media screen and (min-width: 768px) {
+    .container {
+      padding-left: 3rem;
+      padding-right: 3rem;
+    }
+  }
+}
+
 // admin layout
 
 // @media screen and (min-width: 768px) {

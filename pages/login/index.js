@@ -15,7 +15,7 @@ const Login = () => {
         {/* left side content */}
         <Col md={6}>
           <Container>
-            <h1>Login</h1>
+            <h1 className="mt-5">Login</h1>
             <LoginForm />
             {/* <LoginFormTest /> */}
           </Container>

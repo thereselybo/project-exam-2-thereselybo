@@ -5,7 +5,7 @@ import styles from "./HorizontalLayout.module.scss";
 
 const HorizontalLayout = ({ children, image, imageAlt }) => {
   return (
-    <Row className="d-flex flex-md-row justify-content-between">
+    <Row className="d-flex flex-md-row justify-content-between horizontal-layout">
       <Col md={6}>
         <Container>{children}</Container>
       </Col>

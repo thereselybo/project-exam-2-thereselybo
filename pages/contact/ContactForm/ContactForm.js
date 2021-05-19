@@ -75,7 +75,7 @@ const ContactForm = ({ messageTopics }) => {
           />
         )}
 
-        <Form.Group as={Col} xs={6}>
+        <Form.Group as={Col} xs={6} className="mb-3">
           <Form.Label>First name</Form.Label>
           <Form.Control
             placeholder="Enter your first name"
@@ -91,7 +91,7 @@ const ContactForm = ({ messageTopics }) => {
           )}
         </Form.Group>
 
-        <Form.Group as={Col} xs={6}>
+        <Form.Group as={Col} xs={6} className="mb-3">
           <Form.Label>Last name</Form.Label>
           <Form.Control
             placeholder="Enter your last name"
@@ -107,7 +107,7 @@ const ContactForm = ({ messageTopics }) => {
           )}
         </Form.Group>
 
-        <Form.Group as={Col} xs={12}>
+        <Form.Group as={Col} xs={12} className="mb-3">
           <Form.Label>Email address</Form.Label>
           <Form.Control
             type="email"
@@ -125,7 +125,7 @@ const ContactForm = ({ messageTopics }) => {
           )}
         </Form.Group>
 
-        <Form.Group as={Col} xs={12}>
+        <Form.Group as={Col} xs={12} className="mb-3">
           <Form.Label>Topic</Form.Label>
           <Form.Control
             as="select"
@@ -150,7 +150,7 @@ const ContactForm = ({ messageTopics }) => {
           )}
         </Form.Group>
 
-        <Form.Group as={Col} xs={12}>
+        <Form.Group as={Col} xs={12} className="mb-3">
           <Form.Label>Message</Form.Label>
           <Form.Control
             as="textarea"
@@ -170,7 +170,13 @@ const ContactForm = ({ messageTopics }) => {
         </Form.Group>
       </Row>
 
-      <Button variant="primary" size="lg" disabled={submitting} type="submit">
+      <Button
+        variant="primary"
+        size="lg"
+        disabled={submitting}
+        type="submit"
+        className="px-4"
+      >
         {submitting ? "Sending message.." : "Send message"}
       </Button>
     </Form>

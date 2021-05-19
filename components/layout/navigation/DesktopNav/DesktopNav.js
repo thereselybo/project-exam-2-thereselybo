@@ -22,7 +22,7 @@ const DesktopNav = () => {
       <Navbar className="d-none d-md-flex align-items-center px-4 bg-white public-desktop-nav">
         {/* <Container> */}
         <Link href="/" passHref>
-          <Navbar.Brand classList="pb-0">
+          <Navbar.Brand className="pb-0">
             <Image src="/images/holidaze-logo.svg" height="60" width="112" />
           </Navbar.Brand>
         </Link>
