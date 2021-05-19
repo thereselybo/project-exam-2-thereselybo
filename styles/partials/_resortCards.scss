@@ -1,0 +1,79 @@
+.resort-card {
+  .resort-rating {
+    top: 32px;
+    right: 32px;
+    background: hsla(0, 0%, 100%, 75%);
+    border-radius: $border-radius-medium;
+
+    .rating-star {
+      color: $primary-sunrise;
+    }
+  }
+}
+
+// featured resorts
+
+.featured-resort .super-ellipse {
+  height: 340px;
+  width: 100%;
+
+  //   &:hover {
+  //     cursor: pointer;
+  //   }
+
+  .card {
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    .card-body {
+      background: hsla(0, 0%, 100%, 90%);
+      margin: -2px;
+      height: 168px;
+      color: $primary-dusk-light;
+    }
+
+    // .resort-rating {
+    //   top: 32px;
+    //   right: 32px;
+    //   background: hsla(0, 0%, 100%, 75%);
+    //   border-radius: $border-radius-medium;
+
+    //   .rating-star {
+    //     color: $primary-sunrise;
+    //   }
+    // }
+    // .card-title {
+    // }
+  }
+}
+
+// explore
+
+.explore-container {
+  .resort-card {
+    border: none;
+    border-radius: $border-radius-large;
+
+    .resort-rating {
+      top: 1rem;
+      right: 1rem;
+    }
+  }
+  .card-title,
+  .card-subtitle {
+    color: $primary-dusk-light;
+  }
+
+  .resort-image {
+    border-top-left-radius: $border-radius-large;
+    border-bottom-left-radius: $border-radius-large;
+    background-size: cover;
+  }
+
+  .resort-arrow {
+    max-width: fit-content;
+    color: $primary-sunrise;
+  }
+}

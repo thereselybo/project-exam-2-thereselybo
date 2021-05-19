@@ -23,7 +23,7 @@ const FeaturedResortCard = ({ resortDetails }) => {
           role="button"
         >
           <Card
-            className="h-100 position-relative"
+            className="h-100 position-relative resort-card"
             style={{ backgroundImage: `url(${resortDetails.image})` }}
           >
             <Card.ImgOverlay className="d-flex align-items-end p-0">
