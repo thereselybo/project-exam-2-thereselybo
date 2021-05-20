@@ -1,14 +1,20 @@
 // public layout
 
 @media screen and (min-width: 768px) {
+  .public-layout {
+    min-height: calc(100vh - 89px);
+  }
   .public-content-wrapper {
     margin-top: 89px;
+    overflow: hidden;
   }
 }
 
-.public-content-wrapper {
-  margin-bottom: 80px;
-  overflow: hidden;
+@media screen and (max-width: 767px) {
+  .public-content-wrapper {
+    margin-bottom: 80px;
+    overflow: hidden;
+  }
 }
 
 // horizontal layout

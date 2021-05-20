@@ -10,7 +10,7 @@ const Layout = ({ title, children }) => {
   return (
     <AuthProvider>
       <Head title={title} />
-      <div className="min-vh-100">
+      <div className="public-layout">
         <Navigation />
         {/* <div className={styles.contentWrapper}>{children}</div> */}
         <div className="public-content-wrapper">{children}</div>

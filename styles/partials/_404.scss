@@ -1,0 +1,8 @@
+.error-image {
+  background-image: url("/images/404.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: calc(100vh - 89px);
+  overflow: hidden;
+}

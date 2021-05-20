@@ -80,7 +80,7 @@ const ResortDetail = ({ resort, reviews }) => {
       <Row className="d-flex flex-md-row justify-content-between horizontal-layout ">
         {/* left hand content */}
         <Col md={6}>
-          <Container>
+          <Container className="mb-5">
             <h1 className="mt-4 mb-3">{resortDetails.title}</h1>
             <Card className="p-2 fw-light mb-3">
               <Card.Body>{resortDetails.description}</Card.Body>

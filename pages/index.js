@@ -21,7 +21,7 @@ const Home = ({ resorts, destinations }) => {
   return (
     <Layout title="Home">
       <Header />
-      <Container className="home">
+      <Container className="home mb-5">
         <FeaturedResorts
           resorts={resorts}
           heading={[

@@ -11,7 +11,7 @@ import LoginFormTest from "./LoginForm/LoginFormTest";
 const Login = () => {
   return (
     <Layout title="Login">
-      <Row className="d-flex flex-md-row justify-content-between">
+      <Row className="d-flex flex-md-row justify-content-between horizontal-layout">
         {/* left side content */}
         <Col md={6}>
           <Container>
