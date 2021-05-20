@@ -15,6 +15,7 @@ import { Container, Col, Form, Row, Button } from "react-bootstrap";
 import styles from "./home/index.module.scss";
 import TravelGuides from "../components/destinations/TravelGuides/TravelGuides";
 import PopularDestinations from "../components/destinations/PopularDestinations/PopularDestinations";
+import Footer from "../components/layout/PublicLayout/Footer";
 
 const Home = ({ resorts, destinations }) => {
   console.log(destinations);
@@ -41,6 +42,8 @@ const Home = ({ resorts, destinations }) => {
           destinations={destinations}
           heading={[<h2 className="text-center mt-5 mb-4">Travel guides</h2>]}
         />
+
+        <Footer />
       </Container>
     </Layout>
   );
