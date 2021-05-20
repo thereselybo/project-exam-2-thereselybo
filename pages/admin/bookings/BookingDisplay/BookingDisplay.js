@@ -21,14 +21,16 @@ const BookingDisplay = ({ bookings }) => {
 
   return (
     <>
-      <Card>
-        <Card.Header className="d-none d-md-block">
+      <Card className="mb-5 admin-layout-card">
+        <Card.Header className="d-none d-lg-block">
           <Row>
-            <Col md={1}></Col>
-            <Col md={3}>Resort</Col>
-            <Col md={2}>Guest</Col>
-            <Col md={2}>Check in</Col>
-            <Col md={2}>Check out</Col>
+            <Col lg={1}></Col>
+            <Col lg={3} className="ms-3">
+              Resort
+            </Col>
+            <Col lg={2}>Guest</Col>
+            <Col lg={2}>Check in</Col>
+            <Col lg={2}>Check out</Col>
           </Row>
         </Card.Header>
         <Card.Body>
@@ -39,35 +41,41 @@ const BookingDisplay = ({ bookings }) => {
                 return (
                   <Row
                     key={i}
-                    className="justify-content-between align-items-center"
+                    className="justify-content-between align-items-center mb-3"
                   >
-                    <Col xs={2} md={1} className="pe-0">
+                    <Col xs={2} lg={1} className="pe-0">
                       {/* <Col> */}
-                      <Image
+                      {/* <Image
                         // className="position-relative"
                         src={bookingDetails.image}
                         alt={bookingDetails.imageAlt}
                         // layout="fill"
                         width="80"
                         height="80"
-                      />
+                      /> */}
+                      <div
+                        className="admin-layout-card-image"
+                        style={{
+                          backgroundImage: `url(${bookingDetails.image})`,
+                        }}
+                      ></div>
                     </Col>
-                    <Col xs={7} className="d-flex d-md-none flex-column">
+                    <Col xs={7} className="d-flex d-lg-none flex-column">
                       <Col>{bookingDetails.resort}</Col>
                       <Col>
                         {bookingDetails.check_in}-{bookingDetails.check_out}
                       </Col>
                     </Col>
-                    <Col className="d-none d-md-block" md={3}>
+                    <Col className="d-none d-lg-block ms-3" lg={3}>
                       {bookingDetails.resort}
                     </Col>
-                    <Col className="d-none d-md-block" md={2}>
+                    <Col className="d-none d-lg-block" lg={2}>
                       {bookingDetails.guest}
                     </Col>
-                    <Col className="d-none d-md-block" md={2}>
+                    <Col className="d-none d-lg-block fw-light">
                       {bookingDetails.check_in}
                     </Col>
-                    <Col className="d-none d-md-block" md={2}>
+                    <Col className="d-none d-lg-block fw-light">
                       {bookingDetails.check_out}
                     </Col>
                     <Col className="d-flex align-items-end">

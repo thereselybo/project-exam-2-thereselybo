@@ -23,7 +23,7 @@ const Admin = ({ resorts }) => {
 
   return (
     <Layout title="Admin">
-      <div className="d-flex justify-content-between align-items-center">
+      <div className="d-flex justify-content-between align-items-center mt-5 mb-4">
         <h1>Resorts</h1>
         <Link href="/admin/add-resort" passHref>
           <Button variant="outline-primary">

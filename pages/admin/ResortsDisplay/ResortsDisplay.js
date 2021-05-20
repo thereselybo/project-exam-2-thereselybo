@@ -4,19 +4,18 @@ import { getResortDetails } from "../../../utils/getResortDetails";
 
 import DeleteButton from "../../../components/resorts/DeleteButton/DeleteButton";
 import { Button, Card, Col, Row } from "react-bootstrap";
+import SuperEllipse from "react-superellipse";
 
 const ResortsDisplay = ({ resorts }) => {
   return (
-    <Card>
-      <Card.Header className="d-none d-md-block">
+    <Card className="mb-5 admin-layout-card">
+      <Card.Header className="d-none d-lg-block">
         <Row>
-          <Col md={1}></Col>
-          <Col md={3} lg={4}>
+          <Col lg={1}></Col>
+          <Col lg={4} className="ms-3">
             Resort
           </Col>
-          <Col md={3} lg={4}>
-            Location
-          </Col>
+          <Col lg={4}>Location</Col>
           {/* <Col md={2}></Col> */}
         </Row>
       </Card.Header>
@@ -29,23 +28,39 @@ const ResortsDisplay = ({ resorts }) => {
                 // <Row key={i}>
                 <Row
                   key={i}
-                  className="justify-content-between align-items-center"
+                  className="justify-content-between align-items-center mb-3"
                 >
-                  <Col xs={2} md={1} className="pe-0">
+                  <Col xs={2} lg={1} className="pe-0">
                     {/* <Col> */}
-                    <Image
+                    {/* <Image
                       // className="position-relative"
                       src={resortDetails.image}
                       alt={resortDetails.imageAlt}
                       // layout="fill"
                       width="80"
                       height="80"
-                    />
+                    /> */}
+                    {/* <SuperEllipse
+                      className="ratio ratio-1x1 facility-card mx-2"
+                      r1={0.03}
+                      r2={0.4}
+                      style={{
+                        width: "64px",
+                        height: "64px",
+                        background: { url: `${resortDetails.image}` },
+                      }}
+                    ></SuperEllipse> */}
+                    <div
+                      className="admin-layout-card-image"
+                      style={{
+                        backgroundImage: `url(${resortDetails.image})`,
+                      }}
+                    ></div>
                   </Col>
-                  <Col xs={7} md={3} lg={4}>
+                  <Col xs={7} lg={4} className="ms-3">
                     {resortDetails.title}
                   </Col>
-                  <Col md={3} lg={4} className="d-none d-md-block">
+                  <Col lg={3} className="d-none d-lg-block">
                     {resortDetails.destination}
                   </Col>
                   <Col className="d-flex align-items-end">
@@ -58,7 +73,7 @@ const ResortsDisplay = ({ resorts }) => {
                       </Button>
                     </Link>
                   </Col>
-                  <Col className="d-none d-md-block d-flex align-items-end">
+                  <Col className="d-none d-lg-block d-flex align-items-end">
                     <DeleteButton
                       id={resortDetails.id}
                       title={resortDetails.title}

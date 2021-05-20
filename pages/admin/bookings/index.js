@@ -7,7 +7,7 @@ import BookingDisplay from "./BookingDisplay/BookingDisplay";
 const Bookings = ({ bookings }) => {
   return (
     <Layout title="Bookings">
-      <h1>Bookings</h1>
+      <h1 className="mt-5 mb-4">Bookings</h1>
 
       <BookingDisplay bookings={bookings} />
     </Layout>

@@ -9,7 +9,7 @@ import MessageDisplay from "./MessageDisplay/MessageDisplay";
 const Messages = ({ messages }) => {
   return (
     <Layout title="Messages">
-      <h1>Messages</h1>
+      <h1 className="mt-5 mb-4">Messages</h1>
       <MessageDisplay messages={messages} />
     </Layout>
   );

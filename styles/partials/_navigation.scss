@@ -54,6 +54,9 @@
 // admin nav
 
 .admin-mobile-nav {
+  background: $primary-sunrise-lighter;
+  padding-bottom: 0;
+
   &.top-nav {
     margin-left: -10px;
 
@@ -95,6 +98,7 @@
   .admin-side-nav {
     width: 220px;
   }
+
   .admin-desktop-nav {
     background-color: $primary-sunrise-medium;
     border-top-right-radius: $border-radius-xlarge;

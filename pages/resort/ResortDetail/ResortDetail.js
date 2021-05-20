@@ -152,9 +152,7 @@ const ResortDetail = ({ resort, reviews }) => {
                               style={{
                                 backgroundImage: `url(${reviewDetails.image})`,
                               }}
-                            >
-                              {" "}
-                            </div>
+                            ></div>
                             <div className="align-self-center">
                               {reviewDetails.visitor}
                             </div>
