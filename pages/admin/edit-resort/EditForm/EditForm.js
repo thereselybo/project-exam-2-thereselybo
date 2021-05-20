@@ -13,6 +13,8 @@ import Message from "../../../../components/misc/Message";
 import { Form, Row, Col, Button } from "react-bootstrap";
 import DeleteButton from "../../../../components/resorts/DeleteButton/DeleteButton";
 import SuperEllipse from "react-superellipse";
+// import BootstrapSwitchButton from "bootstrap-switch-button-react";
+import Switch from "../../../../components/misc/Switch";
 
 const EditForm = ({ resort, destinations, facilities }) => {
   const [editing, setEditing] = useState(false);
@@ -29,7 +31,8 @@ const EditForm = ({ resort, destinations, facilities }) => {
   });
 
   const resortDetails = getResortDetails(resort);
-  const featured = resortDetails.featured;
+  const [featured, setFeatured] = useState(resortDetails.featured);
+  // const featured = resortDetails.featured;
   const url = `${BASE_URL}${RESORTS_ENDPOINT}/${resortDetails.id}`;
   // console.log(resortDetails);
 
@@ -237,9 +240,9 @@ const EditForm = ({ resort, destinations, facilities }) => {
               }}
               label="Switch"
             /> */}
-          <Form.Switch
+          {/* <Form.Switch
             id="featured"
-            className="custom-control-input"
+            className="custom-control-input position-relative"
             defaultChecked={featured}
             // checked={featured}
             // value={featured}
@@ -263,8 +266,30 @@ const EditForm = ({ resort, destinations, facilities }) => {
             // }}
             {...register("featured")}
             disabled={editing}
-          />
+          /> */}
+          {/* <span className="switch"></span> */}
+
+          {/* <BootstrapSwitchButton
+            checked={featured}
+            // onlabel='Featured'
+            // onstyle="primary"
+            // offlabel='Regular User'
+            // offstyle="secondary"
+            style="w-100 mx-3"
+            // onChange={(checked: boolean) => {
+            //   this.setState({ isUserAdmin: checked });
+            // }}
+          /> */}
+          <div>
+            <Switch
+              checked={featured}
+              onChange={() => {
+                setFeatured(!featured);
+              }}
+            />
+          </div>
         </Form.Group>
+        {/* <BootstrapSwitchButton /> */}
 
         {/* <div class="form-check form-switch">
             <input

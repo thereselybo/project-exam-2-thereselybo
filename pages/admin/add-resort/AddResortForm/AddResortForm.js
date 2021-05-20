@@ -10,11 +10,13 @@ import FormError from "../../../../components/misc/FormError";
 import Message from "../../../../components/misc/Message";
 
 import { Form, Row, Col, Button } from "react-bootstrap";
+import Switch from "../../../../components/misc/Switch";
 
 const AddResortForm = ({ facilities, destinations }) => {
   const [adding, setAdding] = useState(false);
   const [addError, setAddError] = useState(null);
   const [added, setAdded] = useState(false);
+  const [featured, setFeatured] = useState(false);
 
   const {
     register,
@@ -31,7 +33,7 @@ const AddResortForm = ({ facilities, destinations }) => {
     setAdding(true);
     setAddError(null);
     // console.log("data", data);
-    const updatedResort = updateResort(data, destinations);
+    const updatedResort = updateResort(data, destinations, featured);
     // console.log(updatedResort);
 
     try {
@@ -177,12 +179,20 @@ const AddResortForm = ({ facilities, destinations }) => {
             // label="Check this switch"
             // {...register("featured")} disabled={adding}
           /> */}
-          <Form.Switch
+          {/* <Form.Switch
             id="featured"
             className="custom-control-input"
             {...register("featured")}
             disabled={adding}
-          />
+          /> */}
+          <div>
+            <Switch
+              checked={featured}
+              onChange={() => {
+                setFeatured(!featured);
+              }}
+            />
+          </div>
         </Form.Group>
 
         {/* <div class="form-check form-switch">

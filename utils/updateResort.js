@@ -11,6 +11,7 @@ export const updateResort = (resort, allDestinations, featured) => {
   );
 
   updatedResort.destination = updatedDestination;
+  updatedResort.featured = featured;
   updatedResort.slug = slug;
 
   return updatedResort;
