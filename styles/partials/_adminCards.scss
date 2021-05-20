@@ -1,6 +1,11 @@
 .admin-layout-card {
   border: none;
   border-radius: $border-radius-medium;
+
+  @media screen and (max-width: 767px) {
+    margin-bottom: 7rem !important;
+  }
+
   .card-header {
     border-top-left-radius: $border-radius-medium;
     border-top-right-radius: $border-radius-medium;

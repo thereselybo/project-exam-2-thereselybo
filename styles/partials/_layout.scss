@@ -47,7 +47,8 @@
 @media screen and (min-width: 768px) {
   .admin-content-wrapper {
     max-width: 960px;
-    margin-right: auto;
+    // margin-right: auto;
+    margin-left: 0;
     padding-left: 2rem;
   }
 }

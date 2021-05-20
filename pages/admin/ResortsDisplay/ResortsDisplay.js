@@ -72,15 +72,17 @@ const ResortsDisplay = ({ resorts }) => {
                         Edit
                       </Button>
                     </Link>
-                  </Col>
-                  <Col className="d-none d-lg-block d-flex align-items-end">
-                    <DeleteButton
-                      id={resortDetails.id}
-                      title={resortDetails.title}
-                      // size=""
-                      content="Delete"
-                      className="ms-auto"
-                    />
+                    {/* </Col> */}
+                    {/* <Col className="d-none d-lg-block d-flex align-items-end"> */}
+                    <div className="ms-3 d-none d-lg-block">
+                      <DeleteButton
+                        id={resortDetails.id}
+                        title={resortDetails.title}
+                        // size=""
+                        content="Delete"
+                        // className="ms-auto"
+                      />
+                    </div>
                     {/* <Button className="ms-auto" variant="danger">
                       Delete
                     </Button> */}
