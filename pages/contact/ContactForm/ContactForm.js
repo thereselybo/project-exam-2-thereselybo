@@ -85,7 +85,7 @@ const ContactForm = ({ messageTopics }) => {
           {errors.first_name && (
             <Message
               className="my-2 p-2"
-              message={errors.firstName.message}
+              message={errors.first_name.message}
               variant="danger"
             />
           )}
@@ -98,7 +98,7 @@ const ContactForm = ({ messageTopics }) => {
             {...register("last_name")}
             disabled={submitting}
           />
-          {errors.lastName && (
+          {errors.last_name && (
             <Message
               className="my-2 p-2"
               message={errors.last_name.message}
@@ -144,7 +144,7 @@ const ContactForm = ({ messageTopics }) => {
           {errors.message_topic && (
             <Message
               className="my-2 p-2"
-              message={errors.topic.message}
+              message={errors.message_topic.message}
               variant="danger"
             />
           )}

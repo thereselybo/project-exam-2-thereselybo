@@ -49,10 +49,10 @@ const DeleteButton = ({ id, title, size, editing, content }) => {
         {content}
       </Button>
 
-      <Modal show={show} onHide={handleClose}>
+      <Modal show={show} onHide={handleClose} className="delete-modal">
         <Modal.Header>
-          <Modal.Title>Are you sure?</Modal.Title>
-          <div className="close" onClick={handleClose}>
+          <Modal.Title className="fs-3">Are you sure?</Modal.Title>
+          <div className="close fs-1 mt-n1" onClick={handleClose}>
             <X />
           </div>
         </Modal.Header>
@@ -71,7 +71,7 @@ const DeleteButton = ({ id, title, size, editing, content }) => {
           <Button variant="secondary" onClick={handleClose}>
             Cancel
           </Button>
-          <Button variant="primary" onClick={handleDelete}>
+          <Button variant="danger" onClick={handleDelete}>
             Confirm
           </Button>
         </Modal.Footer>

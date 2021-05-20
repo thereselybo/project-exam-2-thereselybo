@@ -30,7 +30,7 @@ const MessageDisplay = ({ messages }) => {
             <Col>Message</Col>
           </Row>
         </Card.Header>
-        <Card.Body>
+        <Card.Body className="d-flex flex-column-reverse">
           {messages.length
             ? messages.map((message, i) => {
                 // console.log(console.log(message));
@@ -90,10 +90,10 @@ const MessageDisplay = ({ messages }) => {
         </Card.Body>
       </Card>
 
-      <Modal show={show} onHide={handleClose}>
+      <Modal show={show} onHide={handleClose} className="message-display">
         <Modal.Header>
-          <Modal.Title>{modalContent.topic}</Modal.Title>
-          <div className="close" onClick={handleClose}>
+          <Modal.Title className="fs-3">{modalContent.topic}</Modal.Title>
+          <div className="close fs-1 mt-n1" onClick={handleClose}>
             <X />
           </div>
         </Modal.Header>
@@ -101,15 +101,15 @@ const MessageDisplay = ({ messages }) => {
           <Row>
             <Col xs={12}>
               <div className="h6">Guest name</div>
-              <p>{modalContent.guest}</p>
+              <p className="fw-light">{modalContent.guest}</p>
             </Col>
             <Col xs={12}>
               <div className="h6">Email address</div>
-              <p>{modalContent.email}</p>
+              <p className="fw-light">{modalContent.email}</p>
             </Col>
             <Col xs={12}>
               <div className="h6">Message</div>
-              <p>{modalContent.message}</p>
+              <p className="fw-light">{modalContent.message}</p>
             </Col>
           </Row>
         </Modal.Body>

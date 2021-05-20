@@ -33,7 +33,7 @@ const BookingDisplay = ({ bookings }) => {
             <Col lg={2}>Check out</Col>
           </Row>
         </Card.Header>
-        <Card.Body>
+        <Card.Body className="d-flex flex-column-reverse">
           {bookings.length
             ? bookings.map((booking, i) => {
                 // console.log(booking);
@@ -96,10 +96,10 @@ const BookingDisplay = ({ bookings }) => {
         </Card.Body>
       </Card>
 
-      <Modal show={show} onHide={handleClose}>
+      <Modal show={show} onHide={handleClose} className="booking-display">
         <Modal.Header>
-          <Modal.Title>{modalContent.resort}</Modal.Title>
-          <div className="close" onClick={handleClose}>
+          <Modal.Title className="fs-3">{modalContent.resort}</Modal.Title>
+          <div className="close fs-1 mt-n1" onClick={handleClose}>
             <X />
           </div>
         </Modal.Header>
@@ -107,28 +107,28 @@ const BookingDisplay = ({ bookings }) => {
           <Row>
             <Col xs={6}>
               <div className="h6">Guest name</div>
-              <p>{modalContent.guest}</p>
+              <p className="fw-light">{modalContent.guest}</p>
             </Col>
             <Col xs={6}>
               <div className="h6">Number of guests</div>
-              <p>{modalContent.guests}</p>
+              <p className="fw-light">{modalContent.guests}</p>
             </Col>
             <Col xs={12}>
               <div className="h6">Email address</div>
-              <p>{modalContent.email}</p>
+              <p className="fw-light">{modalContent.email}</p>
             </Col>
             <Col xs={6}>
               <div className="h6">Check in</div>
-              <p>{modalContent.check_in}</p>
+              <p className="fw-light">{modalContent.check_in}</p>
             </Col>
             <Col xs={6}>
               <div className="h6">Check out</div>
-              <p>{modalContent.check_out}</p>
+              <p className="fw-light">{modalContent.check_out}</p>
             </Col>
             {modalContent.additional_requests ? (
               <Col xs={12}>
                 <div className="h6">Additional requests</div>
-                <p>{modalContent.additional_requests}</p>
+                <p className="fw-light">{modalContent.additional_requests}</p>
               </Col>
             ) : (
               ""
