@@ -89,32 +89,34 @@ const ResortDetail = ({ resort, reviews }) => {
             {resortDetails.facilities ? (
               <>
                 <h2 className="mt-4 mb-3">Facilities</h2>
-                <Row className="d-flex flex-row flex-nowrap overflow-auto">
+                <Row className="d-flex flex-row flex-nowrap facilities">
                   {resortDetails.facilities.map((facility, i) => {
                     console.log(facility);
                     return (
+                      // <Col xs={2}>
                       <SuperEllipse
-                        className="p-5 ratio ratio-1x1"
+                        className="ratio ratio-1x1 facility-card mx-2"
                         r1={0.03}
                         r2={0.4}
                         style={{
-                          width: "45px",
-                          height: "45px",
+                          width: "64px",
+                          height: "64px",
                           background: "white",
                         }}
                       >
-                        <Card key={i}>
+                        <Card key={i} className="px-1 py-2 my-1">
                           <Card.Img
                             src={`${BASE_URL}${facility.icon.url}`}
-                            className="h-50"
+                            className="facility-icon"
                           />
-                          <Card.Body>
-                            <Card.Text className="text-center">
+                          <Card.Body className="p-0 mt-1">
+                            <Card.Text className="text-center facility-text">
                               {facility.title}
                             </Card.Text>
                           </Card.Body>
                         </Card>
                       </SuperEllipse>
+                      // </Col>
                     );
                   })}
                 </Row>

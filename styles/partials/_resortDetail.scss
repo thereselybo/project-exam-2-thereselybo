@@ -58,4 +58,23 @@
       color: $primary-sunrise;
     }
   }
+
+  .facilities {
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    .facility-card {
+      flex: 0 0 auto;
+      width: 20%;
+    }
+
+    .facility-icon {
+      height: 20px;
+    }
+
+    .facility-text {
+      font-size: 10px;
+      color: $silver-lining;
+    }
+  }
 }

@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -6,10 +7,9 @@ import { BASE_URL, BOOKINGS_ENDPOINT } from "../../../constants/api";
 
 import FormError from "../../../components/misc/FormError";
 import Message from "../../../components/misc/Message";
-
+import SuperEllipse from "react-superellipse";
 import { Col, Row, Form, Button, Modal } from "react-bootstrap";
 import { X } from "react-bootstrap-icons";
-import axios from "axios";
 
 const BookingForm = ({ show, resortDetails, bookingDetails, handleClose }) => {
   const [booking, setBooking] = useState(false);
@@ -43,16 +43,28 @@ const BookingForm = ({ show, resortDetails, bookingDetails, handleClose }) => {
   };
 
   return (
-    <Modal show={show} onHide={handleClose}>
+    <Modal show={show} onHide={handleClose} className="booking-form">
+      {/* <SuperEllipse
+      className="m-auto p-5 ratio ratio-1x1"
+      r1={0.03}
+      r2={0.4}
+      style={{
+        // width: "80%",
+        // height: "100%",
+        background: "hsl(0, 0%, 95%)",
+      }}
+    > */}
       <Modal.Header>
-        <Modal.Title {...register("resort")}>{resortDetails.title}</Modal.Title>
-        <div className="close" onClick={handleClose}>
+        <Modal.Title {...register("resort")} className="fs-3">
+          {resortDetails.title}
+        </Modal.Title>
+        <div className="close fs-1 mt-n1" onClick={handleClose}>
           <X />
         </div>
       </Modal.Header>
       <Modal.Body>
         <Form noValidate onSubmit={handleSubmit(onSubmit)}>
-          <Row className="my-3">
+          <Row>
             {bookingError && <FormError>{bookingError}</FormError>}
             {booked && (
               <Message
@@ -62,7 +74,7 @@ const BookingForm = ({ show, resortDetails, bookingDetails, handleClose }) => {
               />
             )}
 
-            <Form.Group as={Col} xs={6}>
+            <Form.Group as={Col} xs={6} className="mb-3">
               <Form.Label>First name</Form.Label>
               <Form.Control
                 placeholder="Enter your first name"
@@ -78,7 +90,7 @@ const BookingForm = ({ show, resortDetails, bookingDetails, handleClose }) => {
               )}
             </Form.Group>
 
-            <Form.Group as={Col} xs={6}>
+            <Form.Group as={Col} xs={6} className="mb-3">
               <Form.Label>Last name</Form.Label>
               <Form.Control
                 placeholder="Enter your last name"
@@ -94,7 +106,7 @@ const BookingForm = ({ show, resortDetails, bookingDetails, handleClose }) => {
               )}
             </Form.Group>
 
-            <Form.Group as={Col} xs={12}>
+            <Form.Group as={Col} xs={12} className="mb-3">
               <Form.Label>Email address</Form.Label>
               <Form.Control
                 type="email"
@@ -111,7 +123,7 @@ const BookingForm = ({ show, resortDetails, bookingDetails, handleClose }) => {
               )}
             </Form.Group>
 
-            <Form.Group as={Col} xs={6}>
+            <Form.Group as={Col} xs={6} className="mb-3">
               <Form.Label>Check in</Form.Label>
               <Form.Control
                 type="date"
@@ -128,7 +140,7 @@ const BookingForm = ({ show, resortDetails, bookingDetails, handleClose }) => {
               )}
             </Form.Group>
 
-            <Form.Group as={Col} xs={6}>
+            <Form.Group as={Col} xs={6} className="mb-3">
               <Form.Label>Check out</Form.Label>
               <Form.Control
                 type="date"
@@ -145,7 +157,7 @@ const BookingForm = ({ show, resortDetails, bookingDetails, handleClose }) => {
               )}
             </Form.Group>
 
-            <Form.Group as={Col} xs={12}>
+            <Form.Group as={Col} xs={6} className="mb-3">
               <Form.Label>Guests</Form.Label>
               <Form.Control
                 type="number"
@@ -162,7 +174,7 @@ const BookingForm = ({ show, resortDetails, bookingDetails, handleClose }) => {
               )}
             </Form.Group>
 
-            <Form.Group as={Col} xs={12}>
+            <Form.Group as={Col} xs={12} className="mb-3">
               <Form.Label>Additional requests</Form.Label>
               <Form.Control
                 as="textarea"
@@ -187,6 +199,7 @@ const BookingForm = ({ show, resortDetails, bookingDetails, handleClose }) => {
           </Col>
         </Form>
       </Modal.Body>
+      {/* </SuperEllipse> */}
     </Modal>
   );
 };

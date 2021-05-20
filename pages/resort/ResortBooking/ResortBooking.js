@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import SuperEllipse from "react-superellipse";
 
 import { Col, Row, Form, Button, Modal } from "react-bootstrap";
-import { X } from "react-bootstrap-icons";
+import { X, StarFill } from "react-bootstrap-icons";
 import BookingForm from "./BookingForm";
 
 const ResortBooking = ({ show, handleShow, handleClose, resortDetails }) => {
@@ -19,7 +19,7 @@ const ResortBooking = ({ show, handleShow, handleClose, resortDetails }) => {
 
   return (
     <>
-      <Col className="h-100 d-flex align-items-center ms-auto">
+      <Col className="h-100 d-flex align-items-center ms-auto resort-booking">
         <SuperEllipse
           className="my-auto d-none d-md-block p-4 position-absolute "
           r1={0.03}
@@ -34,44 +34,53 @@ const ResortBooking = ({ show, handleShow, handleClose, resortDetails }) => {
             bottom: "10%",
           }}
         >
-          <h2>
-            {resortDetails.price} NOK
-            <span className="fw-light">/night</span>
-          </h2>
-          <Form
-            //   onSubmit={handleShow}
-            onSubmit={handleSubmit(updateModal)}
-          >
-            <Row className="my-3">
-              <Form.Group as={Col} md={4}>
-                <Form.Label>Check in</Form.Label>
-                <Form.Control type="date" {...register("checkIn")} />
-              </Form.Group>
+          <div className="position-relative">
+            <h2>
+              {resortDetails.price} NOK
+              <span className="fw-light">/night</span>
+            </h2>
+            <Form
+              //   onSubmit={handleShow}
+              onSubmit={handleSubmit(updateModal)}
+            >
+              <Row className="my-3">
+                <Form.Group as={Col} md={4}>
+                  <Form.Label>Check in</Form.Label>
+                  <Form.Control type="date" {...register("checkIn")} />
+                </Form.Group>
 
-              <Form.Group as={Col} md={4}>
-                <Form.Label>Check out</Form.Label>
-                <Form.Control type="date" {...register("checkOut")} />
-              </Form.Group>
+                <Form.Group as={Col} md={4}>
+                  <Form.Label>Check out</Form.Label>
+                  <Form.Control type="date" {...register("checkOut")} />
+                </Form.Group>
 
-              <Form.Group as={Col} md={4}>
-                <Form.Label>Guests</Form.Label>
-                <Form.Control type="number" {...register("guests")} />
-              </Form.Group>
-            </Row>
+                <Form.Group as={Col} md={4}>
+                  <Form.Label>Guests</Form.Label>
+                  <Form.Control type="number" {...register("guests")} />
+                </Form.Group>
+              </Row>
 
-            <Col className="d-flex justify-content-center">
-              <Button
-                variant="primary"
-                size="lg"
-                className="mx-auto mt-3 px-4"
-                type="submit"
-                // onClick={handleShow}
-                onClick={handleSubmit(updateModal)}
-              >
-                Book
-              </Button>
-            </Col>
-          </Form>
+              <Col className="d-flex justify-content-center">
+                <Button
+                  variant="primary"
+                  size="lg"
+                  className="mx-auto mt-3 px-5"
+                  type="submit"
+                  // onClick={handleShow}
+                  onClick={handleSubmit(updateModal)}
+                >
+                  Book
+                </Button>
+              </Col>
+            </Form>
+
+            <div className="resort-rating position-absolute py-1 px-3 d-flex align-items-center">
+              <span className="align-middle rating-star">
+                <StarFill />
+              </span>
+              <span className="ps-2 pt-1">{resortDetails.rating}</span>
+            </div>
+          </div>
         </SuperEllipse>
       </Col>
 
