@@ -12,6 +12,7 @@ import Message from "../../../../components/misc/Message";
 
 import { Form, Row, Col, Button } from "react-bootstrap";
 import DeleteButton from "../../../../components/resorts/DeleteButton/DeleteButton";
+import SuperEllipse from "react-superellipse";
 
 const EditForm = ({ resort, destinations, facilities }) => {
   const [editing, setEditing] = useState(false);
@@ -53,7 +54,11 @@ const EditForm = ({ resort, destinations, facilities }) => {
   };
 
   return (
-    <Form noValidate onSubmit={handleSubmit(onSubmit)}>
+    <Form
+      noValidate
+      onSubmit={handleSubmit(onSubmit)}
+      className="admin-form mb-4"
+    >
       <Row className="my-3">
         {editError && <FormError>{editError}</FormError>}
         {edited && (
@@ -64,7 +69,7 @@ const EditForm = ({ resort, destinations, facilities }) => {
           />
         )}
 
-        <Form.Group as={Col} xs={12} md={6}>
+        <Form.Group as={Col} xs={12} md={6} className="mb-3">
           <Form.Label>Resort name</Form.Label>
           <Form.Control
             placeholder="Enter a name for the resort"
@@ -82,7 +87,7 @@ const EditForm = ({ resort, destinations, facilities }) => {
           )}
         </Form.Group>
 
-        <Form.Group as={Col} xs={12} md={6}>
+        <Form.Group as={Col} xs={12} md={6} className="mb-3">
           <Form.Label>Location</Form.Label>
           <Form.Control
             as="select"
@@ -108,7 +113,7 @@ const EditForm = ({ resort, destinations, facilities }) => {
           )}
         </Form.Group>
 
-        <Form.Group as={Col} xs={12}>
+        <Form.Group as={Col} xs={12} className="mb-3">
           <Form.Label>Introduction</Form.Label>
           <Form.Control
             as="textarea"
@@ -129,7 +134,7 @@ const EditForm = ({ resort, destinations, facilities }) => {
           )}
         </Form.Group>
 
-        <Form.Group as={Col} xs={12}>
+        <Form.Group as={Col} xs={12} className="mb-3">
           <Form.Label>Description</Form.Label>
           <Form.Control
             as="textarea"
@@ -150,8 +155,42 @@ const EditForm = ({ resort, destinations, facilities }) => {
           )}
         </Form.Group>
 
-        <Form.Group as={Col} xs={12}>
+        <Form.Group as={Col} xs={12} className="mb-3">
           <Form.Label>Image URL</Form.Label>
+          <SuperEllipse
+            className="mx-0 mb-3 super-ellipse resort-image-wrapper"
+            r1={0.03}
+            r2={0.4}
+            style={{
+              height: "180px",
+              width: "320px",
+              //   width: "80%",
+              //   height: "320px",
+              //   background: "hsla(26, 59%, 90%, 0.8)",
+              background: "white",
+              // backgroundImage: `url(${resortDetails.image})`,
+            }}
+          >
+            <div
+              className="resort-image"
+              style={{
+                backgroundImage: `url(${
+                  resortDetails.image
+                    ? resortDetails.image
+                    : "https://image.freepik.com/free-vector/illustration-gallery-icon_53876-27002.jpg"
+                })`,
+              }}
+              // style={{
+              //   background: url(
+              //     `${
+              //       resortDetails.image
+              //         ? resortDetails.image
+              //         : "https://image.freepik.com/free-vector/illustration-gallery-icon_53876-27002.jpg"
+              //     }`
+              //   ),
+              // }}
+            ></div>
+          </SuperEllipse>
           <Form.Control
             defaultValue={resortDetails.image ? resortDetails.image : ""}
             placeholder="Enter an image URL"
@@ -167,7 +206,7 @@ const EditForm = ({ resort, destinations, facilities }) => {
           )}
         </Form.Group>
 
-        <Form.Group as={Col} xs={6}>
+        <Form.Group as={Col} xs={6} className="mb-3">
           <Form.Label>Price per night</Form.Label>
           <Form.Control
             defaultValue={resortDetails.price ? resortDetails.price : ""}
@@ -176,7 +215,7 @@ const EditForm = ({ resort, destinations, facilities }) => {
           />
         </Form.Group>
 
-        <Form.Group as={Col} xs={6}>
+        <Form.Group as={Col} xs={6} className="mb-3">
           <Form.Label>Featured</Form.Label>
           {/* <Form.Check
               type="switch"

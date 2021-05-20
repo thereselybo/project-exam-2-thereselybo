@@ -49,7 +49,11 @@ const AddResortForm = ({ facilities, destinations }) => {
   };
 
   return (
-    <Form noValidate onSubmit={handleSubmit(onSubmit)}>
+    <Form
+      noValidate
+      onSubmit={handleSubmit(onSubmit)}
+      className="admin-form mb-4"
+    >
       <Row className="my-3">
         {addError && <FormError>{addError}</FormError>}
         {added && (
@@ -60,7 +64,7 @@ const AddResortForm = ({ facilities, destinations }) => {
           />
         )}
 
-        <Form.Group as={Col} xs={6}>
+        <Form.Group as={Col} xs={6} className="mb-3">
           <Form.Label>Resort name</Form.Label>
           <Form.Control
             placeholder="Enter a name for the resort"
@@ -76,7 +80,7 @@ const AddResortForm = ({ facilities, destinations }) => {
           )}
         </Form.Group>
 
-        <Form.Group as={Col} xs={12} md={6}>
+        <Form.Group as={Col} xs={12} md={6} className="mb-3">
           <Form.Label>Location</Form.Label>
           <Form.Control
             as="select"
@@ -100,7 +104,7 @@ const AddResortForm = ({ facilities, destinations }) => {
           )}
         </Form.Group>
 
-        <Form.Group as={Col} xs={12}>
+        <Form.Group as={Col} xs={12} className="mb-3">
           <Form.Label>Introduction</Form.Label>
           <Form.Control
             as="textarea"
@@ -118,7 +122,7 @@ const AddResortForm = ({ facilities, destinations }) => {
           )}
         </Form.Group>
 
-        <Form.Group as={Col} xs={12}>
+        <Form.Group as={Col} xs={12} className="mb-3">
           <Form.Label>Description</Form.Label>
           <Form.Control
             as="textarea"
@@ -136,7 +140,7 @@ const AddResortForm = ({ facilities, destinations }) => {
           )}
         </Form.Group>
 
-        <Form.Group as={Col} xs={12}>
+        <Form.Group as={Col} xs={12} className="mb-3">
           <Form.Label>Image URL</Form.Label>
           <Form.Control
             placeholder="Enter an image URL"
@@ -152,7 +156,7 @@ const AddResortForm = ({ facilities, destinations }) => {
           )}
         </Form.Group>
 
-        <Form.Group as={Col} xs={6}>
+        <Form.Group as={Col} xs={6} className="mb-3">
           <Form.Label>Price per night</Form.Label>
           <Form.Control {...register("price")} disabled={adding} />
           {errors.price && (
@@ -164,7 +168,7 @@ const AddResortForm = ({ facilities, destinations }) => {
           )}
         </Form.Group>
 
-        <Form.Group as={Col} xs={6}>
+        <Form.Group as={Col} xs={6} className="mb-3">
           <Form.Label>Featured</Form.Label>
           {/* <Form.Check
             type="switch"

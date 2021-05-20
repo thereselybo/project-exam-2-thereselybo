@@ -28,3 +28,24 @@
     }
   }
 }
+
+.admin-form {
+  @media screen and (max-width: 767px) {
+    margin-bottom: 7rem !important;
+  }
+
+  .resort-image-wrapper {
+    @media screen and (max-width: 767px) {
+      width: 100% !important;
+    }
+    .resort-image {
+      // height: 180px;
+      // width: 320px;
+      height: 100%;
+      width: 100%;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+}

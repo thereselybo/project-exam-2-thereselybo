@@ -27,7 +27,7 @@ const EditResort = ({ resort, destinations, facilities }) => {
 
   return (
     <Layout title="Edit resort">
-      <h1>Edit resort</h1>
+      <h1 className="mt-5 mb-4">Edit resort</h1>
       <EditForm
         resort={resort}
         destinations={destinations}
