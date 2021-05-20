@@ -20,6 +20,7 @@ const EditForm = ({ resort, destinations, facilities }) => {
   const [editing, setEditing] = useState(false);
   const [editError, setEditError] = useState(null);
   const [edited, setEdited] = useState(false);
+  const [featured, setFeatured] = useState(resortDetails.featured);
 
   const {
     register,
@@ -31,7 +32,6 @@ const EditForm = ({ resort, destinations, facilities }) => {
   });
 
   const resortDetails = getResortDetails(resort);
-  const [featured, setFeatured] = useState(resortDetails.featured);
   // const featured = resortDetails.featured;
   const url = `${BASE_URL}${RESORTS_ENDPOINT}/${resortDetails.id}`;
   // console.log(resortDetails);
@@ -167,11 +167,7 @@ const EditForm = ({ resort, destinations, facilities }) => {
             style={{
               height: "180px",
               width: "320px",
-              //   width: "80%",
-              //   height: "320px",
-              //   background: "hsla(26, 59%, 90%, 0.8)",
               background: "white",
-              // backgroundImage: `url(${resortDetails.image})`,
             }}
           >
             <div
@@ -183,15 +179,6 @@ const EditForm = ({ resort, destinations, facilities }) => {
                     : "https://image.freepik.com/free-vector/illustration-gallery-icon_53876-27002.jpg"
                 })`,
               }}
-              // style={{
-              //   background: url(
-              //     `${
-              //       resortDetails.image
-              //         ? resortDetails.image
-              //         : "https://image.freepik.com/free-vector/illustration-gallery-icon_53876-27002.jpg"
-              //     }`
-              //   ),
-              // }}
             ></div>
           </SuperEllipse>
           <Form.Control
@@ -220,66 +207,6 @@ const EditForm = ({ resort, destinations, facilities }) => {
 
         <Form.Group as={Col} xs={6} className="mb-3">
           <Form.Label>Featured</Form.Label>
-          {/* <Form.Check
-              type="switch"
-              id="custom-switch"
-              className="form-check-input"
-              // label="Check this switch"
-            /> */}
-          {/* <Form.Check
-            type="switch"
-            id="custom-switch"
-            // label="Check this switch"
-          /> */}
-          {/* <FormCheck
-              id="switchEnabled"
-              type="switch"
-              checked={true}
-              onChange={() => {
-                console.log("checking switch");
-              }}
-              label="Switch"
-            /> */}
-          {/* <Form.Switch
-            id="featured"
-            className="custom-control-input position-relative"
-            defaultChecked={featured}
-            // checked={featured}
-            // value={featured}
-            // onChange={(e) => {
-            //   // e.target.checked = !checked;
-            //   // e.target.value = !checked;
-
-            //   // console.log(
-            //   //   "e.target.checked on click:",
-            //   //   e.target.checked
-            //   // );
-            //   // console.log("checked before:", checked);
-            //   console.log(featured);
-            //   e.target.checked = !featured;
-            //   featured = !featured;
-            //   // console.log(
-            //   //   "e.target.checked after:",
-            //   //   e.target.checked
-            //   // );
-            //   // console.log("checked after:", checked);
-            // }}
-            {...register("featured")}
-            disabled={editing}
-          /> */}
-          {/* <span className="switch"></span> */}
-
-          {/* <BootstrapSwitchButton
-            checked={featured}
-            // onlabel='Featured'
-            // onstyle="primary"
-            // offlabel='Regular User'
-            // offstyle="secondary"
-            style="w-100 mx-3"
-            // onChange={(checked: boolean) => {
-            //   this.setState({ isUserAdmin: checked });
-            // }}
-          /> */}
           <div>
             <Switch
               checked={featured}
@@ -289,18 +216,6 @@ const EditForm = ({ resort, destinations, facilities }) => {
             />
           </div>
         </Form.Group>
-        {/* <BootstrapSwitchButton /> */}
-
-        {/* <div class="form-check form-switch">
-            <input
-              class="form-check-input"
-              type="checkbox"
-              id="flexSwitchCheckDefault"
-            />
-            <label class="form-check-label" for="flexSwitchCheckDefault">
-              Default switch checkbox input
-            </label>
-          </div> */}
       </Row>
 
       <Col className="mt-3">

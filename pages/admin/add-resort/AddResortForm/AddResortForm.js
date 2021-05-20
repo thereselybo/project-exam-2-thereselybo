@@ -22,7 +22,6 @@ const AddResortForm = ({ facilities, destinations }) => {
     register,
     handleSubmit,
     formState: { errors },
-    // control,
   } = useForm({
     resolver: yupResolver(resortSchema),
   });
@@ -32,15 +31,12 @@ const AddResortForm = ({ facilities, destinations }) => {
   const onSubmit = async (data) => {
     setAdding(true);
     setAddError(null);
-    // console.log("data", data);
+
     const updatedResort = updateResort(data, destinations, featured);
-    // console.log(updatedResort);
 
     try {
-      // console.log(updatedResort);
       const res = await axios.post(url, updatedResort);
       if (res.status === 200) {
-        // console.log(res);
         setAdded(true);
       }
     } catch (err) {
@@ -172,19 +168,6 @@ const AddResortForm = ({ facilities, destinations }) => {
 
         <Form.Group as={Col} xs={6} className="mb-3">
           <Form.Label>Featured</Form.Label>
-          {/* <Form.Check
-            type="switch"
-            id="custom-switch"
-            className="form-check-input"
-            // label="Check this switch"
-            // {...register("featured")} disabled={adding}
-          /> */}
-          {/* <Form.Switch
-            id="featured"
-            className="custom-control-input"
-            {...register("featured")}
-            disabled={adding}
-          /> */}
           <div>
             <Switch
               checked={featured}
@@ -194,18 +177,6 @@ const AddResortForm = ({ facilities, destinations }) => {
             />
           </div>
         </Form.Group>
-
-        {/* <div class="form-check form-switch">
-          <input
-            class="form-check-input"
-            type="checkbox"
-            id="flexSwitchCheckDefault"
-            {...register("featured")} disabled={adding}
-          />
-          <label class="form-check-label" for="flexSwitchCheckDefault">
-            Default switch checkbox input
-          </label>
-        </div> */}
       </Row>
 
       <Button variant="primary" size="lg" disabled={adding} type="submit">
