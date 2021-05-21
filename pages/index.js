@@ -19,6 +19,7 @@ import Footer from "../components/layout/PublicLayout/Footer";
 
 const Home = ({ resorts, destinations }) => {
   console.log(destinations);
+  let key = Date.now();
   return (
     <Layout title="Home">
       <Header />
@@ -26,7 +27,7 @@ const Home = ({ resorts, destinations }) => {
         <FeaturedResorts
           resorts={resorts}
           heading={[
-            <h2 className="text-center mt-5 mb-4">
+            <h2 className="text-center mt-5 mb-4" key={key++}>
               <span className="d-none d-md-inline">Not sure? </span> Get
               inspired
             </h2>,
@@ -35,12 +36,18 @@ const Home = ({ resorts, destinations }) => {
         <PopularDestinations
           destinations={destinations}
           heading={[
-            <h2 className="text-center mt-5 mb-4">Popular destinations</h2>,
+            <h2 className="text-center mt-5 mb-4" key={key++}>
+              Popular destinations
+            </h2>,
           ]}
         />
         <TravelGuides
           destinations={destinations}
-          heading={[<h2 className="text-center mt-5 mb-4">Travel guides</h2>]}
+          heading={[
+            <h2 className="text-center mt-5 mb-4" key={key++}>
+              Travel guides
+            </h2>,
+          ]}
         />
 
         <Footer />

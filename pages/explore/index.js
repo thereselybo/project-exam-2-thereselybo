@@ -8,17 +8,11 @@ import { Container } from "react-bootstrap";
 import SearchBar from "./SearchBar/SearchBar";
 import Resorts from "./Resorts/Resorts";
 
-// TODO:
-// get destination from url path
-// if destination
-// render recommended in area
-// render all resorts in area
-// else render all resorts
-
 const Explore = ({ resorts }) => {
-  console.log("resorts:", resorts);
-  const router = useRouter();
-  console.log(router.pathname);
+  // console.log("resorts:", resorts);
+  // const router = useRouter();
+  // console.log(router.pathname);
+  let key = Date.now();
 
   return (
     <Layout title="Explore">
@@ -26,11 +20,19 @@ const Explore = ({ resorts }) => {
         <SearchBar />
         <FeaturedResorts
           resorts={resorts}
-          heading={[<h1 className="text-center my-4">Recommended resorts</h1>]}
+          heading={[
+            <h1 className="text-center my-4" key={key++}>
+              Recommended resorts
+            </h1>,
+          ]}
         />
         <Resorts
           resorts={resorts}
-          heading={[<h2 className="text-center mt-5 mb-4">More results</h2>]}
+          heading={[
+            <h2 className="text-center mt-5 mb-4" key={key++}>
+              More results
+            </h2>,
+          ]}
         />
       </Container>
     </Layout>

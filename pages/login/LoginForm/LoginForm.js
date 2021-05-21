@@ -41,7 +41,7 @@ const LoginForm = () => {
         // console.log("auth", auth);
         // console.log("res", res);
         // console.log("data", data);
-        // setAuth(res.data);
+        setAuth(res.data);
         // console.log("auth", auth);
         router.push("/admin");
       }

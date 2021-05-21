@@ -12,9 +12,10 @@ const url = `${BASE_URL}${DESTINATIONS_ENDPOINT}`;
 const Destination = ({ destination }) => {
   // const { slug } = destination;
   const resorts = destination.resorts;
-  console.log(resorts);
+  // console.log(resorts);
 
-  console.log(destination);
+  // console.log(destination);
+  let key = Date.now();
 
   return (
     <Layout title={`Explore ${destination.title}`}>
@@ -22,11 +23,19 @@ const Destination = ({ destination }) => {
         <SearchBar />
         <FeaturedResorts
           resorts={resorts}
-          heading={[<h1 className="text-center my-4">Recommended in area</h1>]}
+          heading={[
+            <h1 className="text-center my-4" key={key++}>
+              Recommended in area
+            </h1>,
+          ]}
         />
         <Resorts
           resorts={resorts}
-          heading={[<h2 className="text-center mt-5 mb-4">More results</h2>]}
+          heading={[
+            <h2 className="text-center mt-5 mb-4" key={key++}>
+              More results
+            </h2>,
+          ]}
         />
       </Container>
     </Layout>

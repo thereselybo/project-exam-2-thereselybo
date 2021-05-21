@@ -10,8 +10,7 @@ import { BASE_URL } from "../../../constants/api";
 import FeaturedResortCard from "./FeaturedResortCard";
 
 // TODO:
-// solve unique key prop problem
-// solve problem with img src not matching - fixed?
+// solve problem with img src not matching
 
 const FeaturedResorts = ({ resorts, heading }) => {
   let featuredResorts = [];

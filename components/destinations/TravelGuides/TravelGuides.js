@@ -10,7 +10,6 @@ import TravelGuideCard from "./TravelGuideCard";
 import styles from "./TravelGuides.module.scss";
 
 // TODO:
-// solve unique key prop problem
 // solve problem with img src not matching
 // set a featured flag to certain destinations?
 

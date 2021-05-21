@@ -92,7 +92,7 @@ const BookingDisplay = ({ bookings }) => {
                   </Row>
                 );
               })
-            : "No resorts"}
+            : "No bookings"}
         </Card.Body>
       </Card>
 

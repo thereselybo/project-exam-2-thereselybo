@@ -8,6 +8,7 @@ import styles from "./PopularDestinations.module.scss";
 
 const PopularDestinations = ({ destinations, heading }) => {
   console.log(destinations);
+  let key = Date.now();
 
   return destinations.length ? (
     <section>

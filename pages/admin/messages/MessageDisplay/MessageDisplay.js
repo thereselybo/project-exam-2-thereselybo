@@ -86,7 +86,7 @@ const MessageDisplay = ({ messages }) => {
                   </Row>
                 );
               })
-            : "No resorts"}
+            : "No messages"}
         </Card.Body>
       </Card>
 

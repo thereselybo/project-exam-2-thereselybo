@@ -21,7 +21,7 @@ import styles from "./ResortDetail.module.scss";
 import { ArrowLeftCircleFill, StarFill, X } from "react-bootstrap-icons";
 import ResortBooking from "../ResortBooking/ResortBooking";
 
-const ResortDetail = ({ resort, reviews }) => {
+const ResortDetail = ({ resort, reviews, facilities }) => {
   const resortDetails = getResortDetails(resort);
   // console.log(reviews);
 
@@ -88,11 +88,11 @@ const ResortDetail = ({ resort, reviews }) => {
               <Card.Body>{resortDetails.description}</Card.Body>
             </Card>
 
-            {resortDetails.facilities.length ? (
+            {facilities.length ? (
               <>
                 <h2 className="mt-4 mb-3">Facilities</h2>
                 <Row className="d-flex flex-row flex-nowrap facilities">
-                  {resortDetails.facilities.map((facility, i) => {
+                  {facilities.map((facility, i) => {
                     console.log(facility);
                     return (
                       // <Col xs={2}>
