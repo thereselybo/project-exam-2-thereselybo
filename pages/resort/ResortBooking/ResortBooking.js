@@ -73,13 +73,14 @@ const ResortBooking = ({ show, handleShow, handleClose, resortDetails }) => {
                 </Button>
               </Col>
             </Form>
-
-            <div className="resort-rating position-absolute py-1 px-3 d-flex align-items-center">
-              <span className="align-middle rating-star">
-                <StarFill />
-              </span>
-              <span className="ps-2 pt-1">{resortDetails.rating}</span>
-            </div>
+            {resortDetails.rating && (
+              <div className="resort-rating position-absolute py-1 px-3 d-flex align-items-center">
+                <span className="align-middle rating-star">
+                  <StarFill />
+                </span>
+                <span className="ps-2 pt-1">{resortDetails.rating}</span>
+              </div>
+            )}
           </div>
         </SuperEllipse>
       </Col>

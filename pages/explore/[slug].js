@@ -18,15 +18,15 @@ const Destination = ({ destination }) => {
 
   return (
     <Layout title={`Explore ${destination.title}`}>
-      <Container>
+      <Container className="explore-container">
         <SearchBar />
         <FeaturedResorts
           resorts={resorts}
-          heading={[<h1 className="text-center">Recommended in area</h1>]}
+          heading={[<h1 className="text-center my-4">Recommended in area</h1>]}
         />
         <Resorts
           resorts={resorts}
-          heading={[<h2 className="text-center">More results</h2>]}
+          heading={[<h2 className="text-center mt-5 mb-4">More results</h2>]}
         />
       </Container>
     </Layout>

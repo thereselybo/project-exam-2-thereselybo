@@ -17,19 +17,26 @@ const Resorts = ({ resorts, heading }) => {
             <Col key={i} xs={12} lg={6} className="mb-5">
               <Link href={`/resort/${resortDetails.slug}`}>
                 {/* <Card className="h-100"> */}
-                <Card className="h-100 d-flex flex-row resort-card">
+                <Card
+                  className="h-100 d-flex flex-row resort-card"
+                  role="button"
+                >
                   {/* <Row className="h-100"> */}
                   <Col
                     xs={4}
                     className="pr-0 resort-image position-relative"
                     style={{ backgroundImage: `url(${resortDetails.image})` }}
                   >
-                    <div className="resort-rating position-absolute py-1 px-3 d-flex align-items-center">
-                      <span className="align-middle rating-star">
-                        <StarFill />
-                      </span>
-                      <span className="ps-2 pt-1">{resortDetails.rating}</span>
-                    </div>
+                    {resortDetails.rating && (
+                      <div className="resort-rating position-absolute py-1 px-3 d-flex align-items-center">
+                        <span className="align-middle rating-star">
+                          <StarFill />
+                        </span>
+                        <span className="ps-2 pt-1">
+                          {resortDetails.rating}
+                        </span>
+                      </div>
+                    )}
                     {/* <Card.Img
                       src={resortDetails.image}
                       alt={resortDetails.imageAlt}

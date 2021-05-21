@@ -54,12 +54,14 @@ const ResortDetail = ({ resort, reviews }) => {
         className="d-md-none resort-image-header resort-image position-relative"
         style={{ backgroundImage: `url(${resortDetails.image})` }}
       >
-        <div className="resort-rating position-absolute py-1 px-3 d-flex align-items-center">
-          <span className="align-middle rating-star">
-            <StarFill />
-          </span>
-          <span className="ps-2 pt-1">{resortDetails.rating}</span>
-        </div>
+        {resortDetails.rating && (
+          <div className="resort-rating position-absolute py-1 px-3 d-flex align-items-center">
+            <span className="align-middle rating-star">
+              <StarFill />
+            </span>
+            <span className="ps-2 pt-1">{resortDetails.rating}</span>
+          </div>
+        )}
 
         <ArrowLeftCircleFill
           className="position-fixed back-button"
@@ -86,7 +88,7 @@ const ResortDetail = ({ resort, reviews }) => {
               <Card.Body>{resortDetails.description}</Card.Body>
             </Card>
 
-            {resortDetails.facilities ? (
+            {resortDetails.facilities.length ? (
               <>
                 <h2 className="mt-4 mb-3">Facilities</h2>
                 <Row className="d-flex flex-row flex-nowrap facilities">
@@ -136,7 +138,7 @@ const ResortDetail = ({ resort, reviews }) => {
               /> */}
             </div>
 
-            {reviews ? (
+            {reviews.length ? (
               <>
                 <h2 className="mt-4 mb-3">Reviews</h2>
 

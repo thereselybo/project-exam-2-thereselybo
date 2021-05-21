@@ -15,7 +15,7 @@ const Resort = ({ resort, reviews }) => {
   console.log(resort);
 
   return (
-    <Layout>
+    <Layout title={resort.title}>
       <ResortDetail resort={resort} reviews={reviews} />
     </Layout>
   );

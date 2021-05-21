@@ -17,6 +17,8 @@ import SuperEllipse from "react-superellipse";
 import Switch from "../../../../components/misc/Switch";
 
 const EditForm = ({ resort, destinations, facilities }) => {
+  const resortDetails = getResortDetails(resort);
+
   const [editing, setEditing] = useState(false);
   const [editError, setEditError] = useState(null);
   const [edited, setEdited] = useState(false);
@@ -31,7 +33,6 @@ const EditForm = ({ resort, destinations, facilities }) => {
     resolver: yupResolver(resortSchema),
   });
 
-  const resortDetails = getResortDetails(resort);
   // const featured = resortDetails.featured;
   const url = `${BASE_URL}${RESORTS_ENDPOINT}/${resortDetails.id}`;
   // console.log(resortDetails);
