@@ -105,8 +105,9 @@ const ResortDetail = ({ resort, reviews, facilities }) => {
                           height: "64px",
                           background: "white",
                         }}
+                        key={i}
                       >
-                        <Card key={i} className="px-1 py-2 my-1">
+                        <Card className="px-1 py-2 my-1">
                           <Card.Img
                             src={`${BASE_URL}${facility.icon.url}`}
                             className="facility-icon"
