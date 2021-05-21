@@ -16,13 +16,12 @@ import styles from "./home/index.module.scss";
 import TravelGuides from "../components/destinations/TravelGuides/TravelGuides";
 import PopularDestinations from "../components/destinations/PopularDestinations/PopularDestinations";
 import Footer from "../components/layout/PublicLayout/Footer";
-
 const Home = ({ resorts, destinations }) => {
   console.log(destinations);
   let key = Date.now();
   return (
     <Layout title="Home">
-      <Header />
+      <Header destinations={destinations} />
       <Container className="home mb-5">
         <FeaturedResorts
           resorts={resorts}
@@ -49,7 +48,6 @@ const Home = ({ resorts, destinations }) => {
             </h2>,
           ]}
         />
-
         <Footer />
       </Container>
     </Layout>

@@ -49,3 +49,14 @@
     }
   }
 }
+
+#destination-search {
+  border: 0;
+  border-radius: $border-radius-medium;
+  background: hsla(0, 0%, 100%, 90%);
+
+  .rbt-highlight-text {
+    padding: 0;
+    background: none;
+  }
+}

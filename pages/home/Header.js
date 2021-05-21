@@ -2,7 +2,15 @@ import Image from "next/image";
 
 import DestinationSearch from "./DestinationSearch/DestinationSearch";
 import SuperEllipse from "react-superellipse";
-import { Container, Col, Form, Row, Button } from "react-bootstrap";
+import {
+  Container,
+  Col,
+  Form,
+  Row,
+  Button,
+  InputGroup,
+  FormControl,
+} from "react-bootstrap";
 
 import styles from "./index.module.scss";
 import { Search } from "react-bootstrap-icons";

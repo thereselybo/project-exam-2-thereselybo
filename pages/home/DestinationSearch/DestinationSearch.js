@@ -7,9 +7,6 @@ import { destinationSearchSchema } from "../../../schema/destinationSearchSchema
 import { Form, Row, Col, Button } from "react-bootstrap";
 import { Typeahead } from "react-bootstrap-typeahead";
 
-import "react-bootstrap-typeahead/css/Typeahead.css";
-import styles from "./DestinationSearch.module.scss";
-
 const DestinationSearch = ({ destinations }) => {
   const [singleSelections, setSingleSelections] = useState([]);
   const [invalidDestination, setInvalidDestination] = useState(false);
@@ -20,12 +17,14 @@ const DestinationSearch = ({ destinations }) => {
     register,
     handleSubmit,
     // formState: { errors },
-  } = useForm(destinationSearchSchema);
+    // } = useForm(destinationSearchSchema);
+  } = useForm();
 
   const onDestinationChange = (destination) => {
     console.log(destination);
     setSingleSelections(destination);
-    const validatedDestination = validateDestinationField();
+    // const validatedDestination = validateDestinationField(
+    const validatedDestination = validateDestination(destination, destinations);
     console.log(validatedDestination);
     // const destination = singleSelections[0];
 
@@ -33,6 +32,16 @@ const DestinationSearch = ({ destinations }) => {
     //   destinations,
     //   destination
     // );
+
+    if (!validatedDestination) {
+      setInvalidDestination(true);
+      // console.log("invalid destination");
+      // console.log(invalidDestination);
+    } else {
+      setInvalidDestination(false);
+      // console.log("valid destination, proceed to next field blabla");
+    }
+
     setInvalidDestination(validatedDestination);
   };
 
@@ -46,24 +55,37 @@ const DestinationSearch = ({ destinations }) => {
 
     // setInvalidDestination(!validatedDestinationField);
 
-    console.log(validatedDestination);
+    console.log("validatedDestination", validatedDestination);
     formData.destination = validatedDestination;
     // data.destination = singleSelections[0];
     console.log(formData);
 
-    if (!validatedDestinationField) {
+    // if (!validatedDestinationField) {
+    //   setInvalidDestination(true);
+    //   console.log(invalidDestination);
+    // } else {
+    //   console.log("yay");
+    //   router.push(`/explore/${validatedDestination.slug}`);
+    // }
+
+    if (!validatedDestination) {
       setInvalidDestination(true);
+      console.log("invalid destination");
       console.log(invalidDestination);
     } else {
-      console.log("yay");
+      setInvalidDestination(false);
+      console.log("valid destination, reroute blabla");
       router.push(`/explore/${validatedDestination.slug}`);
     }
-  };
 
-  const validateDestinationField = () => {
-    const destination = singleSelections[0];
-    const validatedDestination = validateDestination(destinations, destination);
-    return validatedDestination;
+    // setInvalidDestination(!validatedDestination);
+
+    // console.log("invalidDestination", invalidDestination);
+
+    // if (invalidDestination) {
+    // } else {
+    //   setInvalidDestination(false);
+    // }
   };
 
   return (
@@ -79,13 +101,20 @@ const DestinationSearch = ({ destinations }) => {
             options={destinations}
             placeholder="Find a destination..."
             selected={singleSelections}
-            minLength={3}
+            // minLength={3}
+            minLength={1}
             value={this}
             // {...register("destination")}
           />
           {/* {errors.destination && ( */}
-          {invalidDestination && (
+          {/* {invalidDestination && (
             <div className={styles.invalid}>Please select a destination ✈️</div>
+          )} */}
+          {invalidDestination && (
+            // <div className={styles.invalid}>Please select a destination ✈️</div>
+            <span className="text-danger fs-6 ms-1">
+              Please select a destination
+            </span>
           )}
 
           {/* {invalidDestination && (

@@ -19,3 +19,9 @@ button,
 .btn-secondary {
   color: white;
 }
+
+@media screen and (max-width: 767px) {
+  #search-bar-submit {
+    align-self: flex-end;
+  }
+}

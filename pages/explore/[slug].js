@@ -9,7 +9,7 @@ import { Container } from "react-bootstrap";
 
 const url = `${BASE_URL}${DESTINATIONS_ENDPOINT}`;
 
-const Destination = ({ destination }) => {
+const Destination = ({ destination, destinations }) => {
   // const { slug } = destination;
   const resorts = destination.resorts;
   // console.log(resorts);
@@ -20,12 +20,12 @@ const Destination = ({ destination }) => {
   return (
     <Layout title={`Explore ${destination.title}`}>
       <Container className="explore-container">
-        <SearchBar />
+        <SearchBar destinations={destinations} />
         <FeaturedResorts
           resorts={resorts}
           heading={[
             <h1 className="text-center my-4" key={key++}>
-              Recommended in area
+              Recommended in {destination.title}
             </h1>,
           ]}
         />
@@ -62,13 +62,18 @@ export const getStaticPaths = async () => {
 };
 
 export const getStaticProps = async ({ params }) => {
-  const destinationUrl = `${url}?slug=${params.slug}`;
-  console.log(destinationUrl);
   let destination = null;
+  let destinations = [];
+
+  const destinationUrl = `${url}?slug=${params.slug}`;
+  const destinationsUrl = `${BASE_URL}${DESTINATIONS_ENDPOINT}`;
 
   try {
-    const res = await axios.get(destinationUrl);
-    destination = res.data[0];
+    const destinationRes = await axios.get(destinationUrl);
+    const destinationsRes = await axios.get(destinationsUrl);
+
+    destination = destinationRes.data[0];
+    destinations = destinationsRes.data;
   } catch (err) {
     console.log("destination fetch error: ", err);
   }
@@ -76,6 +81,7 @@ export const getStaticProps = async ({ params }) => {
   return {
     props: {
       destination,
+      destinations,
     },
   };
 };

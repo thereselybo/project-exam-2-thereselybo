@@ -1,14 +1,18 @@
 import axios from "axios";
 import Layout from "../../components/layout/PublicLayout/PublicLayout";
 import { useRouter } from "next/router";
-import { BASE_URL, RESORTS_ENDPOINT } from "../../constants/api";
+import {
+  BASE_URL,
+  DESTINATIONS_ENDPOINT,
+  RESORTS_ENDPOINT,
+} from "../../constants/api";
 import FeaturedResorts from "../../components/resorts/FeaturedResorts/FeaturedResorts";
 
 import { Container } from "react-bootstrap";
 import SearchBar from "./SearchBar/SearchBar";
 import Resorts from "./Resorts/Resorts";
 
-const Explore = ({ resorts }) => {
+const Explore = ({ resorts, destinations }) => {
   // console.log("resorts:", resorts);
   // const router = useRouter();
   // console.log(router.pathname);
@@ -17,7 +21,7 @@ const Explore = ({ resorts }) => {
   return (
     <Layout title="Explore">
       <Container className="explore-container">
-        <SearchBar />
+        <SearchBar destinations={destinations} />
         <FeaturedResorts
           resorts={resorts}
           heading={[
@@ -43,12 +47,16 @@ export default Explore;
 
 export const getStaticProps = async () => {
   let resorts = [];
+  let destinations = [];
 
-  const url = `${BASE_URL}${RESORTS_ENDPOINT}`;
+  const resortsUrl = `${BASE_URL}${RESORTS_ENDPOINT}`;
+  const destinationsUrl = `${BASE_URL}${DESTINATIONS_ENDPOINT}`;
 
   try {
-    const res = await axios.get(url);
-    resorts = res.data;
+    const resortsRes = await axios.get(resortsUrl);
+    const destinationsRes = await axios.get(destinationsUrl);
+    resorts = resortsRes.data;
+    destinations = destinationsRes.data;
   } catch (err) {
     console.log("resort fetch error:", err);
   }
@@ -56,6 +64,7 @@ export const getStaticProps = async () => {
   return {
     props: {
       resorts,
+      destinations,
     },
   };
 };
