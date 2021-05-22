@@ -1,4 +1,3 @@
-// import AuthContext, { AuthProvider } from "../../../context/AuthContext";
 import AuthContext from "../../../context/AuthContext";
 import { useContext, useEffect, useState } from "react";
 import { useRouter } from "next/router";

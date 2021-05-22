@@ -13,25 +13,13 @@ const DestinationSearch = ({ destinations }) => {
 
   const router = useRouter();
 
-  const {
-    register,
-    handleSubmit,
-    // formState: { errors },
-    // } = useForm(destinationSearchSchema);
-  } = useForm();
+  const { register, handleSubmit } = useForm();
 
   const onDestinationChange = (destination) => {
-    console.log(destination);
+    // console.log(destination);
     setSingleSelections(destination);
-    // const validatedDestination = validateDestinationField(
     const validatedDestination = validateDestination(destination, destinations);
-    console.log(validatedDestination);
-    // const destination = singleSelections[0];
-
-    // const validatedDestination = validateDestination(
-    //   destinations,
-    //   destination
-    // );
+    // console.log(validatedDestination);
 
     if (!validatedDestination) {
       setInvalidDestination(true);
@@ -46,46 +34,24 @@ const DestinationSearch = ({ destinations }) => {
   };
 
   const onSubmit = (formData) => {
-    // console.log(data);
     setInvalidDestination(false);
-    // console.log(validatedDestinationField);
-    // data.destination = validatedDestinationField;
+
     const destination = singleSelections[0];
     const validatedDestination = validateDestination(destinations, destination);
 
-    // setInvalidDestination(!validatedDestinationField);
-
-    console.log("validatedDestination", validatedDestination);
+    // console.log("validatedDestination", validatedDestination);
     formData.destination = validatedDestination;
-    // data.destination = singleSelections[0];
-    console.log(formData);
-
-    // if (!validatedDestinationField) {
-    //   setInvalidDestination(true);
-    //   console.log(invalidDestination);
-    // } else {
-    //   console.log("yay");
-    //   router.push(`/explore/${validatedDestination.slug}`);
-    // }
+    // console.log(formData);
 
     if (!validatedDestination) {
       setInvalidDestination(true);
-      console.log("invalid destination");
-      console.log(invalidDestination);
+      // console.log("invalid destination");
+      // console.log(invalidDestination);
     } else {
       setInvalidDestination(false);
-      console.log("valid destination, reroute blabla");
+      // console.log("valid destination, reroute blabla");
       router.push(`/explore/${validatedDestination.slug}`);
     }
-
-    // setInvalidDestination(!validatedDestination);
-
-    // console.log("invalidDestination", invalidDestination);
-
-    // if (invalidDestination) {
-    // } else {
-    //   setInvalidDestination(false);
-    // }
   };
 
   return (
@@ -93,7 +59,6 @@ const DestinationSearch = ({ destinations }) => {
       <Row>
         <Form.Group as={Col} md={8}>
           <Form.Label>Destination</Form.Label>
-          {/* <Form.Control /> */}
           <Typeahead
             id="destination-search"
             labelKey="title"
@@ -101,27 +66,14 @@ const DestinationSearch = ({ destinations }) => {
             options={destinations}
             placeholder="Find a destination..."
             selected={singleSelections}
-            // minLength={3}
             minLength={1}
             value={this}
-            // {...register("destination")}
           />
-          {/* {errors.destination && ( */}
-          {/* {invalidDestination && (
-            <div className={styles.invalid}>Please select a destination ✈️</div>
-          )} */}
           {invalidDestination && (
-            // <div className={styles.invalid}>Please select a destination ✈️</div>
             <span className="text-danger fs-6 ms-1">
               Please select a destination
             </span>
           )}
-
-          {/* {invalidDestination && (
-            <Form.Control.Feedback type="invalid">
-              "Please choose a destination"
-            </Form.Control.Feedback>
-          )} */}
         </Form.Group>
 
         <Form.Group as={Col} md={4}>

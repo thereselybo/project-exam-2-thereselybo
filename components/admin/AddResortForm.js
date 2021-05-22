@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { useRouter } from "next/router";
 import { yupResolver } from "@hookform/resolvers/yup";
 import useAxios from "../../hooks/useAxios";
 import { resortSchema } from "../../schema/resortSchema";
@@ -27,6 +28,7 @@ const AddResortForm = ({ facilities, destinations }) => {
     resolver: yupResolver(resortSchema),
   });
 
+  const router = useRouter();
   const http = useAxios();
   const url = `${BASE_URL}${RESORTS_ENDPOINT}`;
 
@@ -40,6 +42,9 @@ const AddResortForm = ({ facilities, destinations }) => {
       const res = await http.post(url, updatedResort);
       if (res.status === 200) {
         setAdded(true);
+        setTimeout(() => {
+          router.back();
+        }, 2000);
       }
     } catch (err) {
       setAddError(err.toString());
@@ -189,6 +194,8 @@ const AddResortForm = ({ facilities, destinations }) => {
 };
 
 export default AddResortForm;
+
+// WIP: facilities logic
 
 // <Form.Group as={Col} xs={12}>
 //   <Form.Label>Facilities</Form.Label>

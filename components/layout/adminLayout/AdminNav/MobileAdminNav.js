@@ -30,14 +30,12 @@ const MobileAdminNav = () => {
           <Nav className="mx-auto w-100 justify-content-between nav-bar pb-3">
             <Nav.Item className="mr-auto p-0">
               <Link href="/" passHref>
-                {/* <Navbar.Brand className="text-center"> */}
                 <Nav.Link className="text-center p-0">
                   <Col className="nav-icon">
                     <ArrowLeftShort />
                   </Col>
                   <Col className="nav-text">Main</Col>
                 </Nav.Link>
-                {/* </Navbar.Brand> */}
               </Link>
             </Nav.Item>
             <Nav.Item className="ml-auto nav-link p-0" onClick={handleLogout}>

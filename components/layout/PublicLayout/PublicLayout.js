@@ -4,7 +4,6 @@ import Navigation from "../navigation/Navigation";
 
 const Layout = ({ title, children }) => {
   return (
-    // <AuthProvider>
     <>
       <Head title={title} />
       <div className="public-layout">
@@ -12,7 +11,6 @@ const Layout = ({ title, children }) => {
         <div className="public-content-wrapper">{children}</div>
       </div>
     </>
-    /* </AuthProvider> */
   );
 };
 

@@ -1,14 +1,3 @@
-// import Layout from "../../../components/layout/AdminLayout/AdminLayout";
-
-//   return (
-//     <Layout title="Edit resort">
-//       <h1>Edit resort</h1>
-//     </Layout>
-//   );
-// };
-
-// export default Editresort;
-
 import axios from "axios";
 import Layout from "../../../components/layout/adminLayout/AdminLayout";
 import {
@@ -33,17 +22,6 @@ const EditResort = ({ resort, destinations, facilities }) => {
         destinations={destinations}
         facilities={facilities}
       />
-      {/* {({
-        // handleSubmit,
-        handleChange,
-        // handleBlur,
-        // values,
-        // touched,
-        // isValid,
-        // errors
-      }) => ( */}
-
-      {/* )} */}
     </Layout>
   );
 };

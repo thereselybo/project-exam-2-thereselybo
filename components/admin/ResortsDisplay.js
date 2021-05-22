@@ -16,40 +16,19 @@ const ResortsDisplay = ({ resorts }) => {
             Resort
           </Col>
           <Col lg={4}>Location</Col>
-          {/* <Col md={2}></Col> */}
         </Row>
       </Card.Header>
       <Card.Body>
         {resorts.length
           ? resorts.map((resort, i) => {
-              console.log(resort);
+              // console.log(resort);
               const resortDetails = getResortDetails(resort);
               return (
-                // <Row key={i}>
                 <Row
                   key={i}
                   className="justify-content-between align-items-center mb-3"
                 >
                   <Col xs={2} lg={1} className="pe-0">
-                    {/* <Col> */}
-                    {/* <Image
-                      // className="position-relative"
-                      src={resortDetails.image}
-                      alt={resortDetails.imageAlt}
-                      // layout="fill"
-                      width="80"
-                      height="80"
-                    /> */}
-                    {/* <SuperEllipse
-                      className="ratio ratio-1x1 facility-card mx-2"
-                      r1={0.03}
-                      r2={0.4}
-                      style={{
-                        width: "64px",
-                        height: "64px",
-                        background: { url: `${resortDetails.image}` },
-                      }}
-                    ></SuperEllipse> */}
                     <div
                       className="admin-layout-card-image"
                       style={{
@@ -72,20 +51,13 @@ const ResortsDisplay = ({ resorts }) => {
                         Edit
                       </Button>
                     </Link>
-                    {/* </Col> */}
-                    {/* <Col className="d-none d-lg-block d-flex align-items-end"> */}
                     <div className="ms-3 d-none d-lg-block">
                       <DeleteButton
                         id={resortDetails.id}
                         title={resortDetails.title}
-                        // size=""
                         content="Delete"
-                        // className="ms-auto"
                       />
                     </div>
-                    {/* <Button className="ms-auto" variant="danger">
-                      Delete
-                    </Button> */}
                   </Col>
                 </Row>
               );

@@ -31,39 +31,9 @@ const TravelGuides = ({ destinations, heading }) => {
               const destinationDetails = getDestinationDetails(destination);
               //   console.log(resortDetails);
               return (
-                // <Col key={key++}>
-                // <div key={i}>
                 <SwiperSlide key={i}>
-                  {/* <SwiperSlide> */}
                   <TravelGuideCard destinationDetails={destinationDetails} />
-                  {/* <SuperEllipse
-                    className="m-auto p-5 ratio ratio-1x1"
-                    r1={0.03}
-                    r2={0.4}
-                    style={{
-                      // width: "80%",
-                      // height: "100%",
-                      background: "hsla(26, 59%, 90%, 0.8)",
-                    }}
-                  >
-                    <Link href={`/explore/${destinationDetails.slug}`}>
-                      <Image
-                        src={destinationDetails.image}
-                        alt={destinationDetails.imageAlt}
-                        layout="fill"
-                        objectFit="cover"
-                        role="button"
-                      />
-                    </Link>
-                  </SuperEllipse>
-                  <Link href={`/explore/${destinationDetails.slug}`}>
-                    <h4 className="my-3 ms-2" role="button">
-                      {destinationDetails.title}
-                    </h4>
-                  </Link> */}
                 </SwiperSlide>
-                // </div>
-                // </Col>
               );
             })
           ) : (
@@ -84,26 +54,6 @@ const TravelGuides = ({ destinations, heading }) => {
             const destinationDetails = getDestinationDetails(destination);
             return (
               <Col key={i} xs={12} md={4} className="p-5">
-                {/* <Link href={`/explore/${destinationDetails.slug}`}>
-                  <SuperEllipse
-                    className="m-auto d-none d-md-block p-5 ratio ratio-1x1"
-                    r1={0.03}
-                    r2={0.4}
-                    style={{
-                      // width: "80%",
-                      // height: "100%",
-                      background: "hsla(26, 59%, 90%, 0.8)",
-                    }}
-                  >
-                    <Image
-                      src={destinationDetails.image}
-                      alt={destinationDetails.imageAlt}
-                      layout="fill"
-                      objectFit="cover"
-                    />
-                  </SuperEllipse>
-                  <h4 className="my-3">{destinationDetails.title}</h4>
-                </Link> */}
                 <TravelGuideCard destinationDetails={destinationDetails} />
               </Col>
             );

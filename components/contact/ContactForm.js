@@ -11,22 +11,6 @@ import { updateMessage } from "../../utils/updateMessage";
 
 import { Form, Row, Col, Button } from "react-bootstrap";
 
-// export const updateMessage = ({ message, allTopics }) => {
-//   console.log("hello");
-//   let updatedMessage = message;
-//   const messageTopic = message.message_topic;
-//   console.log(messageTopic);
-
-//   const updatedTopic = allTopics.filter(
-//     (topic) => topic.message_topic.title === messageTopic
-//   );
-
-//   updatedMessage.messageTopic = updatedTopic;
-//   console.log(updatedMessage);
-
-//   return updatedMessage;
-// };
-
 const ContactForm = ({ messageTopics }) => {
   const [submitting, setSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState(null);

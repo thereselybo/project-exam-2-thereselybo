@@ -91,68 +91,7 @@ const ResortBooking = ({ show, handleShow, handleClose, resortDetails }) => {
         resortDetails={resortDetails}
         bookingDetails={bookingDetails}
         handleClose={handleClose}
-        //   data={data}
       />
-
-      {/* <Modal show={show} onHide={handleClose}>
-        <Modal.Header>
-          <Modal.Title>{resortDetails.title}</Modal.Title>
-          <div className="close" onClick={handleClose}>
-            <X />
-          </div>
-        </Modal.Header>
-        <Modal.Body>
-          <Form>
-            <Row className="my-3">
-              <Form.Group as={Col} xs={6}>
-                <Form.Label>First name</Form.Label>
-                <Form.Control />
-              </Form.Group>
-
-              <Form.Group as={Col} xs={6}>
-                <Form.Label>Last name</Form.Label>
-                <Form.Control />
-              </Form.Group>
-
-              <Form.Group as={Col} xs={12}>
-                <Form.Label>Email address</Form.Label>
-                <Form.Control />
-              </Form.Group>
-
-              <Form.Group as={Col} xs={6}>
-                <Form.Label>Check in</Form.Label>
-                <Form.Control type="date" />
-              </Form.Group>
-
-              <Form.Group as={Col} xs={6}>
-                <Form.Label>Check out</Form.Label>
-                <Form.Control type="date" />
-              </Form.Group>
-
-              <Form.Group as={Col} xs={12}>
-                <Form.Label>Guests</Form.Label>
-                <Form.Control type="number" />
-              </Form.Group>
-
-              <Form.Group as={Col} xs={12}>
-                <Form.Label>Additional requests</Form.Label>
-                <Form.Control as="textarea" rows={3} />
-              </Form.Group>
-            </Row>
-
-            <Col className="d-flex justify-content-center">
-              <Button
-                variant="primary"
-                size="lg"
-                className="mx-auto mt-3 w-100"
-                onClick={handleClose}
-              >
-                Book
-              </Button>
-            </Col>
-          </Form>
-        </Modal.Body>
-      </Modal> */}
     </>
   );
 };

@@ -13,7 +13,6 @@ const MobileNav = () => {
   return (
     <Navbar fixed="bottom" className="d-md-none public-mobile-nav">
       <Container>
-        {/* <Nav fill className="mx-auto"> */}
         <Nav justify className="mx-auto w-100">
           <Nav.Item>
             <Link href="/" passHref>
@@ -65,15 +64,6 @@ const MobileNav = () => {
                 </Nav.Link>
               </Link>
             )}
-
-            {/* <Link href="/login" passHref>
-              <Nav.Link className="text-center">
-                <Col>
-                  <Person />
-                </Col>
-                <Col>{auth ? "Admin" : "Login"}</Col>
-              </Nav.Link>
-            </Link> */}
           </Nav.Item>
         </Nav>
       </Container>

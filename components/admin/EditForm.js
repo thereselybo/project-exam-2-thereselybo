@@ -245,8 +245,9 @@ const EditForm = ({ resort, destinations, facilities }) => {
 
 export default EditForm;
 
-{
-  /* <Form.Group as={Col} xs={12}>
+// WIP: facilities logic
+
+/* <Form.Group as={Col} xs={12}>
   <Form.Label>Facilities</Form.Label>
   <Row>
     {facilities.map((facility, i) => {
@@ -310,4 +311,3 @@ export default EditForm;
     })}
   </Row>
 </Form.Group> */
-}

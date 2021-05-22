@@ -15,7 +15,6 @@ import { Search } from "react-bootstrap-icons";
 
 const Header = ({ destinations }) => {
   return (
-    // <header className={styles.heroImage}>
     <header className="header home-header">
       <Image
         src="/images/hero.svg"
@@ -23,9 +22,6 @@ const Header = ({ destinations }) => {
         layout="fill"
         objectFit="cover"
         className="hero-image"
-        // layout="responsive"
-        // height="700"
-        // width="1200"
       />
       <Container className="h-100 hero-content">
         <Col md={6} className="h-100 d-flex align-items-center ms-auto">

@@ -16,7 +16,6 @@ const Login = () => {
           <Container className="left-content">
             <h1 className="mt-5">Login</h1>
             <LoginForm />
-            {/* <LoginFormTest /> */}
           </Container>
         </Col>
 

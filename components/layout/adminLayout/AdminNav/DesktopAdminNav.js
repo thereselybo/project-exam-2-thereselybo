@@ -24,7 +24,6 @@ const DesktopAdminNav = () => {
 
   return (
     <Navbar className="d-none d-md-block min-vh-100 admin-desktop-nav position-fixed">
-      {/* <Container className={`h-100 position-fixed ${styles.maxContentWidth}`}> */}
       <Container className="h-100 position-fixed nav-container">
         <Nav className="flex-column align-items-left h-100">
           <Nav.Item className="mb-auto mt-2">
