@@ -2,32 +2,27 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/router";
 import { validateDestination } from "../../utils/validateDestination";
-import { destinationSearchSchema } from "../../schema/destinationSearchSchema";
 
-import { Form, Row, Col, Button } from "react-bootstrap";
+import { Form, Col, Button, InputGroup } from "react-bootstrap";
 import { Typeahead } from "react-bootstrap-typeahead";
+import { Search } from "react-bootstrap-icons";
 
-const DestinationSearch = ({ destinations }) => {
+const DestinationSearchMobile = ({ destinations }) => {
   const [singleSelections, setSingleSelections] = useState([]);
   const [invalidDestination, setInvalidDestination] = useState(false);
 
   const router = useRouter();
 
-  const { register, handleSubmit } = useForm();
+  const { handleSubmit } = useForm();
 
   const onDestinationChange = (destination) => {
-    // console.log(destination);
     setSingleSelections(destination);
     const validatedDestination = validateDestination(destination, destinations);
-    // console.log(validatedDestination);
 
     if (!validatedDestination) {
       setInvalidDestination(true);
-      // console.log("invalid destination");
-      // console.log(invalidDestination);
     } else {
       setInvalidDestination(false);
-      // console.log("valid destination, proceed to next field blabla");
     }
 
     setInvalidDestination(validatedDestination);
@@ -39,17 +34,12 @@ const DestinationSearch = ({ destinations }) => {
     const destination = singleSelections[0];
     const validatedDestination = validateDestination(destinations, destination);
 
-    // console.log("validatedDestination", validatedDestination);
     formData.destination = validatedDestination;
-    // console.log(formData);
 
     if (!validatedDestination) {
       setInvalidDestination(true);
-      // console.log("invalid destination");
-      // console.log(invalidDestination);
     } else {
       setInvalidDestination(false);
-      // console.log("valid destination, reroute blabla");
       router.push(`/explore/${validatedDestination.slug}`);
     }
   };
@@ -60,13 +50,13 @@ const DestinationSearch = ({ destinations }) => {
       onSubmit={handleSubmit(onSubmit)}
       className="mobile-destination-search"
     >
-      <InputGroup className="mb-3 d-flex d-md-none">
+      <InputGroup className="mb-3 d-flex d-md-none w-100">
         <Typeahead
-          id="destination-search"
+          className="destination-search-input destination-typeahead d-block"
           labelKey="title"
           onChange={onDestinationChange}
           options={destinations}
-          placeholder="Where are you going"
+          placeholder="Where are you going?"
           selected={singleSelections}
           minLength={1}
           value={this}
@@ -76,57 +66,14 @@ const DestinationSearch = ({ destinations }) => {
             <Search />
           </Button>
         </InputGroup.Append>
-      </InputGroup>
-
-      {/* <Row>
-        <Form.Group as={Col} md={8}>
-          <Form.Label>Destination</Form.Label>
-          <Typeahead
-            id="destination-search"
-            labelKey="title"
-            onChange={onDestinationChange}
-            options={destinations}
-            placeholder="Find a destination..."
-            selected={singleSelections}
-            minLength={1}
-            value={this}
-          />
+        <Col xs={12}>
           {invalidDestination && (
-            <span className="text-danger fs-6 ms-1">
-              Please select a destination
-            </span>
+            <p className="text-danger fs-6 m-1">Please select a destination</p>
           )}
-        </Form.Group>
-
-        <Form.Group as={Col} md={4}>
-          <Form.Label>Guests</Form.Label>
-          <Form.Control type="number" {...register("guests")} />
-        </Form.Group>
-      </Row> */}
-
-      {/* <Col className="d-flex justify-content-center">
-        <Button
-          variant="primary"
-          size="lg"
-          className="mx-auto mt-3"
-          type="submit"
-        >
-          Search
-        </Button>
-      </Col> */}
+        </Col>
+      </InputGroup>
     </Form>
   );
 };
 
-export default DestinationSearch;
-
-<Form className="mobile-destination-search">
-  <InputGroup className="mb-3 d-flex d-md-none">
-    <FormControl placeholder="Where are you going?" aria-label="Destination" />
-    <InputGroup.Append>
-      <Button variant="primary">
-        <Search />
-      </Button>
-    </InputGroup.Append>
-  </InputGroup>
-</Form>;
+export default DestinationSearchMobile;

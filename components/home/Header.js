@@ -12,6 +12,7 @@ import {
   FormControl,
 } from "react-bootstrap";
 import { Search } from "react-bootstrap-icons";
+import DestinationSearchMobile from "./DestinationSearchMobile";
 
 const Header = ({ destinations }) => {
   return (
@@ -40,7 +41,8 @@ const Header = ({ destinations }) => {
           </SuperEllipse>
         </Col>
         <Col>
-          <Form className="mobile-destination-search">
+          <DestinationSearchMobile destinations={destinations} />
+          {/* <Form className="mobile-destination-search">
             <InputGroup className="mb-3 d-flex d-md-none">
               <FormControl
                 placeholder="Where are you going?"
@@ -52,7 +54,7 @@ const Header = ({ destinations }) => {
                 </Button>
               </InputGroup.Append>
             </InputGroup>
-          </Form>
+          </Form> */}
         </Col>
       </Container>
     </header>

@@ -59,7 +59,7 @@ const SearchBar = ({ destinations }) => {
             <Form.Group as={Col} xs={8} lg={4}>
               <Form.Label className="d-md-none">Destination</Form.Label>
               <Typeahead
-                id="destination-search"
+                class="destination-search-input"
                 labelKey="title"
                 onChange={onDestinationChange}
                 options={destinations}

@@ -50,7 +50,18 @@
   }
 }
 
-#destination-search {
+.mobile-destination-search {
+  .destination-search-input {
+    position: relative;
+    flex: 1 1 auto;
+    width: 1%;
+    min-width: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+}
+
+.destination-search-input {
   border: 0;
   border-radius: $border-radius-medium;
   background: hsla(0, 0%, 100%, 90%);

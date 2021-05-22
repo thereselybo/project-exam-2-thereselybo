@@ -60,7 +60,7 @@ const DestinationSearch = ({ destinations }) => {
         <Form.Group as={Col} md={8}>
           <Form.Label>Destination</Form.Label>
           <Typeahead
-            id="destination-search"
+            className="destination-search-input"
             labelKey="title"
             onChange={onDestinationChange}
             options={destinations}
