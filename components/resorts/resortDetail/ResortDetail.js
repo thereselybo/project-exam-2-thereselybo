@@ -92,7 +92,6 @@ const ResortDetail = ({ resort, reviews, facilities }) => {
                 <h2 className="mt-4 mb-3">Facilities</h2>
                 <Row className="d-flex flex-row flex-nowrap facilities">
                   {facilities.map((facility, i) => {
-                    console.log(facility);
                     return (
                       // <Col xs={2}>
                       <SuperEllipse
