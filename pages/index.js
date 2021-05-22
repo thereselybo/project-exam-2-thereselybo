@@ -11,7 +11,7 @@ import Layout from "../components/layout/publicLayout/PublicLayout";
 import Header from "../components/home/Header";
 import FeaturedResorts from "../components/resorts/featuredResorts/FeaturedResorts";
 import { Container, Col, Form, Row, Button } from "react-bootstrap";
-import TravelGuides from "../components/destinations/TravelGuides/TravelGuides";
+import TravelGuides from "../components/destinations/travelGuides/TravelGuides";
 import PopularDestinations from "../components/destinations/PopularDestinations";
 import Footer from "../components/layout/publicLayout/Footer";
 
