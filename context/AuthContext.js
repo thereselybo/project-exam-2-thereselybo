@@ -3,11 +3,11 @@ import useLocalStorage from "../hooks/useLocalStorage";
 
 const AuthContext = createContext([null, () => {}]);
 
-export const AuthProvider = (props) => {
+export const AuthProvider = ({ children }) => {
   const [auth, setAuth] = useLocalStorage("jwt", null);
   return (
     <AuthContext.Provider value={[auth, setAuth]}>
-      {props.children}
+      {children}
     </AuthContext.Provider>
   );
 };

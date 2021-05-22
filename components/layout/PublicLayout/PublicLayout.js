@@ -4,14 +4,15 @@ import Navigation from "../navigation/Navigation";
 
 const Layout = ({ title, children }) => {
   return (
-    <AuthProvider>
+    // <AuthProvider>
+    <>
       <Head title={title} />
       <div className="public-layout">
         <Navigation />
-        {/* <div className={styles.contentWrapper}>{children}</div> */}
         <div className="public-content-wrapper">{children}</div>
       </div>
-    </AuthProvider>
+    </>
+    /* </AuthProvider> */
   );
 };
 

@@ -14,11 +14,8 @@ const DesktopNav = () => {
   console.log("auth", auth);
 
   return (
-    // <Navbar className="d-none d-md-block">
-    // <div className={`position-fixed start-0 end-0 top-0 ${styles.navWrapper}`}>
     <div className={`position-fixed start-0 end-0 top-0 nav-wrapper`}>
       <Navbar className="d-none d-md-flex align-items-center px-4 bg-white public-desktop-nav">
-        {/* <Container> */}
         <Link href="/" passHref>
           <Navbar.Brand className="pb-0">
             <Image src="/images/holidaze-logo.svg" height="60" width="112" />
@@ -53,13 +50,7 @@ const DesktopNav = () => {
               <Button variant="outline-primary">Login</Button>
             </Link>
           )}
-          {/* // <Link href="/login" passHref>
-          //   <Button variant="outline-primary">
-          //     {auth ? "Admin" : "Login"}
-          //   </Button>
-          // </Link> */}
         </Nav.Item>
-        {/* </Container> */}
       </Navbar>
     </div>
   );
