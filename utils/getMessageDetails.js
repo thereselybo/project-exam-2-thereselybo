@@ -9,7 +9,7 @@ export const getMessageDetails = (message) => {
     message.message.length > 30
       ? `${message.message.substring(0, 30)}...`
       : message.message;
-  console.log(shortMessage);
+  // console.log(shortMessage);
 
   const messageDetails = {
     guest: message.first_name,

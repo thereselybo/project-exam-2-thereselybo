@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
+import useAxios from "../../hooks/useAxios";
 import { resortSchema } from "../../schema/resortSchema";
 import { BASE_URL, RESORTS_ENDPOINT } from "../../constants/api";
 import { updateResort } from "../../utils/updateResort";
@@ -34,6 +35,7 @@ const EditForm = ({ resort, destinations, facilities }) => {
   });
 
   // const featured = resortDetails.featured;
+  const http = useAxios();
   const url = `${BASE_URL}${RESORTS_ENDPOINT}/${resortDetails.id}`;
   // console.log(resortDetails);
 
@@ -45,7 +47,7 @@ const EditForm = ({ resort, destinations, facilities }) => {
     // console.log(updatedResort);
 
     try {
-      const res = await axios.put(url, updatedResort);
+      const res = await http.put(url, updatedResort);
       console.log(res);
       if (res.status === 200) {
         setEdited(true);

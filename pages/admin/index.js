@@ -1,25 +1,42 @@
 import axios from "axios";
-import { useContext, useEffect } from "react";
-import AuthContext from "../../context/AuthContext";
+
+import { useState, useContext, useEffect } from "react";
 import Link from "next/link";
-import Layout from "../../components/layout/adminLayout/AdminLayout";
+import AuthContext from "../../context/AuthContext";
+import useAxios from "../../hooks/useAxios";
 import { BASE_URL, RESORTS_ENDPOINT } from "../../constants/api";
 import ResortsDisplay from "../../components/admin/ResortsDisplay";
 
+import Layout from "../../components/layout/adminLayout/AdminLayout";
 import { Button, Card, Col, Row } from "react-bootstrap";
+import LoadingSpinner from "../../components/misc/LoadingSpinner";
+import Message from "../../components/misc/Message";
 
-const Admin = ({ resorts }) => {
-  // const [auth] = useContext(AuthContext);
-  // console.log("auth", auth);
-  // // const router = useRouter();
+// const Admin = ({ resorts }) => {
+const Admin = () => {
+  const [resorts, setResorts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-  // useEffect(() => {
-  //   console.log("auth", auth);
-  //   if (!auth) {
-  //     // router.push("/");
-  //   }
-  // }, []);
-  // // console.log(resorts);
+  const http = useAxios();
+  const url = `${BASE_URL}${RESORTS_ENDPOINT}`;
+
+  useEffect(() => {
+    const getResorts = async () => {
+      try {
+        // const res = await axios.get(url);
+        const res = await http.get(url);
+        if (res.status === 200) {
+          setResorts(res.data);
+        }
+      } catch (err) {
+        setError(err.toString());
+      } finally {
+        setLoading(false);
+      }
+    };
+    getResorts();
+  }, []);
 
   return (
     <Layout title="Admin">
@@ -31,29 +48,33 @@ const Admin = ({ resorts }) => {
           </Button>
         </Link>
       </div>
-
-      <ResortsDisplay resorts={resorts} />
+      {error && (
+        <Message className="my-2 p-2" variant={danger} message={error} />
+      )}
+      {loading ? <LoadingSpinner /> : <ResortsDisplay resorts={resorts} />}
     </Layout>
   );
 };
 
 export default Admin;
 
-export const getStaticProps = async () => {
-  let resorts = [];
+// export const getStaticProps = async () => {
+//   let resorts = [];
 
-  const url = `${BASE_URL}${RESORTS_ENDPOINT}`;
+//   // const http = useAxios();
+//   const url = `${BASE_URL}${RESORTS_ENDPOINT}`;
 
-  try {
-    const res = await axios.get(url);
-    resorts = res.data;
-  } catch (err) {
-    console.log("resort fetch error:", err);
-  }
+//   try {
+//     const res = await axios.get(url);
+//     // const res = await http.get(url);
+//     resorts = res.data;
+//   } catch (err) {
+//     console.log("resort fetch error:", err);
+//   }
 
-  return {
-    props: {
-      resorts,
-    },
-  };
-};
+//   return {
+//     props: {
+//       resorts,
+//     },
+//   };
+// };

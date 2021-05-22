@@ -5,7 +5,7 @@ import {
 import { imageCheck } from "./imageCheck";
 
 export const getBookingDetails = (booking) => {
-  console.log(booking);
+  // console.log(booking);
   const image = imageCheck(
     booking.resort,
     resortImgAltPlaceholder,

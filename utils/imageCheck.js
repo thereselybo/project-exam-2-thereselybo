@@ -6,7 +6,7 @@ export const imageCheck = (resort, imgPlaceholder, altPlaceholder) => {
   // console.log(resort);
   const imgUrl = resort.image_url;
   const imgObject = resort.image;
-  let fallbackImage;
+  // let fallbackImage;
   let resortImg = imgPlaceholder;
   let resortImgAlt = altPlaceholder;
 
@@ -16,11 +16,11 @@ export const imageCheck = (resort, imgPlaceholder, altPlaceholder) => {
 
   if (imgUrl) {
     resortImg = imgUrl;
-    resortImgAlt = `Resort image of ${resort.title}`;
+    resortImgAlt = `Image of ${resort.title}`;
   } else if (imgObject.length) {
     // if (fallbackImage) {
     resortImg = `${BASE_URL}${resort.image[0].formats.medium.url}`;
-    resortImgAlt = `Resort image of ${resort.title}`;
+    resortImgAlt = `Image of ${resort.title}`;
     // }
   }
 

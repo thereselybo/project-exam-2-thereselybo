@@ -13,20 +13,16 @@ const Layout = ({ title, children }) => {
   const [auth] = useContext(AuthContext);
   const [loggedIn, setLoggedIn] = useState(false);
   const router = useRouter();
-  console.log(auth);
+  // console.log(auth);
 
   useEffect(() => {
-    console.log("authorized", auth);
+    // console.log("authorized", auth);
     if (auth) {
       setLoggedIn(true);
     } else {
       setLoggedIn(false);
       router.push("/login");
     }
-    // if (!auth) {
-    //   console.log("not authorized", auth);
-    //   router.push("/");
-    // }
   }, []);
 
   return (

@@ -1,7 +1,8 @@
 import axios from "axios";
 import { useState } from "react";
-import { useForm, Controller } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
+import useAxios from "../../hooks/useAxios";
 import { resortSchema } from "../../schema/resortSchema";
 import { BASE_URL, RESORTS_ENDPOINT } from "../../constants/api";
 import { updateResort } from "../../utils/updateResort";
@@ -26,6 +27,7 @@ const AddResortForm = ({ facilities, destinations }) => {
     resolver: yupResolver(resortSchema),
   });
 
+  const http = useAxios();
   const url = `${BASE_URL}${RESORTS_ENDPOINT}`;
 
   const onSubmit = async (data) => {
@@ -35,7 +37,7 @@ const AddResortForm = ({ facilities, destinations }) => {
     const updatedResort = updateResort(data, destinations, featured);
 
     try {
-      const res = await axios.post(url, updatedResort);
+      const res = await http.post(url, updatedResort);
       if (res.status === 200) {
         setAdded(true);
       }

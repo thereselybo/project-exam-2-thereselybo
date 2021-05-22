@@ -1,85 +1,69 @@
 import axios from "axios";
+import { useState, useEffect } from "react";
+import useAxios from "../../../hooks/useAxios";
+import MessageDisplay from "../../../components/admin/MessageDisplay";
 
 import Layout from "../../../components/layout/adminLayout/AdminLayout";
 import { BASE_URL, MESSAGES_ENDPOINT } from "../../../constants/api";
+import LoadingSpinner from "../../../components/misc/LoadingSpinner";
+import Message from "../../../components/misc/Message";
 
-import MessageDisplay from "../../../components/admin/MessageDisplay";
+// const Messages = ({ messages }) => {
+const Messages = () => {
+  const [messages, setMessages] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-// const Bookings = ({ bookings }) => {
-const Messages = ({ messages }) => {
+  const http = useAxios();
+  const url = `${BASE_URL}${MESSAGES_ENDPOINT}`;
+
+  useEffect(() => {
+    const getMessages = async () => {
+      try {
+        // const res = await axios.get(url);
+        const res = await http.get(url);
+        if (res.status === 200) {
+          setMessages(res.data);
+        }
+      } catch (err) {
+        setError(err.toString());
+      } finally {
+        setLoading(false);
+      }
+    };
+    getMessages();
+  }, []);
+
   return (
     <Layout title="Messages">
       <h1 className="mt-5 mb-4">Messages</h1>
-      <MessageDisplay messages={messages} />
+      {error && (
+        <Message className="my-2 p-2" variant={danger} message={error} />
+      )}
+      {loading ? <LoadingSpinner /> : <MessageDisplay messages={messages} />}
     </Layout>
   );
 };
 
 export default Messages;
 
-export const getStaticProps = async () => {
-  let messages = [];
+// export const getStaticProps = async () => {
+//   let messages = [];
 
-  const url = `${BASE_URL}${MESSAGES_ENDPOINT}`;
+//   // const http = useAxios()
+//   const url = `${BASE_URL}${MESSAGES_ENDPOINT}`;
 
-  try {
-    const res = await axios.get(url);
-    messages = res.data;
-  } catch (err) {
-    console.log("messages fetch error:", err);
-  }
+//   try {
+//     // const res = await http.get(url);
+//     const res = await axios.get(url);
+//     messages = res.data;
+//   } catch (err) {
+//     console.log("messages fetch error:", err);
+//   }
 
-  return {
-    props: {
-      messages,
-    },
-  };
-};
-
-// const something = () => {
-//   const bookingDetails = getBookingDetails(booking);
-//   return (
-//     <Row key={i} className="justify-content-between align-items-center">
-//       <Col xs={2} md={1} className="pe-0">
-//         {/* <Col> */}
-//         <Image
-//           // className="position-relative"
-//           src={bookingDetails.image}
-//           alt={bookingDetails.imageAlt}
-//           // layout="fill"
-//           width="80"
-//           height="80"
-//         />
-//       </Col>
-//       <Col xs={7} className="d-flex d-md-none flex-column">
-//         <Col>{bookingDetails.resort}</Col>
-//         <Col>
-//           {bookingDetails.check_in}-{bookingDetails.check_out}
-//         </Col>
-//       </Col>
-//       <Col className="d-none d-md-block" md={3}>
-//         {bookingDetails.resort}
-//       </Col>
-//       <Col className="d-none d-md-block" md={2}>
-//         {bookingDetails.guest}
-//       </Col>
-//       <Col className="d-none d-md-block" md={2}>
-//         {bookingDetails.check_in}
-//       </Col>
-//       <Col className="d-none d-md-block" md={2}>
-//         {bookingDetails.check_out}
-//       </Col>
-//       <Col className="d-flex align-items-end">
-//         <Button
-//           className="ms-auto"
-//           variant="primary"
-//           onClick={() => {
-//             handleShow(bookingDetails);
-//           }}
-//         >
-//           Details
-//         </Button>
-//       </Col>
-//     </Row>
-//   );
+//   return {
+//     props: {
+//       messages,
+//     },
+//   };
 // };

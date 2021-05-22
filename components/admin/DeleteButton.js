@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { useRouter } from "next/router";
+import useAxios from "../../hooks/useAxios";
 import { BASE_URL, RESORTS_ENDPOINT } from "../../constants/api";
 
 import { Button, Modal } from "react-bootstrap";
@@ -14,6 +15,7 @@ const DeleteButton = ({ id, title, size, editing, content }) => {
   const [deleted, setDeleted] = useState(false);
 
   const router = useRouter();
+  const http = useAxios();
   const url = `${BASE_URL}${RESORTS_ENDPOINT}/${id}`;
 
   const handleClose = () => setShow(false);
@@ -25,7 +27,7 @@ const DeleteButton = ({ id, title, size, editing, content }) => {
     setDeleteError(null);
 
     try {
-      const res = await axios.delete(url);
+      const res = await http.delete(url);
       if (res.status === 200) {
         setDeleted(true);
         setTimeout(() => {
