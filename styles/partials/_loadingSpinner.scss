@@ -1,0 +1,12 @@
+@media screen and (max-width: 767px) {
+  .loading-spinner-wrapper {
+    position: absolute;
+    top: 0;
+  }
+}
+
+.spinner-border {
+  width: 4rem;
+  height: 4rem;
+  border-width: 0.5rem;
+}

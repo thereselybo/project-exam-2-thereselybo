@@ -2,10 +2,13 @@ import { Spinner } from "react-bootstrap";
 
 const LoadingSpinner = () => {
   return (
-    <div className="d-flex justify-content-center">
-      <Spinner animation="border" role="status">
-        <span className="sr-only">Loading...</span>
-      </Spinner>
+    <div className="loading-spinner-wrapper d-flex align-items-center w-100 h-100">
+      <Spinner
+        animation="border"
+        role="status"
+        variant="primary"
+        className="mx-auto"
+      ></Spinner>
     </div>
   );
 };
