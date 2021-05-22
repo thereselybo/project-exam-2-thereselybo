@@ -124,7 +124,7 @@ const AddResortForm = ({ facilities, destinations }) => {
           <Form.Label>Description</Form.Label>
           <Form.Control
             as="textarea"
-            rows={3}
+            rows={5}
             placeholder="Enter a description"
             {...register("description")}
             disabled={adding}

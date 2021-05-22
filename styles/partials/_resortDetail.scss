@@ -64,6 +64,10 @@
   .facilities {
     overflow-x: auto;
     overflow-y: hidden;
+    &::-webkit-scrollbar {
+      height: 0;
+      // visibility: hidden;
+    }
 
     .facility-card {
       flex: 0 0 auto;

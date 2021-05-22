@@ -1,8 +1,6 @@
 // import AuthContext, { AuthProvider } from "../../../context/AuthContext";
 import AuthContext from "../../../context/AuthContext";
-import { AuthProvider } from "../../../context/AuthContext";
 import { useContext, useEffect, useState } from "react";
-// import AuthContext from "../../../context/AuthContext";
 import { useRouter } from "next/router";
 
 import Head from "../Head";
@@ -23,7 +21,7 @@ const Layout = ({ title, children }) => {
       setLoggedIn(true);
     } else {
       setLoggedIn(false);
-      router.push("/");
+      router.push("/login");
     }
     // if (!auth) {
     //   console.log("not authorized", auth);
@@ -32,24 +30,27 @@ const Layout = ({ title, children }) => {
   }, []);
 
   return (
-    // <AuthProvider>
     <>
       <Head title={title} />
       <Row className="admin-wrapper">
-        {/* <Col xs={12} md={1}> */}
-        {/* <div className={styles.sideNav}> */}
-        <div className="admin-side-nav">{loggedIn && <AdminNav />}</div>
-        {/* <Col xs={12} md={11}> */}
-        <Col>
-          {loggedIn ? (
-            <Container className="admin-content-wrapper">{children}</Container>
-          ) : (
+        {loggedIn ? (
+          <>
+            <div className="admin-side-nav">
+              <AdminNav />
+            </div>
+            <Col>
+              <Container className="admin-content-wrapper">
+                {children}
+              </Container>
+            </Col>
+          </>
+        ) : (
+          <Col>
             <LoadingSpinner />
-          )}
-        </Col>
+          </Col>
+        )}
       </Row>
     </>
-    // </AuthProvider>
   );
 };
 
