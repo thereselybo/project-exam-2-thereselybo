@@ -53,6 +53,7 @@ const DestinationSearchMobile = ({ destinations }) => {
       <InputGroup className="mb-3 d-flex d-md-none w-100">
         <Typeahead
           className="destination-search-input destination-typeahead d-block"
+          id="destination-search"
           labelKey="title"
           onChange={onDestinationChange}
           options={destinations}

@@ -39,17 +39,12 @@ const DestinationSearch = ({ destinations }) => {
     const destination = singleSelections[0];
     const validatedDestination = validateDestination(destinations, destination);
 
-    // console.log("validatedDestination", validatedDestination);
     formData.destination = validatedDestination;
-    // console.log(formData);
 
     if (!validatedDestination) {
       setInvalidDestination(true);
-      // console.log("invalid destination");
-      // console.log(invalidDestination);
     } else {
       setInvalidDestination(false);
-      // console.log("valid destination, reroute blabla");
       router.push(`/explore/${validatedDestination.slug}`);
     }
   };
@@ -60,6 +55,7 @@ const DestinationSearch = ({ destinations }) => {
         <Form.Group as={Col} md={8}>
           <Form.Label>Destination</Form.Label>
           <Typeahead
+            id="destination-search"
             className="destination-search-input"
             labelKey="title"
             onChange={onDestinationChange}

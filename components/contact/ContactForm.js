@@ -159,7 +159,7 @@ const ContactForm = ({ messageTopics }) => {
         size="lg"
         disabled={submitting}
         type="submit"
-        className="px-4"
+        className="px-4 mb-5"
       >
         {submitting ? "Sending message.." : "Send message"}
       </Button>

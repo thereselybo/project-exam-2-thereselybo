@@ -13,6 +13,8 @@ const SearchBar = ({ destinations }) => {
   const [singleSelections, setSingleSelections] = useState([]);
   const [invalidDestination, setInvalidDestination] = useState(false);
 
+  const router = useRouter();
+
   const { register, handleSubmit } = useForm();
 
   const onDestinationChange = (destination) => {
@@ -36,17 +38,12 @@ const SearchBar = ({ destinations }) => {
     const destination = singleSelections[0];
     const validatedDestination = validateDestination(destinations, destination);
 
-    // console.log("validatedDestination", validatedDestination);
     formData.destination = validatedDestination;
-    // console.log(formData);
 
     if (!validatedDestination) {
       setInvalidDestination(true);
-      // console.log("invalid destination");
-      // console.log(invalidDestination);
     } else {
       setInvalidDestination(false);
-      // console.log("valid destination, reroute blabla");
       router.push(`/explore/${validatedDestination.slug}`);
     }
   };
@@ -59,6 +56,7 @@ const SearchBar = ({ destinations }) => {
             <Form.Group as={Col} xs={8} lg={4}>
               <Form.Label className="d-md-none">Destination</Form.Label>
               <Typeahead
+                id="destination-search"
                 class="destination-search-input"
                 labelKey="title"
                 onChange={onDestinationChange}

@@ -49,7 +49,7 @@ const FeaturedResorts = ({ resorts, heading }) => {
     return featuredResorts.length ? (
       <section>
         {heading}
-        <Row className="gx-5">
+        <Row className="g-5">
           {featuredResorts.map((resort, i) => {
             const resortDetails = getResortDetails(resort);
             return (
