@@ -17,7 +17,6 @@ import { BASE_URL } from "../../../constants/api";
 import { getResortDetails } from "../../../utils/getResortDetails";
 import { getReviewDetails } from "../../../utils/getReviewDetails";
 
-import styles from "./ResortDetail.module.scss";
 import { ArrowLeftCircleFill, StarFill, X } from "react-bootstrap-icons";
 import ResortBooking from "../../../pages/resort/ResortBooking/ResortBooking";
 
@@ -93,7 +92,6 @@ const ResortDetail = ({ resort, reviews, facilities }) => {
                 <h2 className="mt-4 mb-3">Facilities</h2>
                 <Row className="d-flex flex-row flex-nowrap facilities">
                   {facilities.map((facility, i) => {
-                    console.log(facility);
                     return (
                       // <Col xs={2}>
                       <SuperEllipse

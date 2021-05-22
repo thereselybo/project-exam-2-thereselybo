@@ -78,10 +78,10 @@ const ResortDetail = ({ resort, reviews, facilities }) => {
         image={resortDetails.image}
         imageAlt={resortDetails.imageAlt}
       > */}
-      <Row className="d-flex flex-md-row justify-content-between horizontal-layout ">
+      <Row className="d-flex flex-md-row justify-content-between horizontal-layout">
         {/* left hand content */}
         <Col md={6}>
-          <Container className="mb-5">
+          <Container className="mb-5 left-content">
             <h1 className="mt-4 mb-3">{resortDetails.title}</h1>
             <Card className="p-2 fw-light mb-3">
               <Card.Body>{resortDetails.description}</Card.Body>
@@ -108,7 +108,8 @@ const ResortDetail = ({ resort, reviews, facilities }) => {
                       >
                         <Card className="px-1 py-2 my-1">
                           <Card.Img
-                            src={`${BASE_URL}${facility.icon.url}`}
+                            // src={`${BASE_URL}${facility.icon.url}`}
+                            src={`${facility.icon_url}`}
                             className="facility-icon"
                           />
                           <Card.Body className="p-0 mt-1">

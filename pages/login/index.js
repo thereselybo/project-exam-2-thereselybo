@@ -13,7 +13,7 @@ const Login = () => {
       <Row className="d-flex flex-md-row justify-content-between horizontal-layout">
         {/* left side content */}
         <Col md={6}>
-          <Container>
+          <Container className="left-content">
             <h1 className="mt-5">Login</h1>
             <LoginForm />
             {/* <LoginFormTest /> */}

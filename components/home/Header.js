@@ -11,8 +11,6 @@ import {
   InputGroup,
   FormControl,
 } from "react-bootstrap";
-
-import styles from "./index.module.scss";
 import { Search } from "react-bootstrap-icons";
 
 const Header = ({ destinations }) => {

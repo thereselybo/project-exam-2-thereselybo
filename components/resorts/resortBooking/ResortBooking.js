@@ -19,19 +19,20 @@ const ResortBooking = ({ show, handleShow, handleClose, resortDetails }) => {
 
   return (
     <>
-      <Col className="h-100 d-flex align-items-center ms-auto resort-booking">
+      <Col className="h-100 d-flex align-items-center ms-auto resort-booking position-relative">
         <SuperEllipse
-          className="my-auto d-none d-md-block p-4 position-absolute "
+          className="my-auto d-none d-md-block p-4 position-absolute start-50 translate-middle"
           r1={0.03}
           r2={0.4}
           style={{
             width: "80%",
+            maxWidth: "700px",
             // height: "55%",
             height: "260px",
             background: "hsla(1, 100%, 100%, 0.8)",
-            transform: "translateX(10%)",
             // bottom: "40px",
-            bottom: "10%",
+            top: "80%",
+            // bottom: "10%",
           }}
         >
           <div className="position-relative">

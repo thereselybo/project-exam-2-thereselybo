@@ -4,11 +4,11 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import axios from "axios";
 
-import { loginSchema } from "../../../schema/loginSchema";
-import AuthContext from "../../../context/AuthContext";
-import FormError from "../../../components/misc/FormError";
-import Message from "../../../components/misc/Message";
-import { BASE_URL, AUTH_ENDPOINT } from "../../../constants/api";
+import { loginSchema } from "../../schema/loginSchema";
+import AuthContext from "../../context/AuthContext";
+import FormError from "../misc/FormError";
+import Message from "../misc/Message";
+import { BASE_URL, AUTH_ENDPOINT } from "../../constants/api";
 
 import { Form, Row, Col, Button } from "react-bootstrap";
 
