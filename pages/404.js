@@ -1,4 +1,4 @@
-import Layout from "../components/layout/PublicLayout/PublicLayout";
+import Layout from "../components/layout/publicLayout/PublicLayout";
 
 const FourOhFour = () => {
   return (

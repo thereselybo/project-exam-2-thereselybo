@@ -1,16 +1,16 @@
 import axios from "axios";
-import Layout from "../../components/layout/PublicLayout/PublicLayout";
+import Layout from "../../components/layout/publicLayout/PublicLayout";
 import { useRouter } from "next/router";
 import {
   BASE_URL,
   DESTINATIONS_ENDPOINT,
   RESORTS_ENDPOINT,
 } from "../../constants/api";
-import FeaturedResorts from "../../components/resorts/FeaturedResorts/FeaturedResorts";
+import FeaturedResorts from "../../components/resorts/featuredResorts/FeaturedResorts";
 
 import { Container } from "react-bootstrap";
-import SearchBar from "./SearchBar/SearchBar";
-import Resorts from "./Resorts/Resorts";
+import SearchBar from "../../components/explore/SearchBar";
+import Resorts from "../../components/explore/Resorts";
 
 const Explore = ({ resorts, destinations }) => {
   // console.log("resorts:", resorts);

@@ -1,7 +1,5 @@
-import DesktopAdminNav from "./DesktopAdminNav/DesktopAdminNav";
-import MobileAdminNav from "./MobileAdminNav/MobileAdminNav";
-
-import styles from "./AdminNav.module.scss";
+import DesktopAdminNav from "./DesktopAdminNav";
+import MobileAdminNav from "./MobileAdminNav";
 
 const Navigation = () => {
   return (

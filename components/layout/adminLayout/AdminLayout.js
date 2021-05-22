@@ -6,12 +6,10 @@ import { AuthProvider } from "../../../context/AuthContext";
 import { useRouter } from "next/router";
 
 import Head from "../Head";
-import AdminNav from "./AdminNav/AdminNav";
+import AdminNav from "./adminNav/AdminNav";
 import LoadingSpinner from "../../misc/LoadingSpinner";
 
 import { Container, Row, Col } from "react-bootstrap";
-
-import styles from "./AdminLayout.module.scss";
 
 const Layout = ({ title, children }) => {
   // const [auth] = useContext(AuthContext);

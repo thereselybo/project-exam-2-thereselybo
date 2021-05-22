@@ -1,10 +1,6 @@
 import { AuthProvider } from "../../../context/AuthContext";
 import Head from "../Head";
-import Navigation from "../Navigation/Navigation";
-
-import { Container } from "react-bootstrap";
-
-import styles from "./PublicLayout.module.scss";
+import Navigation from "../navigation/Navigation";
 
 const Layout = ({ title, children }) => {
   return (

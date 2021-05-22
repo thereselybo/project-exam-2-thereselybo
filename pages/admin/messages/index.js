@@ -1,9 +1,9 @@
 import axios from "axios";
 
-import Layout from "../../../components/layout/AdminLayout/AdminLayout";
+import Layout from "../../../components/layout/adminLayout/AdminLayout";
 import { BASE_URL, MESSAGES_ENDPOINT } from "../../../constants/api";
 
-import MessageDisplay from "./MessageDisplay/MessageDisplay";
+import MessageDisplay from "../../../components/admin/MessageDisplay";
 
 // const Bookings = ({ bookings }) => {
 const Messages = ({ messages }) => {

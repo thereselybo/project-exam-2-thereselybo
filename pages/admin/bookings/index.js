@@ -1,8 +1,8 @@
 import { useState } from "react";
 import axios from "axios";
-import Layout from "../../../components/layout/AdminLayout/AdminLayout";
+import Layout from "../../../components/layout/adminLayout/AdminLayout";
 import { BASE_URL, BOOKINGS_ENDPOINT } from "../../../constants/api";
-import BookingDisplay from "./BookingDisplay/BookingDisplay";
+import BookingDisplay from "../../../components/admin/BookingDisplay";
 
 const Bookings = ({ bookings }) => {
   return (

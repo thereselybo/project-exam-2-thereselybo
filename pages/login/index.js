@@ -1,9 +1,8 @@
 import Image from "next/image";
-import Layout from "../../components/layout/PublicLayout/PublicLayout";
+import Layout from "../../components/layout/publicLayout/PublicLayout";
 
 import { Row, Col, Container, Form, Button } from "react-bootstrap";
-import LoginForm from "./LoginForm/LoginForm";
-import LoginFormTest from "./LoginForm/LoginFormTest";
+import LoginForm from "../../components/login/LoginForm";
 
 // TODO:
 // center align form vertically

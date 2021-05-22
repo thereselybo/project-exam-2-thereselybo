@@ -2,10 +2,8 @@ import Link from "next/link";
 import { Card, Col, Row } from "react-bootstrap";
 import { SwiperSlide } from "swiper/react";
 import { getResortDetails } from "../../../utils/getResortDetails";
-import Carousel from "../../Carousel/Carousel";
-import SuperEllipse from "react-superellipse";
+import Carousel from "../../carousel/Carousel";
 
-import styles from "./FeaturedResorts.module.scss";
 import { BASE_URL } from "../../../constants/api";
 import FeaturedResortCard from "./FeaturedResortCard";
 

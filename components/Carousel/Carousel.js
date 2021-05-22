@@ -2,10 +2,6 @@ import { Swiper } from "swiper/react";
 import SwiperCore, { Lazy, Navigation } from "swiper/core";
 
 import "swiper/swiper-bundle.css";
-// import "~swiper/swiper.min.css";
-// import "~swiper/components/navigation/navigation.min.css";
-
-import styles from "./Carousel.module.scss";
 
 SwiperCore.use([Navigation, Lazy]);
 

@@ -4,10 +4,8 @@ import { Card, Col, Row } from "react-bootstrap";
 import SuperEllipse from "react-superellipse";
 import { SwiperSlide } from "swiper/react";
 import { getDestinationDetails } from "../../../utils/getDestinationDetails";
-import Carousel from "../../Carousel/Carousel";
+import Carousel from "../../carousel/Carousel";
 import TravelGuideCard from "./TravelGuideCard";
-
-import styles from "./TravelGuides.module.scss";
 
 // TODO:
 // solve problem with img src not matching

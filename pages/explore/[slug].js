@@ -1,9 +1,9 @@
 import axios from "axios";
 
-import Layout from "../../components/layout/PublicLayout/PublicLayout";
-import SearchBar from "./SearchBar/SearchBar";
-import FeaturedResorts from "../../components/resorts/FeaturedResorts/FeaturedResorts";
-import Resorts from "./Resorts/Resorts";
+import Layout from "../../components/layout/publicLayout/PublicLayout";
+import SearchBar from "../../components/explore/SearchBar";
+import FeaturedResorts from "../../components/resorts/featuredResorts/FeaturedResorts";
+import Resorts from "../../components/explore/Resorts";
 import { BASE_URL, DESTINATIONS_ENDPOINT } from "../../constants/api";
 import { Container } from "react-bootstrap";
 

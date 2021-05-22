@@ -17,9 +17,8 @@ import { BASE_URL } from "../../../constants/api";
 import { getResortDetails } from "../../../utils/getResortDetails";
 import { getReviewDetails } from "../../../utils/getReviewDetails";
 
-import styles from "./ResortDetail.module.scss";
 import { ArrowLeftCircleFill, StarFill, X } from "react-bootstrap-icons";
-import ResortBooking from "../../../pages/resort/ResortBooking/ResortBooking";
+import ResortBooking from "../resortBooking/ResortBooking";
 
 const ResortDetail = ({ resort, reviews, facilities }) => {
   const resortDetails = getResortDetails(resort);

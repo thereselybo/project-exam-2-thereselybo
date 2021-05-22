@@ -1,7 +1,5 @@
-import DesktopNav from "./DesktopNav/DesktopNav";
-import MobileNav from "./MobileNav/MobileNav";
-
-import styles from "./Navigation.module.scss";
+import DesktopNav from "./DesktopNav";
+import MobileNav from "./MobileNav";
 
 const Navigation = () => {
   return (

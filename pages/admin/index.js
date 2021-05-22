@@ -2,9 +2,9 @@ import axios from "axios";
 import { useContext, useEffect } from "react";
 import AuthContext from "../../context/AuthContext";
 import Link from "next/link";
-import Layout from "../../components/layout/AdminLayout/AdminLayout";
+import Layout from "../../components/layout/adminLayout/AdminLayout";
 import { BASE_URL, RESORTS_ENDPOINT } from "../../constants/api";
-import ResortsDisplay from "./ResortsDisplay/ResortsDisplay";
+import ResortsDisplay from "../../components/admin/ResortsDisplay";
 
 import { Button, Card, Col, Row } from "react-bootstrap";
 

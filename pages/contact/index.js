@@ -1,7 +1,7 @@
 import axios from "axios";
-import Layout from "../../components/layout/PublicLayout/PublicLayout";
+import Layout from "../../components/layout/publicLayout/PublicLayout";
 import Image from "next/image";
-import ContactForm from "./ContactForm/ContactForm";
+import ContactForm from "../../components/contact/ContactForm";
 
 import { Row, Col, Container, Form, Button } from "react-bootstrap";
 import { BASE_URL, MESSAGE_TOPICS_ENDPOINT } from "../../constants/api";
