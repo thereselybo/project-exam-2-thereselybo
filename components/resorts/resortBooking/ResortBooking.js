@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import SuperEllipse from "react-superellipse";
 
-import { Col, Row, Form, Button, Modal } from "react-bootstrap";
-import { X, StarFill } from "react-bootstrap-icons";
 import BookingForm from "./BookingForm";
+import SuperEllipse from "react-superellipse";
+import { Col, Row, Form, Button } from "react-bootstrap";
+import { StarFill } from "react-bootstrap-icons";
 
 const ResortBooking = ({ show, handleShow, handleClose, resortDetails }) => {
   const [bookingDetails, setBookingDetails] = useState({});

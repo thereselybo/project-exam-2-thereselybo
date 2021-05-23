@@ -1,8 +1,7 @@
 import { useContext } from "react";
 import AuthContext from "../../../context/AuthContext";
-import Link from "next/link";
-import Image from "next/image";
 
+import Link from "next/link";
 import { Nav, Navbar, Container, Col } from "react-bootstrap";
 import { House, Search, Envelope, Person } from "react-bootstrap-icons";
 

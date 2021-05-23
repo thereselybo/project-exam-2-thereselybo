@@ -1,24 +1,14 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
-import Image from "next/image";
-import {
-  Col,
-  Row,
-  Container,
-  Card,
-  Form,
-  Button,
-  Modal,
-} from "react-bootstrap";
-import SuperEllipse from "react-superellipse";
-import { SwiperSlide } from "swiper/react";
-import Carousel from "../../carousel/Carousel";
-import { BASE_URL } from "../../../constants/api";
 import { getResortDetails } from "../../../utils/getResortDetails";
 import { getReviewDetails } from "../../../utils/getReviewDetails";
 
-import { ArrowLeftCircleFill, StarFill, X } from "react-bootstrap-icons";
 import ResortBooking from "../resortBooking/ResortBooking";
+import Carousel from "../../carousel/Carousel";
+import { Col, Row, Container, Card, Button } from "react-bootstrap";
+import SuperEllipse from "react-superellipse";
+import { SwiperSlide } from "swiper/react";
+import { ArrowLeftCircleFill, StarFill } from "react-bootstrap-icons";
 
 const ResortDetail = ({ resort, reviews, facilities }) => {
   const resortDetails = getResortDetails(resort);

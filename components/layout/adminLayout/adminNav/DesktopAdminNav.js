@@ -1,9 +1,9 @@
 import { useContext } from "react";
-import AuthContext from "../../../../context/AuthContext";
-import Link from "next/link";
 import { useRouter } from "next/router";
+import AuthContext from "../../../../context/AuthContext";
 
-import { Nav, Navbar, Container, Col } from "react-bootstrap";
+import Link from "next/link";
+import { Nav, Navbar, Container } from "react-bootstrap";
 import {
   Calendar2Week,
   Envelope,

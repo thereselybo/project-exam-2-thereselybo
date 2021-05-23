@@ -1,10 +1,9 @@
-import axios from "axios";
 import { useState, useEffect } from "react";
 import useAxios from "../../../hooks/useAxios";
-import MessageDisplay from "../../../components/admin/MessageDisplay";
-
-import Layout from "../../../components/layout/adminLayout/AdminLayout";
 import { BASE_URL, MESSAGES_ENDPOINT } from "../../../constants/api";
+
+import MessageDisplay from "../../../components/admin/MessageDisplay";
+import Layout from "../../../components/layout/adminLayout/AdminLayout";
 import LoadingSpinner from "../../../components/misc/LoadingSpinner";
 import Message from "../../../components/misc/Message";
 

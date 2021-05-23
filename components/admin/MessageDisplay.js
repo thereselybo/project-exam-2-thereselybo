@@ -1,6 +1,6 @@
 import { useState } from "react";
-import Image from "next/image";
 import { getMessageDetails } from "../../utils/getMessageDetails";
+
 import { Button, Card, Col, Row, Modal } from "react-bootstrap";
 import { X } from "react-bootstrap-icons";
 

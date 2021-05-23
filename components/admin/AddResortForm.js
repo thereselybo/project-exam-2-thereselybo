@@ -1,4 +1,3 @@
-import axios from "axios";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/router";
@@ -10,7 +9,6 @@ import { updateResort } from "../../utils/updateResort";
 
 import FormError from "../misc/FormError";
 import Message from "../misc/Message";
-
 import { Form, Row, Col, Button } from "react-bootstrap";
 import Switch from "../misc/Switch";
 

@@ -1,11 +1,10 @@
-import Image from "next/image";
-import Link from "next/link";
-import { Card, Col, Row } from "react-bootstrap";
-import SuperEllipse from "react-superellipse";
 import { SwiperSlide } from "swiper/react";
 import { getDestinationDetails } from "../../../utils/getDestinationDetails";
+
+import SuperEllipse from "react-superellipse";
 import Carousel from "../../carousel/Carousel";
 import TravelGuideCard from "./TravelGuideCard";
+import { Col, Row } from "react-bootstrap";
 
 // TODO:
 // solve problem with img src not matching - only a problem in develop?

@@ -1,14 +1,11 @@
-import axios from "axios";
-
-import { useState, useContext, useEffect } from "react";
-import Link from "next/link";
-import AuthContext from "../../context/AuthContext";
+import { useState, useEffect } from "react";
 import useAxios from "../../hooks/useAxios";
 import { BASE_URL, RESORTS_ENDPOINT } from "../../constants/api";
-import ResortsDisplay from "../../components/admin/ResortsDisplay";
 
+import Link from "next/link";
+import ResortsDisplay from "../../components/admin/ResortsDisplay";
 import Layout from "../../components/layout/adminLayout/AdminLayout";
-import { Button, Card, Col, Row } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import LoadingSpinner from "../../components/misc/LoadingSpinner";
 import Message from "../../components/misc/Message";
 

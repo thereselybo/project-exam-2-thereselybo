@@ -1,11 +1,11 @@
-import Image from "next/image";
-import Link from "next/link";
-import { Card, Col, Row } from "react-bootstrap";
-import SuperEllipse from "react-superellipse";
 import { getDestinationDetails } from "../../utils/getDestinationDetails";
 
-const PopularDestinations = ({ destinations, heading }) => {
+import Image from "next/image";
+import Link from "next/link";
+import { Col, Row } from "react-bootstrap";
+import SuperEllipse from "react-superellipse";
 
+const PopularDestinations = ({ destinations, heading }) => {
   return destinations.length ? (
     <section>
       {heading}

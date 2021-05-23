@@ -4,11 +4,10 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { contactSchema } from "../../schema/contactSchema";
 import { BASE_URL, MESSAGES_ENDPOINT } from "../../constants/api";
+import { updateMessage } from "../../utils/updateMessage";
 
 import Message from "../misc/Message";
 import FormError from "../misc/FormError";
-import { updateMessage } from "../../utils/updateMessage";
-
 import { Form, Row, Col, Button } from "react-bootstrap";
 
 const ContactForm = ({ messageTopics }) => {

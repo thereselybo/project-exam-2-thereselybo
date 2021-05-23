@@ -1,4 +1,3 @@
-import { AuthProvider } from "../../../context/AuthContext";
 import Head from "../Head";
 import Navigation from "../navigation/Navigation";
 

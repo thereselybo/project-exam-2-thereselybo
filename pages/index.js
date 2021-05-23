@@ -1,5 +1,3 @@
-import Image from "next/image";
-import SuperEllipse from "react-superellipse";
 import axios from "axios";
 import {
   BASE_URL,
@@ -10,10 +8,10 @@ import {
 import Layout from "../components/layout/publicLayout/PublicLayout";
 import Header from "../components/home/Header";
 import FeaturedResorts from "../components/resorts/featuredResorts/FeaturedResorts";
-import { Container, Col, Form, Row, Button } from "react-bootstrap";
 import TravelGuides from "../components/destinations/travelGuides/TravelGuides";
 import PopularDestinations from "../components/destinations/PopularDestinations";
 import Footer from "../components/layout/publicLayout/Footer";
+import { Container, } from "react-bootstrap";
 
 const Home = ({ resorts, destinations }) => {
   let key = Date.now();

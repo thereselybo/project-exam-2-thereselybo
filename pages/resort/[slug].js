@@ -1,13 +1,13 @@
 import axios from "axios";
-
-import Layout from "../../components/layout/publicLayout/PublicLayout";
 import {
   BASE_URL,
   FACILITIES_ENDPOINT,
   RESORTS_ENDPOINT,
   REVIEWS_ENDPOINT,
 } from "../../constants/api";
+
 import ResortDetail from "../../components/resorts/resortDetail/ResortDetail";
+import Layout from "../../components/layout/publicLayout/PublicLayout";
 
 const resortsUrl = `${BASE_URL}${RESORTS_ENDPOINT}`;
 

@@ -1,16 +1,15 @@
 import axios from "axios";
-import Layout from "../../components/layout/publicLayout/PublicLayout";
-import { useRouter } from "next/router";
 import {
   BASE_URL,
   DESTINATIONS_ENDPOINT,
   RESORTS_ENDPOINT,
 } from "../../constants/api";
-import FeaturedResorts from "../../components/resorts/featuredResorts/FeaturedResorts";
 
-import { Container } from "react-bootstrap";
+import Layout from "../../components/layout/publicLayout/PublicLayout";
+import FeaturedResorts from "../../components/resorts/featuredResorts/FeaturedResorts";
 import SearchBar from "../../components/explore/SearchBar";
 import Resorts from "../../components/explore/Resorts";
+import { Container } from "react-bootstrap";
 
 const Explore = ({ resorts, destinations }) => {
   let key = Date.now();

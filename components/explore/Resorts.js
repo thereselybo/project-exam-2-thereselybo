@@ -1,6 +1,6 @@
-import Link from "next/link";
 import { getResortDetails } from "../../utils/getResortDetails";
 
+import Link from "next/link";
 import { Card, Col, Row } from "react-bootstrap";
 import { ArrowRightCircleFill } from "react-bootstrap-icons";
 import { StarFill } from "react-bootstrap-icons";

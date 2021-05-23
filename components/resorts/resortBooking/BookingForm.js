@@ -7,7 +7,6 @@ import { BASE_URL, BOOKINGS_ENDPOINT } from "../../../constants/api";
 
 import FormError from "../../misc/FormError";
 import Message from "../../misc/Message";
-import SuperEllipse from "react-superellipse";
 import { Col, Row, Form, Button, Modal } from "react-bootstrap";
 import { X } from "react-bootstrap-icons";
 

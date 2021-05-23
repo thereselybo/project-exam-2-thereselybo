@@ -1,11 +1,11 @@
 import axios from "axios";
-import Layout from "../../../components/layout/adminLayout/AdminLayout";
 import {
   BASE_URL,
   DESTINATIONS_ENDPOINT,
   FACILITIES_ENDPOINT,
 } from "../../../constants/api";
 
+import Layout from "../../../components/layout/adminLayout/AdminLayout";
 import AddResortForm from "../../../components/admin/AddResortForm";
 
 const AddResort = ({ facilities, destinations }) => {

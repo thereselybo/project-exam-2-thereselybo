@@ -2,7 +2,6 @@ import {
   userImgAltPlaceholder,
   userImgPlaceholder,
 } from "../constants/placeholders";
-import { imageCheck } from "./imageCheck";
 
 export const getMessageDetails = (message) => {
   const shortMessage =

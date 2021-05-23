@@ -1,10 +1,10 @@
 import axios from "axios";
-import Layout from "../../components/layout/publicLayout/PublicLayout";
-import Image from "next/image";
-import ContactForm from "../../components/contact/ContactForm";
-
-import { Row, Col, Container, Form, Button } from "react-bootstrap";
 import { BASE_URL, MESSAGE_TOPICS_ENDPOINT } from "../../constants/api";
+
+import Image from "next/image";
+import Layout from "../../components/layout/publicLayout/PublicLayout";
+import ContactForm from "../../components/contact/ContactForm";
+import { Row, Col, Container } from "react-bootstrap";
 
 // TODO:
 // center align form vertically

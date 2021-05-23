@@ -1,10 +1,10 @@
 import { useContext } from "react";
+import { useRouter } from "next/router";
 import AuthContext from "../../../context/AuthContext";
+
 import Link from "next/link";
 import Image from "next/image";
-import { useRouter } from "next/router";
-
-import { Navbar, Nav, Container, Button } from "react-bootstrap";
+import { Navbar, Nav, Button } from "react-bootstrap";
 
 const DesktopNav = () => {
   const router = useRouter();

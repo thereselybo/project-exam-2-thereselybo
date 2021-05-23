@@ -1,17 +1,7 @@
 import Image from "next/image";
-
 import DestinationSearch from "./DestinationSearch";
 import SuperEllipse from "react-superellipse";
-import {
-  Container,
-  Col,
-  Form,
-  Row,
-  Button,
-  InputGroup,
-  FormControl,
-} from "react-bootstrap";
-import { Search } from "react-bootstrap-icons";
+import { Container, Col } from "react-bootstrap";
 import DestinationSearchMobile from "./DestinationSearchMobile";
 
 const Header = ({ destinations }) => {

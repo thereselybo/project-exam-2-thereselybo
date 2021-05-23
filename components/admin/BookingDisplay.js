@@ -1,8 +1,8 @@
 import { useState } from "react";
-import Image from "next/image";
 import { getBookingDetails } from "../../utils/getBookingDetails";
-import { Button, Card, Col, Row, Modal } from "react-bootstrap";
 
+import Image from "next/image";
+import { Button, Card, Col, Row, Modal } from "react-bootstrap";
 import { X } from "react-bootstrap-icons";
 
 const BookingDisplay = ({ bookings }) => {

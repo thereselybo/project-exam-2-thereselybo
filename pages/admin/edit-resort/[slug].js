@@ -1,17 +1,17 @@
 import axios from "axios";
-import Layout from "../../../components/layout/adminLayout/AdminLayout";
 import {
   BASE_URL,
   DESTINATIONS_ENDPOINT,
   FACILITIES_ENDPOINT,
   RESORTS_ENDPOINT,
 } from "../../../constants/api";
+
+import Layout from "../../../components/layout/adminLayout/AdminLayout";
 import EditForm from "../../../components/admin/EditForm";
 
 const resortsUrl = `${BASE_URL}${RESORTS_ENDPOINT}`;
 
 const EditResort = ({ resort, destinations, facilities }) => {
-
   return (
     <Layout title="Edit resort">
       <h1 className="mt-5 mb-4">Edit resort</h1>

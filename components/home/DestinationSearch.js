@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/router";
 import { validateDestination } from "../../utils/validateDestination";
-import { destinationSearchSchema } from "../../schema/destinationSearchSchema";
 
 import { Form, Row, Col, Button } from "react-bootstrap";
 import { Typeahead } from "react-bootstrap-typeahead";

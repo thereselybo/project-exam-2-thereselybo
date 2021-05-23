@@ -1,13 +1,12 @@
-import axios from "axios";
 import { useState } from "react";
 import { useRouter } from "next/router";
 import useAxios from "../../hooks/useAxios";
 import { BASE_URL, RESORTS_ENDPOINT } from "../../constants/api";
 
-import { Button, Modal } from "react-bootstrap";
-import { X } from "react-bootstrap-icons";
 import Message from "../misc/Message";
 import FormError from "../misc/FormError";
+import { Button, Modal } from "react-bootstrap";
+import { X } from "react-bootstrap-icons";
 
 const DeleteButton = ({ id, title, size, editing, content }) => {
   const [show, setShow] = useState(false);

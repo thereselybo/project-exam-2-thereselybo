@@ -1,9 +1,8 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
 import useAxios from "../../../hooks/useAxios";
 import { BASE_URL, BOOKINGS_ENDPOINT } from "../../../constants/api";
-import BookingDisplay from "../../../components/admin/BookingDisplay";
 
+import BookingDisplay from "../../../components/admin/BookingDisplay";
 import Layout from "../../../components/layout/adminLayout/AdminLayout";
 import Message from "../../../components/misc/Message";
 import LoadingSpinner from "../../../components/misc/LoadingSpinner";

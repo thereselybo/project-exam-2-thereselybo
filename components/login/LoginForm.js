@@ -23,7 +23,7 @@ const LoginForm = () => {
     resolver: yupResolver(loginSchema),
   });
 
-  const [auth, setAuth] = useContext(AuthContext);
+  const [, setAuth] = useContext(AuthContext);
 
   const url = `${BASE_URL}${AUTH_ENDPOINT}`;
   const router = useRouter();

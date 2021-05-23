@@ -1,4 +1,3 @@
-import axios from "axios";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -10,11 +9,10 @@ import { getResortDetails } from "../../utils/getResortDetails";
 
 import FormError from "../misc/FormError";
 import Message from "../misc/Message";
-
-import { Form, Row, Col, Button } from "react-bootstrap";
 import DeleteButton from "./DeleteButton";
-import SuperEllipse from "react-superellipse";
 import Switch from "../misc/Switch";
+import { Form, Row, Col, Button } from "react-bootstrap";
+import SuperEllipse from "react-superellipse";
 
 const EditForm = ({ resort, destinations, facilities }) => {
   const resortDetails = getResortDetails(resort);

@@ -15,7 +15,9 @@ const Footer = () => {
         </Link>
       </p>
       <p className="mb-1">
-        All illustrations from{" "}
+        All illustrations designed by{" "}
+        <a href="https://www.freepik.com/jongcreative">jongcreative</a> and{" "}
+        <a href="https://www.freepik.com/vectorpouch">vectorpouch</a> from{" "}
         <Link href="https://www.freepik.com/">Freepik</Link>
       </p>
     </footer>
