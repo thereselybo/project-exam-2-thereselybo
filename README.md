@@ -1,17 +1,36 @@
-<img src="./.readme/noroff-light.png" width="160" align="right">
-
 # Project Exam 2
+
+### Run project
+
+```bash
+npm i
+npm run dev
+```
+
+Runs app in development mode.
+Open http://localhost:3000 to access it in the browser.
+
+### User credentials for admin section
+
+```bash
+email: admin@admin.com
+username: admin
+password: Pass1234
+```
+
+---
 
 ## Delivery
 
 ### Week 2
+
 - Notion board: https://www.notion.so/thereselyboprojex2
 - Invite link: https://www.notion.so/thereselyboprojex2/invite/d50c9da1966073990120003a8be554b41521f606
 - Figma prototype: https://www.figma.com/proto/mQZNKGeoz6CmAtCIMdjIzL/Projex2-prototype?page-id=0%3A1&node-id=1%3A440&viewport=923%2C609%2C0.07518839091062546&scaling=min-zoom
 
----------------
+---
 
-There are two options with this Project Exam. 
+There are two options with this Project Exam.
 You need to only choose one and please follow the deliveries carefully.
 
 ## Goal
@@ -23,6 +42,7 @@ To take the skills learned over the last two years and take on an extensive proj
 For this assignment you have the choice between getting a real world client that you will manage and build a website for, or a case study to make a hotel booking website.
 
 Whatever project you choose, the final submission must have the following:
+
 - A Gantt chart planning the project
 - A style guide
 - An Adobe XD prototype
@@ -42,7 +62,7 @@ Note: The project has to have a big enough scope to show off the skills learned 
 
 ### Recommended Process
 
-Week 1 to 3:  Finding client, Planning and Design
+Week 1 to 3: Finding client, Planning and Design
 
 Week 4 to 6: Coding
 
@@ -71,11 +91,12 @@ A local tourism agency in Bergen is launching a new website called ‘Holidaze�
 
 The project requires you to create the visitor side of the website where users can search accommodation and make enquiries, as well as the administration side where properties can be added and enquiries managed.
 
-You will need to create an API to store the data for the establishments, enquiries and contact submissions. You can choose to use WordPress or Strapi as a Headless CMS, but it is very important that the API is deployed and publicly available. Please do not submit any files for your API. Only submit the website you have created. 
+You will need to create an API to store the data for the establishments, enquiries and contact submissions. You can choose to use WordPress or Strapi as a Headless CMS, but it is very important that the API is deployed and publicly available. Please do not submit any files for your API. Only submit the website you have created.
 
 ## Requirements for the Website
 
 ### Visitor Side
+
 - Homepage
 - Search bar typeahead (auto dropdown with hotel names that match what has been typed)
 - A results page with all hotels
@@ -92,7 +113,7 @@ You will need to create an API to store the data for the establishments, enquiri
 
 ### Recommended Process
 
-Week 1 and 2:  Planning and Design
+Week 1 and 2: Planning and Design
 
 Week 3 to 6: Coding
 
@@ -100,11 +121,11 @@ Week 7: Bug Fixing
 
 ### Level 1 Process
 
-- Start by planning out the project. 
+- Start by planning out the project.
 - Next begin your research of likely users and browse competitor websites for ideas.
 - Create a style guide
 - Build an Adobe XD prototype (or you can use Sketch or Figma).
-- Start coding. 
+- Start coding.
 - Once you’ve finished development, start looking for bugs and ensure the site functions well on all viewports. Test the code on different devices. Because your API is public, the code shouldn’t rely on a local API.
 - Refactor your code.
 - Ask another student to look over your code and ask them if they can see how it might be better implemented. This is important to get an outside view on your code. Please attach this feedback to your report.
