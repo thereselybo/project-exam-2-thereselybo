@@ -44,16 +44,6 @@ const BookingForm = ({ show, resortDetails, bookingDetails, handleClose }) => {
 
   return (
     <Modal show={show} onHide={handleClose} className="booking-form">
-      {/* <SuperEllipse
-      className="m-auto p-5 ratio ratio-1x1"
-      r1={0.03}
-      r2={0.4}
-      style={{
-        // width: "80%",
-        // height: "100%",
-        background: "hsl(0, 0%, 95%)",
-      }}
-    > */}
       <Modal.Header>
         <Modal.Title {...register("resort")} className="fs-3">
           {resortDetails.title}
@@ -199,7 +189,6 @@ const BookingForm = ({ show, resortDetails, bookingDetails, handleClose }) => {
           </Col>
         </Form>
       </Modal.Body>
-      {/* </SuperEllipse> */}
     </Modal>
   );
 };

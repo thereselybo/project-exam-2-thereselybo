@@ -8,7 +8,7 @@ import { BASE_URL } from "../../../constants/api";
 import FeaturedResortCard from "./FeaturedResortCard";
 
 // TODO:
-// solve problem with img src not matching
+// solve problem with img src not matching - only a problem in develop?
 
 const FeaturedResorts = ({ resorts, heading }) => {
   let featuredResorts = [];
@@ -27,7 +27,6 @@ const FeaturedResorts = ({ resorts, heading }) => {
           {featuredResorts ? (
             featuredResorts.map((resort, i) => {
               const resortDetails = getResortDetails(resort);
-              //   console.log(resortDetails);
               return (
                 <SwiperSlide key={i}>
                   <Col className="featured-resort">
@@ -39,7 +38,6 @@ const FeaturedResorts = ({ resorts, heading }) => {
           ) : (
             <h3>Loading.....</h3>
           )}
-          {/* </div> */}
         </Carousel>
       </section>
     );

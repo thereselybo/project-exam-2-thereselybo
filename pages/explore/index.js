@@ -13,9 +13,6 @@ import SearchBar from "../../components/explore/SearchBar";
 import Resorts from "../../components/explore/Resorts";
 
 const Explore = ({ resorts, destinations }) => {
-  // console.log("resorts:", resorts);
-  // const router = useRouter();
-  // console.log(router.pathname);
   let key = Date.now();
 
   return (

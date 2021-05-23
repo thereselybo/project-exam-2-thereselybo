@@ -9,7 +9,6 @@ import {
 import AddResortForm from "../../../components/admin/AddResortForm";
 
 const AddResort = ({ facilities, destinations }) => {
-  // console.log("destinations", destinations);
   return (
     <Layout title="Add resort">
       <h1 className="mt-5 mb-4">Add resort</h1>

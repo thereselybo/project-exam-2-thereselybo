@@ -5,16 +5,12 @@ import { Button, Card, Col, Row, Modal } from "react-bootstrap";
 import { X } from "react-bootstrap-icons";
 
 const MessageDisplay = ({ messages }) => {
-  // console.log(bookings);
-
   const [show, setShow] = useState(false);
   const [modalContent, setModalContent] = useState({});
 
   const handleClose = () => setShow(false);
   const handleShow = (message) => {
     setModalContent(message);
-    // console.log("booking:", booking);
-    // console.log("modalContent:", modalContent);
     setShow(true);
   };
   return (
@@ -33,7 +29,6 @@ const MessageDisplay = ({ messages }) => {
         <Card.Body className="d-flex flex-column-reverse">
           {messages.length
             ? messages.map((message, i) => {
-                // console.log(console.log(message));
                 const messageDetails = getMessageDetails(message);
                 return (
                   <Row
@@ -41,21 +36,10 @@ const MessageDisplay = ({ messages }) => {
                     className="justify-content-between align-items-center mb-3"
                   >
                     <Col xs={2} lg={1} className="pe-0">
-                      {/* <Col> */}
-                      {/* <Image
-                        // className="position-relative"
-                        src={messageDetails.image}
-                        alt={messageDetails.imageAlt}
-                        // layout="fill"
-                        width="80"
-                        height="80"
-                      /> */}
                       <div
                         className="admin-layout-card-image"
                         style={{
-                          // backgroundImage: `url(${messageDetails.image})`,
-                          backgroundImage:
-                            "url(https://image.freepik.com/free-photo/thoughtful-beautiful-teenage-girl-holds-mobile-phone-sends-text-messages-thinks-what-answer-give-reads-comments-her-post-social-networks-dressed-winter-clothes-isolated-blue-wall_273609-43784.jpg)",
+                          backgroundImage: `url(${messageDetails.image})`,
                         }}
                       ></div>
                     </Col>

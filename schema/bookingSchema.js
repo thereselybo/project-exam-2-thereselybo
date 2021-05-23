@@ -19,12 +19,10 @@ export const bookingSchema = yup.object().shape({
     .positive("Guests must be greater than 0")
     .required("Please enter the number of guests"),
   check_in: yup
-    // .date()
     .string()
     .typeError("Please choose a date for check in")
     .required(),
   check_out: yup
-    // .date()
     .string()
     .typeError("Please choose a date for check out")
     .required(),

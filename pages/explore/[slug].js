@@ -10,11 +10,8 @@ import { Container } from "react-bootstrap";
 const url = `${BASE_URL}${DESTINATIONS_ENDPOINT}`;
 
 const Destination = ({ destination, destinations }) => {
-  // const { slug } = destination;
   const resorts = destination.resorts;
-  // console.log(resorts);
-
-  // console.log(destination);
+  
   let key = Date.now();
 
   return (

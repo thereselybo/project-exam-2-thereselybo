@@ -15,13 +15,11 @@ const SearchBar = ({ destinations }) => {
 
   const router = useRouter();
 
-  const { register, handleSubmit } = useForm();
+  const { handleSubmit } = useForm();
 
   const onDestinationChange = (destination) => {
-    // console.log(destination);
     setSingleSelections(destination);
     const validatedDestination = validateDestination(destination, destinations);
-    // console.log(validatedDestination);
 
     if (!validatedDestination) {
       setInvalidDestination(true);

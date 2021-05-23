@@ -8,7 +8,6 @@ import { BASE_URL, MESSAGES_ENDPOINT } from "../../../constants/api";
 import LoadingSpinner from "../../../components/misc/LoadingSpinner";
 import Message from "../../../components/misc/Message";
 
-// const Messages = ({ messages }) => {
 const Messages = () => {
   const [messages, setMessages] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -20,7 +19,6 @@ const Messages = () => {
   useEffect(() => {
     const getMessages = async () => {
       try {
-        // const res = await axios.get(url);
         const res = await http.get(url);
         if (res.status === 200) {
           setMessages(res.data);
@@ -46,24 +44,3 @@ const Messages = () => {
 };
 
 export default Messages;
-
-// export const getStaticProps = async () => {
-//   let messages = [];
-
-//   // const http = useAxios()
-//   const url = `${BASE_URL}${MESSAGES_ENDPOINT}`;
-
-//   try {
-//     // const res = await http.get(url);
-//     const res = await axios.get(url);
-//     messages = res.data;
-//   } catch (err) {
-//     console.log("messages fetch error:", err);
-//   }
-
-//   return {
-//     props: {
-//       messages,
-//     },
-//   };
-// };

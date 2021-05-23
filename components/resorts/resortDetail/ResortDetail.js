@@ -22,17 +22,6 @@ import ResortBooking from "../resortBooking/ResortBooking";
 
 const ResortDetail = ({ resort, reviews, facilities }) => {
   const resortDetails = getResortDetails(resort);
-  // console.log(reviews);
-
-  // const [show, setShow] = useState(false);
-
-  // const handleClose = () => setShow(false);
-  // const handleShow = (e, data) => {
-  //   console.dir(e.target);
-  //   e.preventDefault();
-  //   console.log(data);
-  //   setShow(true);
-  // };
 
   const [show, setShow] = useState(false);
   const handleShow = () => {
@@ -68,7 +57,6 @@ const ResortDetail = ({ resort, reviews, facilities }) => {
         />
       </header>
       <Row className="d-flex flex-md-row justify-content-between horizontal-layout">
-        {/* left side content */}
         <Col md={6}>
           <Container className="mb-5 left-content">
             <h1 className="mt-4 mb-3">{resortDetails.title}</h1>
@@ -136,7 +124,6 @@ const ResortDetail = ({ resort, reviews, facilities }) => {
                             <div className="align-self-center">
                               {reviewDetails.visitor}
                             </div>
-                            {/* <div>{reviewDetails.rating}</div> */}
                             <div className="resort-rating py-1 px-3 d-flex align-items-center ms-auto">
                               <span className="align-middle rating-star">
                                 <StarFill />
@@ -147,7 +134,6 @@ const ResortDetail = ({ resort, reviews, facilities }) => {
                             </div>
                           </Col>
                           <Card.Body className="pt-0">
-                            {/* <Card.Title>{reviewDetails.visitor}</Card.Title> */}
                             <Card.Text className="fw-light ">
                               {reviewDetails.review}
                             </Card.Text>
@@ -180,7 +166,6 @@ const ResortDetail = ({ resort, reviews, facilities }) => {
           </Container>
         </Col>
 
-        {/* right side content */}
         <Col
           md={6}
           className="d-none d-md-flex h-100 position-fixed end-0 top-0 resort-image"

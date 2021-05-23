@@ -11,8 +11,6 @@ import EditForm from "../../../components/admin/EditForm";
 const resortsUrl = `${BASE_URL}${RESORTS_ENDPOINT}`;
 
 const EditResort = ({ resort, destinations, facilities }) => {
-  // console.log(resortDetails);
-  // console.log(resortDetails.facilities);
 
   return (
     <Layout title="Edit resort">
@@ -73,19 +71,3 @@ export const getStaticProps = async ({ params }) => {
     },
   };
 };
-
-// export const getStaticProps = async ({ params }) => {
-
-//   try {
-//     const facilitiesRes = await axios.get(facilitiesUrl);
-//   } catch (err) {
-//     console.log("fetch error:", err);
-//   }
-
-//   return {
-//     props: {
-//       facilities,
-//       destinations,
-//     },
-//   };
-// };

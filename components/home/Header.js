@@ -42,19 +42,6 @@ const Header = ({ destinations }) => {
         </Col>
         <Col>
           <DestinationSearchMobile destinations={destinations} />
-          {/* <Form className="mobile-destination-search">
-            <InputGroup className="mb-3 d-flex d-md-none">
-              <FormControl
-                placeholder="Where are you going?"
-                aria-label="Destination"
-              />
-              <InputGroup.Append>
-                <Button variant="primary">
-                  <Search />
-                </Button>
-              </InputGroup.Append>
-            </InputGroup>
-          </Form> */}
         </Col>
       </Container>
     </header>

@@ -6,7 +6,7 @@ import { contactSchema } from "../../schema/contactSchema";
 import { BASE_URL, MESSAGES_ENDPOINT } from "../../constants/api";
 
 import Message from "../misc/Message";
-import FormError from "..//misc/FormError";
+import FormError from "../misc/FormError";
 import { updateMessage } from "../../utils/updateMessage";
 
 import { Form, Row, Col, Button } from "react-bootstrap";
@@ -29,15 +29,12 @@ const ContactForm = ({ messageTopics }) => {
   const onSubmit = async (data) => {
     setSubmitting(true);
     setSubmitError(null);
-    // console.log("data", data);
     const updatedMessage = updateMessage(data, messageTopics);
-    // console.log(updatedMessage);
 
     try {
       console.log(updatedMessage);
       const res = await axios.post(url, updatedMessage);
       if (res.status === 200) {
-        // console.log(res);
         setSubmitted(true);
       }
     } catch (err) {

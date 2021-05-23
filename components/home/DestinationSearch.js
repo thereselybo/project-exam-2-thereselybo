@@ -16,18 +16,13 @@ const DestinationSearch = ({ destinations }) => {
   const { register, handleSubmit } = useForm();
 
   const onDestinationChange = (destination) => {
-    // console.log(destination);
     setSingleSelections(destination);
     const validatedDestination = validateDestination(destination, destinations);
-    // console.log(validatedDestination);
 
     if (!validatedDestination) {
       setInvalidDestination(true);
-      // console.log("invalid destination");
-      // console.log(invalidDestination);
     } else {
       setInvalidDestination(false);
-      // console.log("valid destination, proceed to next field blabla");
     }
 
     setInvalidDestination(validatedDestination);

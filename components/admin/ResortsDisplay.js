@@ -21,7 +21,6 @@ const ResortsDisplay = ({ resorts }) => {
       <Card.Body>
         {resorts.length
           ? resorts.map((resort, i) => {
-              // console.log(resort);
               const resortDetails = getResortDetails(resort);
               return (
                 <Row

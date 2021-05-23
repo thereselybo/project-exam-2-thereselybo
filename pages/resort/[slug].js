@@ -12,7 +12,6 @@ import ResortDetail from "../../components/resorts/resortDetail/ResortDetail";
 const resortsUrl = `${BASE_URL}${RESORTS_ENDPOINT}`;
 
 const Resort = ({ resort, reviews, facilities }) => {
-  // const { slug } = resort;
   console.log(resort);
 
   return (

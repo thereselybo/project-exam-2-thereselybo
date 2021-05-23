@@ -14,7 +14,6 @@ import Message from "../misc/Message";
 import { Form, Row, Col, Button } from "react-bootstrap";
 import DeleteButton from "./DeleteButton";
 import SuperEllipse from "react-superellipse";
-// import BootstrapSwitchButton from "bootstrap-switch-button-react";
 import Switch from "../misc/Switch";
 
 const EditForm = ({ resort, destinations, facilities }) => {
@@ -29,22 +28,17 @@ const EditForm = ({ resort, destinations, facilities }) => {
     register,
     handleSubmit,
     formState: { errors },
-    // control,
   } = useForm({
     resolver: yupResolver(resortSchema),
   });
 
-  // const featured = resortDetails.featured;
   const http = useAxios();
   const url = `${BASE_URL}${RESORTS_ENDPOINT}/${resortDetails.id}`;
-  // console.log(resortDetails);
 
   const onSubmit = async (data) => {
     setEditing(true);
     setEditError(null);
-    // console.log("data", data);
     const updatedResort = updateResort(data, destinations, featured);
-    // console.log(updatedResort);
 
     try {
       const res = await http.put(url, updatedResort);

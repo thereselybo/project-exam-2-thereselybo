@@ -37,13 +37,6 @@ footer {
   }
 }
 
-// admin layout
-
-// @media screen and (min-width: 768px) {
-//   .admin-content-wrapper {
-//   }
-// }
-
 .admin-wrapper {
   background-color: $primary-sunrise-lighter;
   min-height: 100vh;
@@ -63,7 +56,6 @@ footer {
 @media screen and (min-width: 768px) {
   .admin-content-wrapper {
     max-width: 960px;
-    // margin-right: auto;
     margin-left: 0;
     padding-left: 2rem;
 

@@ -6,7 +6,6 @@ import { Button, Card, Col, Row, Modal } from "react-bootstrap";
 import { X } from "react-bootstrap-icons";
 
 const BookingDisplay = ({ bookings }) => {
-  //   const handleClose = () => setShow(false);
 
   const [show, setShow] = useState(false);
   const [modalContent, setModalContent] = useState({});
@@ -14,8 +13,6 @@ const BookingDisplay = ({ bookings }) => {
   const handleClose = () => setShow(false);
   const handleShow = (booking) => {
     setModalContent(booking);
-    // console.log("booking:", booking);
-    // console.log("modalContent:", modalContent);
     setShow(true);
   };
 
@@ -36,7 +33,6 @@ const BookingDisplay = ({ bookings }) => {
         <Card.Body className="d-flex flex-column-reverse">
           {bookings.length
             ? bookings.map((booking, i) => {
-                // console.log(booking);
                 const bookingDetails = getBookingDetails(booking);
                 return (
                   <Row
@@ -44,15 +40,6 @@ const BookingDisplay = ({ bookings }) => {
                     className="justify-content-between align-items-center mb-3"
                   >
                     <Col xs={2} lg={1} className="pe-0">
-                      {/* <Col> */}
-                      {/* <Image
-                        // className="position-relative"
-                        src={bookingDetails.image}
-                        alt={bookingDetails.imageAlt}
-                        // layout="fill"
-                        width="80"
-                        height="80"
-                      /> */}
                       <div
                         className="admin-layout-card-image"
                         style={{

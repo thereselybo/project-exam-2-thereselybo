@@ -15,8 +15,6 @@ export const getResortDetails = (resort) => {
     resortImgAltPlaceholder
   );
 
-  //   console.log(image);
-
   const resortDetails = {
     title: resort.title,
     introduction: resort.introduction,
@@ -27,7 +25,6 @@ export const getResortDetails = (resort) => {
     price: resort.price,
     featured: resort.featured,
     rating: resort.rating,
-    // facilities: resort.facilities,
     id: resort.id,
     slug: resort.slug,
   };

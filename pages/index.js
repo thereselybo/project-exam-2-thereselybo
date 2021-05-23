@@ -16,7 +16,6 @@ import PopularDestinations from "../components/destinations/PopularDestinations"
 import Footer from "../components/layout/publicLayout/Footer";
 
 const Home = ({ resorts, destinations }) => {
-  // console.log(destinations);
   let key = Date.now();
   return (
     <Layout title="Home">

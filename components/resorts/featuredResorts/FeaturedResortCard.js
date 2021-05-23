@@ -8,18 +8,9 @@ const FeaturedResortCard = ({ resortDetails }) => {
     <Link href={`/resort/${resortDetails.slug}`} passHref>
       <div>
         <SuperEllipse
-          // className="m-auto super-ellipse"
           className="m-0 super-ellipse"
           r1={0.03}
           r2={0.4}
-          style={
-            {
-              //   width: "80%",
-              //   height: "320px",
-              //   background: "hsla(26, 59%, 90%, 0.8)",
-              // backgroundImage: `url(${resortDetails.image})`,
-            }
-          }
           role="button"
         >
           <Card

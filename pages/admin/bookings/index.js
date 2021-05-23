@@ -8,7 +8,6 @@ import Layout from "../../../components/layout/adminLayout/AdminLayout";
 import Message from "../../../components/misc/Message";
 import LoadingSpinner from "../../../components/misc/LoadingSpinner";
 
-// const Bookings = ({ bookings }) => {
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -20,7 +19,6 @@ const Bookings = () => {
   useEffect(() => {
     const getBookings = async () => {
       try {
-        // const res = await axios.get(url);
         const res = await http.get(url);
         if (res.status === 200) {
           setBookings(res.data);
@@ -47,24 +45,3 @@ const Bookings = () => {
 };
 
 export default Bookings;
-
-// export const getStaticProps = async () => {
-//   let bookings = [];
-
-//   // const http = useAxios();
-//   const url = `${BASE_URL}${BOOKINGS_ENDPOINT}`;
-
-//   try {
-//     const res = await axios.get(url);
-//     // const res = await http.get(url);
-//     bookings = res.data;
-//   } catch (err) {
-//     console.log("booking fetch error:", err);
-//   }
-
-//   return {
-//     props: {
-//       bookings,
-//     },
-//   };
-// };

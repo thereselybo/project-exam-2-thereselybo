@@ -12,10 +12,8 @@ const Layout = ({ title, children }) => {
   const [auth] = useContext(AuthContext);
   const [loggedIn, setLoggedIn] = useState(false);
   const router = useRouter();
-  // console.log(auth);
 
   useEffect(() => {
-    // console.log("authorized", auth);
     if (auth) {
       setLoggedIn(true);
     } else {

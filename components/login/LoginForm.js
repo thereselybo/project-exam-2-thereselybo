@@ -19,7 +19,6 @@ const LoginForm = () => {
     register,
     handleSubmit,
     formState: { errors },
-    // errors,
   } = useForm({
     resolver: yupResolver(loginSchema),
   });
@@ -37,11 +36,7 @@ const LoginForm = () => {
     try {
       const res = await axios.post(url, data);
       if (res.status === 200) {
-        // console.log("auth", auth);
-        // console.log("res", res);
-        // console.log("data", data);
         setAuth(res.data);
-        // console.log("auth", auth);
         router.push("/admin");
       }
     } catch (err) {
@@ -61,7 +56,6 @@ const LoginForm = () => {
           <Form.Control
             name="identifier"
             placeholder="Enter username/email"
-            // ref={register}
             {...register("identifier")}
             disabled={submitting}
           />
@@ -80,7 +74,6 @@ const LoginForm = () => {
             type="password"
             name="password"
             placeholder="Enter password"
-            // ref={register}
             {...register("password")}
             disabled={submitting}
           />

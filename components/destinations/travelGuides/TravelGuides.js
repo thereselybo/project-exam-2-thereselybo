@@ -8,19 +8,10 @@ import Carousel from "../../carousel/Carousel";
 import TravelGuideCard from "./TravelGuideCard";
 
 // TODO:
-// solve problem with img src not matching
+// solve problem with img src not matching - only a problem in develop?
 // set a featured flag to certain destinations?
 
 const TravelGuides = ({ destinations, heading }) => {
-  // console.log("travel guide destinations: ", destinations);
-  // let featuredDestinations = [];
-  //   destinations.forEach((destination) => {
-  //     if (destination.featured) {
-  //       featuredDestinations.push(resort);
-  //     }
-  //   });
-
-  //   if (featuredDestinations.length > 3) {
   if (destinations.length > 3) {
     return (
       <section>
@@ -29,7 +20,6 @@ const TravelGuides = ({ destinations, heading }) => {
           {destinations ? (
             destinations.map((destination, i) => {
               const destinationDetails = getDestinationDetails(destination);
-              //   console.log(resortDetails);
               return (
                 <SwiperSlide key={i}>
                   <TravelGuideCard destinationDetails={destinationDetails} />
@@ -44,7 +34,6 @@ const TravelGuides = ({ destinations, heading }) => {
     );
   }
 
-  //   if (featuredDestinations.length <= 3) {
   if (destinations.length <= 3) {
     return destinations.length ? (
       <section>

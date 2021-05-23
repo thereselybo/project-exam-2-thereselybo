@@ -12,7 +12,6 @@ import { Button, Card, Col, Row } from "react-bootstrap";
 import LoadingSpinner from "../../components/misc/LoadingSpinner";
 import Message from "../../components/misc/Message";
 
-// const Admin = ({ resorts }) => {
 const Admin = () => {
   const [resorts, setResorts] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -24,7 +23,6 @@ const Admin = () => {
   useEffect(() => {
     const getResorts = async () => {
       try {
-        // const res = await axios.get(url);
         const res = await http.get(url);
         if (res.status === 200) {
           setResorts(res.data);
@@ -57,24 +55,3 @@ const Admin = () => {
 };
 
 export default Admin;
-
-// export const getStaticProps = async () => {
-//   let resorts = [];
-
-//   // const http = useAxios();
-//   const url = `${BASE_URL}${RESORTS_ENDPOINT}`;
-
-//   try {
-//     const res = await axios.get(url);
-//     // const res = await http.get(url);
-//     resorts = res.data;
-//   } catch (err) {
-//     console.log("resort fetch error:", err);
-//   }
-
-//   return {
-//     props: {
-//       resorts,
-//     },
-//   };
-// };

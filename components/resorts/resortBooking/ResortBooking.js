@@ -11,8 +11,6 @@ const ResortBooking = ({ show, handleShow, handleClose, resortDetails }) => {
   const { register, handleSubmit } = useForm();
 
   const updateModal = (data) => {
-    // e.preventDefault();
-    console.log(data);
     setBookingDetails(data);
     handleShow();
   };
@@ -27,12 +25,9 @@ const ResortBooking = ({ show, handleShow, handleClose, resortDetails }) => {
           style={{
             width: "80%",
             maxWidth: "700px",
-            // height: "55%",
             height: "260px",
             background: "hsla(1, 100%, 100%, 0.8)",
-            // bottom: "40px",
-            top: "80%",
-            // bottom: "10%",
+            top: "75%",
           }}
         >
           <div className="position-relative">
@@ -40,10 +35,7 @@ const ResortBooking = ({ show, handleShow, handleClose, resortDetails }) => {
               {resortDetails.price} NOK
               <span className="fw-light">/night</span>
             </h2>
-            <Form
-              //   onSubmit={handleShow}
-              onSubmit={handleSubmit(updateModal)}
-            >
+            <Form onSubmit={handleSubmit(updateModal)}>
               <Row className="my-3">
                 <Form.Group as={Col} md={4}>
                   <Form.Label>Check in</Form.Label>
@@ -67,7 +59,6 @@ const ResortBooking = ({ show, handleShow, handleClose, resortDetails }) => {
                   size="lg"
                   className="mx-auto mt-3 px-5"
                   type="submit"
-                  // onClick={handleShow}
                   onClick={handleSubmit(updateModal)}
                 >
                   Book

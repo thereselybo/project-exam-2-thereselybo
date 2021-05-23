@@ -15,7 +15,6 @@ import {
 const DesktopAdminNav = () => {
   const [, setAuth] = useContext(AuthContext);
   const router = useRouter();
-  // const path = router.pathname;
 
   const handleLogout = () => {
     setAuth(null);
