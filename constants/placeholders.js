@@ -3,8 +3,8 @@ export const resortImgPlaceholder =
 export const resortImgAltPlaceholder = "Digital illustration of resort";
 
 export const userImgPlaceholder =
-  "https://image.freepik.com/free-vector/organic-flat-transgender-person-illustrated_23-2148945541.jpg";
-export const userImgAltPlaceholder = "Illustration of user";
+  "https://image.freepik.com/free-photo/thoughtful-beautiful-teenage-girl-holds-mobile-phone-sends-text-messages-thinks-what-answer-give-reads-comments-her-post-social-networks-dressed-winter-clothes-isolated-blue-wall_273609-43784.jpg";
+export const userImgAltPlaceholder = "Image of user";
 
 export const destinationImgPlaceholder =
   "https://image.freepik.com/free-vector/nature-scene-with-coconut-trees-beach_1308-29137.jpg";

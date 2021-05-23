@@ -1,28 +1,19 @@
 import { BASE_URL } from "../constants/api";
 
-// TODO: change from "resort" to some more generic variable name for reusing
+export const imageCheck = (element, imgPlaceholder, altPlaceholder) => {
+  const imgUrl = element.image_url;
+  const imgObject = element.image;
 
-export const imageCheck = (resort, imgPlaceholder, altPlaceholder) => {
-  // console.log(resort);
-  const imgUrl = resort.image_url;
-  const imgObject = resort.image;
-  // let fallbackImage;
-  let resortImg = imgPlaceholder;
-  let resortImgAlt = altPlaceholder;
-
-  // if (imgObject.length) {
-  //   fallbackImage = `${BASE_URL}${resort.image[0].formats.medium.url}`;
-  // }
+  let elementImg = imgPlaceholder;
+  let elementImgAlt = altPlaceholder;
 
   if (imgUrl) {
-    resortImg = imgUrl;
-    resortImgAlt = `Image of ${resort.title}`;
+    elementImg = imgUrl;
+    elementImgAlt = `Image of ${element.title}`;
   } else if (imgObject.length) {
-    // if (fallbackImage) {
-    resortImg = `${BASE_URL}${resort.image[0].formats.medium.url}`;
-    resortImgAlt = `Image of ${resort.title}`;
-    // }
+    elementImg = `${BASE_URL}${element.image[0].formats.medium.url}`;
+    elementImgAlt = `Image of ${element.title}`;
   }
 
-  return { resortImg, resortImgAlt };
+  return { elementImg, elementImgAlt };
 };
