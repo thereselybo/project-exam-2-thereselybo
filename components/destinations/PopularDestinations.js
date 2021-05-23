@@ -5,7 +5,6 @@ import SuperEllipse from "react-superellipse";
 import { getDestinationDetails } from "../../utils/getDestinationDetails";
 
 const PopularDestinations = ({ destinations, heading }) => {
-  console.log(destinations);
 
   return destinations.length ? (
     <section>

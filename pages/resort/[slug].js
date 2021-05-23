@@ -12,8 +12,6 @@ import ResortDetail from "../../components/resorts/resortDetail/ResortDetail";
 const resortsUrl = `${BASE_URL}${RESORTS_ENDPOINT}`;
 
 const Resort = ({ resort, reviews, facilities }) => {
-  console.log(resort);
-
   return (
     <Layout title={resort.title}>
       <ResortDetail resort={resort} reviews={reviews} facilities={facilities} />

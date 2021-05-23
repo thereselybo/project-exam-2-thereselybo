@@ -42,7 +42,6 @@ const EditForm = ({ resort, destinations, facilities }) => {
 
     try {
       const res = await http.put(url, updatedResort);
-      console.log(res);
       if (res.status === 200) {
         setEdited(true);
       }

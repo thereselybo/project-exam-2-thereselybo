@@ -32,7 +32,6 @@ const ContactForm = ({ messageTopics }) => {
     const updatedMessage = updateMessage(data, messageTopics);
 
     try {
-      console.log(updatedMessage);
       const res = await axios.post(url, updatedMessage);
       if (res.status === 200) {
         setSubmitted(true);

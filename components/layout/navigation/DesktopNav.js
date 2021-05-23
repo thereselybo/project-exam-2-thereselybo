@@ -11,7 +11,6 @@ const DesktopNav = () => {
   const path = router.pathname;
 
   const [auth] = useContext(AuthContext);
-  console.log("auth", auth);
 
   return (
     <div className={`position-fixed start-0 end-0 top-0 nav-wrapper`}>

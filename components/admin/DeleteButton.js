@@ -34,7 +34,6 @@ const DeleteButton = ({ id, title, size, editing, content }) => {
           router.push("/admin");
         }, 2000);
       }
-      console.log("deleting...");
     } catch (err) {
       setDeleteError(err.toString());
     }

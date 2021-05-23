@@ -24,7 +24,6 @@ const LoginForm = () => {
   });
 
   const [auth, setAuth] = useContext(AuthContext);
-  console.log(auth);
 
   const url = `${BASE_URL}${AUTH_ENDPOINT}`;
   const router = useRouter();

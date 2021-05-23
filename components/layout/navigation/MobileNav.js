@@ -8,7 +8,6 @@ import { House, Search, Envelope, Person } from "react-bootstrap-icons";
 
 const MobileNav = () => {
   const [auth] = useContext(AuthContext);
-  console.log("auth", auth);
 
   return (
     <Navbar fixed="bottom" className="d-md-none public-mobile-nav">
