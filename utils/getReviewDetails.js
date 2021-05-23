@@ -12,8 +12,8 @@ export const getReviewDetails = (review) => {
   const reviewDetails = {
     visitor: review.visitor,
     review: review.review,
-    image: image.resortImg,
-    imageAlt: image.resortImgAlt,
+    image: image.image,
+    imageAlt: image.imageAlt,
     rating: review.rating,
   };
   return reviewDetails;

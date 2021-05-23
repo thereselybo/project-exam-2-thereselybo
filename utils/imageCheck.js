@@ -4,16 +4,16 @@ export const imageCheck = (element, imgPlaceholder, altPlaceholder) => {
   const imgUrl = element.image_url;
   const imgObject = element.image;
 
-  let elementImg = imgPlaceholder;
-  let elementImgAlt = altPlaceholder;
+  let image = imgPlaceholder;
+  let imageAlt = altPlaceholder;
 
   if (imgUrl) {
-    elementImg = imgUrl;
-    elementImgAlt = `Image of ${element.title}`;
+    image = imgUrl;
+    imageAlt = `Image of ${element.title}`;
   } else if (imgObject.length) {
-    elementImg = `${BASE_URL}${element.image[0].formats.medium.url}`;
-    elementImgAlt = `Image of ${element.title}`;
+    image = `${BASE_URL}${element.image[0].formats.medium.url}`;
+    imageAlt = `Image of ${element.title}`;
   }
 
-  return { elementImg, elementImgAlt };
+  return { image, imageAlt };
 };
